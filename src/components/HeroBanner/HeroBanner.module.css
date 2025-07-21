@@ -1,25 +1,18 @@
 .frame {
     display: flex;
     flex-direction: column;
-    padding: 32px;
-    gap: 32px;
 }
 
 .content {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--full-size);
     margin-inline: auto;
-}
-
-.title {
-    font-weight: 300;
-    font-size: 16px;
-    font-family: 'Roboto Mono', system-ui, sans-serif;
-    text-transform: uppercase
+    gap: var(--size-500);
+    padding: var(--size-500);
 }
 
 .description {
-    font-size: 40px;
+    font-size: var(--size-900);
     font-family: 'Aeonik', system-ui, sans-serif;
     font-weight: 400;
 }

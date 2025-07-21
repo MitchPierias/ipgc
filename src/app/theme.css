@@ -1,0 +1,30 @@
+:root {
+    --content-width: 960px;
+    --gutter-width: 64px;
+    --full-size: calc(var(--content-width) + 2 * var(--gutter-width));
+
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-secondary: #e5e5e5;
+
+    --size-200: 8px;
+    --size-300: 11px;
+    --size-400: 13px;
+    --size-500: 16px;
+    --size-600: 19px;
+    --size-700: 21px;
+    --size-800: 28px;
+    --size-900: 32px;
+
+    @media (min-width: 1024px) {
+        --size-200: 10px;
+        --size-300: 12px;
+        --size-400: 14px;
+        --size-500: 16px;
+        --size-600: 21px;
+        --size-700: 28px;
+        --size-800: 32px;
+        --size-900: 42px;
+    }
+}

@@ -1,0 +1,18 @@
+.frame {
+    display: grid;
+    grid-template-columns: var(--size-900) 1fr;
+    gap: var(--size-600);
+}
+
+.icon {
+    width: var(--size-900);
+    aspect-ratio: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 100vw;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-600);
+}

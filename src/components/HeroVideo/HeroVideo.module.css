@@ -31,15 +31,3 @@
 .video {
     @apply w-full h-screen object-cover;
 }
-
-.fallback {
-    @apply w-full h-screen bg-slate-900 flex items-center justify-center;
-}
-
-.fallbackContent {
-    @apply max-w-7xl mx-auto px-4 lg:px-8 text-white text-center;
-}
-
-.fallbackTitle {
-    @apply text-54 mb-0 max-w-520 text-white mx-auto;
-}

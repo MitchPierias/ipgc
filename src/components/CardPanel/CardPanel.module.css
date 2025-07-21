@@ -1,0 +1,26 @@
+.frame {
+    color: var(--color-white);
+    display: grid;
+    grid-auto-flow: row;
+    position: relative;
+    z-index: 1;
+    padding: var(--size-600);
+    gap: var(--size-600);
+    overflow: hidden;
+    transition: border-radius 300ms ease, padding 300ms ease, gap 300ms ease;
+
+    @media (min-width: 1024px) {
+        padding: var(--size-900);
+        border-radius: var(--size-900);
+        gap: var(--size-900);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+        backdrop-filter: blur(25px);
+    }
+}

@@ -2,14 +2,17 @@
 
 import React from "react";
 import styles from "./HeroVideo.module.css";
+import { Title } from "src/elements/Text/Text";
 
-const HeroVideo = () => {
+interface HeroVideoProps extends Common.ComponentProps {}
+
+const HeroVideo = ({ testID, ...props }: HeroVideoProps) => {
   return (
-    <section id="top_video" className={styles.frame}>
+    <section data-testid={testID} className={styles.frame}>
       <div>
         <div className={styles.overlay}>
           <div className={styles.content}>
-            <h3 className={styles.title}>Whole Body 3T MRI Scan</h3>
+            <Title testID={`${testID}.title`}>Whole Body 3T MRI Scan</Title>
             <h4 className={styles.subtitle}>
               Unmatched precision in screening — for those who prioritise health
               and longevity.
@@ -22,16 +25,6 @@ const HeroVideo = () => {
             src="https://wholebodymri.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4"
             type="video/mp4"
           />
-          {/* Fallback for browsers that don't support video */}
-          <div className={styles.fallback}>
-            <div className={styles.fallbackContent}>
-              <h3 className={styles.fallbackTitle}>Whole Body 3T MRI Scan</h3>
-              <h4 className={styles.subtitle}>
-                Unmatched precision in screening — for those who prioritise
-                health and longevity.
-              </h4>
-            </div>
-          </div>
         </video>
       </div>
     </section>
