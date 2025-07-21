@@ -1,0 +1,87 @@
+.section {
+    @apply pt-16 lg:pt-20 pb-16 lg:pb-20;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 lg:px-8;
+}
+
+.header {
+    @apply mb-12 flex items-center justify-between flex-col sm:flex-row gap-4;
+}
+
+.title {
+    @apply text-42 mb-0;
+}
+
+.viewAllBtn {
+    @apply bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 px-4 py-2 text-sm inline-flex items-center gap-3 font-medium rounded-full transition-colors duration-200;
+}
+
+.grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6;
+}
+
+.resourceCard {
+    @apply bg-grey rounded-25 overflow-hidden;
+}
+
+.cardImage {
+    @apply rounded-25 w-full h-48 object-cover;
+}
+
+.cardBody {
+    @apply p-6 flex flex-col justify-between h-full;
+}
+
+.categoryList {
+    @apply mb-2;
+}
+
+.category {
+    @apply inline-block px-3 py-1 text-xs font-medium bg-white rounded-full mr-2 mb-2;
+}
+
+.cardTitle {
+    @apply mb-4;
+}
+
+.cardTitleLink {
+    @apply text-onyx hover:text-slate-600 transition-colors duration-200;
+}
+
+.readMoreBtn {
+    @apply bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 px-4 py-2 text-sm inline-flex items-center gap-3 font-medium rounded-full transition-colors duration-200;
+}
+
+.controls {
+    @apply flex items-center justify-center;
+}
+
+.controlsInner {
+    @apply flex items-center gap-4;
+}
+
+.pagination {
+    @apply flex gap-2;
+}
+
+.paginationDot {
+    @apply w-2 h-2 rounded-full;
+}
+
+.paginationDotActive {
+    @apply bg-slate-900;
+}
+
+.paginationDotInactive {
+    @apply bg-slate-400;
+}
+
+.sliderControls {
+    @apply flex gap-2;
+}
+
+.sliderBtn {
+    @apply p-2 border border-slate-300 rounded-full hover:bg-slate-50 transition-colors duration-200;
+}

@@ -1,0 +1,101 @@
+.header {
+    @apply max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between py-4;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 20;
+    border-radius: 100vw;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Aeonik', system-ui, sans-serif;
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(25px);
+        z-index: -1;
+    }
+}
+
+.logo {
+    @apply flex items-center;
+}
+
+.logo img,
+.logo svg {
+    @apply h-8 w-auto fill-current;
+    fill: #fff;
+}
+
+.headerRight {
+    @apply hidden lg:flex items-center gap-8;
+}
+
+.nav ul {
+    @apply flex items-center gap-6;
+}
+
+.navLink {
+    font-family: 'Aeonik', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.searchForm {
+    @apply transition-all duration-300;
+}
+
+.searchInput {
+    @apply absolute right-0 top-0 h-8 border border-slate-300 rounded-full px-4 transition-all duration-300;
+    font-family: 'Aeonik', system-ui, sans-serif;
+}
+
+.searchButton {
+    @apply w-8 h-8 flex items-center justify-center;
+}
+
+.mobileControls {
+    @apply lg:hidden flex items-center gap-4;
+}
+
+.hamburger {
+    @apply flex flex-col gap-1;
+}
+
+.hamburgerLine {
+    @apply w-6 h-0.5 bg-current;
+}
+
+.mobileMenu {
+    @apply lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg;
+}
+
+.mobileNav {
+    @apply max-w-7xl mx-auto px-4 lg:px-8 py-4;
+}
+
+.mobileNavList {
+    @apply flex flex-col gap-4;
+}
+
+.mobileNavLink {
+    @apply text-onyx hover:text-slate-600 transition-colors duration-200 block py-2;
+    font-family: 'Aeonik', system-ui, sans-serif;
+    font-weight: 400;
+}
+
+.mobileSearch {
+    @apply lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg;
+}
+
+.mobileSearchForm {
+    @apply max-w-7xl mx-auto px-4 lg:px-8 py-4;
+}
+
+.mobileSearchInput {
+    @apply w-full h-12 border border-slate-300 rounded-full px-4;
+    font-family: 'Aeonik', system-ui, sans-serif;
+}

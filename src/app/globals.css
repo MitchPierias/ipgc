@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/aeonik/AeonikTRIAL-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@layer base {
+    html {
+        font-family: 'Aeonik', system-ui, sans-serif;
+    }
+
+    body {
+        @apply text-onyx bg-white;
+    }
+
+    /* Remove default margins and paddings */
+    * {
+        @apply box-border;
+    }
+}
+
+@layer utilities {
+    .ff-roboto {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .ff-aeonik {
+        font-family: 'Aeonik', system-ui, sans-serif;
+    }
+
+    /* Global utility classes that don't belong to specific components */
+    .notanim {
+        /* Placeholder for animations that are disabled */
+    }
+}

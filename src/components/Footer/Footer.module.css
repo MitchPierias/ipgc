@@ -1,0 +1,97 @@
+.footer {
+    @apply pt-12 lg:pt-16 pb-12 lg:pb-16 text-white bg-slate-900;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 lg:px-8;
+}
+
+.topSection {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16;
+}
+
+.leftColumn {
+    @apply flex flex-col;
+}
+
+.logo {
+    @apply flex items-center mb-6;
+}
+
+.logoImage {
+    @apply h-8 w-auto;
+}
+
+.downloadSection .title {
+    @apply text-24 font-normal mb-4 text-white;
+}
+
+.downloadBtn {
+    @apply bg-transparent border border-white text-white hover:bg-white hover:text-slate-900 inline-flex items-center gap-2 px-6 py-3 font-medium rounded-full transition-colors duration-200;
+}
+
+.rightColumn {
+    @apply relative;
+}
+
+.navigation {
+    @apply flex;
+}
+
+.navList {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+}
+
+.navLink {
+    @apply text-white hover:text-slate-300 transition-colors duration-200;
+}
+
+.socialSection {
+    @apply flex gap-4 mt-6;
+}
+
+.socialLink {
+    @apply w-8 h-8 flex items-center justify-center;
+}
+
+.socialIcon {
+    @apply w-6 h-6;
+}
+
+.bottomSection {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12;
+}
+
+.leftBottom {
+    @apply flex justify-end uppercase items-center gap-4;
+}
+
+.bottomLogo {
+    @apply flex items-center;
+}
+
+.bottomLogoImage {
+    @apply h-6 w-auto;
+}
+
+.legalLink {
+    @apply text-white opacity-50 text-16 uppercase hover:opacity-75 transition-opacity duration-200;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rightBottom {
+    @apply flex justify-end items-center gap-4;
+}
+
+.brandingText {
+    @apply text-16 uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.brandingLink {
+    @apply opacity-50 text-white hover:opacity-75 transition-opacity duration-200;
+}
+
+.tagline {
+    @apply text-24 font-normal text-white;
+}
