@@ -5,19 +5,19 @@ import Link from "next/link";
 import { Search, X } from "lucide-react";
 import styles from "./Header.module.css";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navigationItems = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Referral Form", href: "/referral" },
+    { label: "Patient Portal", href: "/portal" },
+    { label: "Results Portal", href: "/results" },
     { label: "About", href: "/about" },
-    { label: "Packages", href: "/packages" },
-    { label: "Experience", href: "/your-experience" },
-    { label: "Technology", href: "/our-technology" },
-    { label: "Difference", href: "/our-difference" },
-    { label: "Resources", href: "/resources" },
-    { label: "FAQs", href: "/frequently-asked-questions" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <form
+        {/* <form
           action="/"
           method="get"
           className={`${styles.searchForm} ${isSearchOpen ? "w-64" : "w-8"}`}
@@ -66,14 +66,14 @@ const Header: React.FC = () => {
               <Search size={18} />
             </button>
           </div>
-        </form>
+        </form> */}
       </div>
 
       {/* Mobile Controls */}
       <div className={styles.mobileControls}>
-        <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
+        {/* <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
           <Search size={20} />
-        </button>
+        </button> */}
         <button
           className={styles.hamburger}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,5 +129,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

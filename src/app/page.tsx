@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "~/components/Header/Header";
+import { Header } from "~/components/Header/Header";
 import HeroVideo from "~/components/HeroVideo/HeroVideo";
 import Footer from "~/components/Footer/Footer";
 import { DualPanel } from "~/components/DualPanel/DualPanel";
@@ -9,6 +9,7 @@ import HeroImage from "~/components/HeroImage/HeroImage";
 import { ArticleCard } from "~/components/ArticleCard/ArticleCard";
 import { GridLayout } from "~/components/GridLayout/GridLayout";
 import { IconBlock } from "~/components/IconBlock/IconBlock";
+import { ImagePanel } from "~/components/ImagePanel/ImagePanel";
 
 export default function Home() {
   return (
@@ -94,6 +95,18 @@ export default function Home() {
             />
           </div>
         </div>
+
+        <DualPanel testID="image-panel">
+          <ImagePanel
+            testID="image-panel"
+            image="https://wholebodymri.com.au/wp-content/uploads/2024/11/experience-gallery-1.jpg"
+          />
+          <ImagePanel
+            testID="image-panel"
+            image="https://wholebodymri.com.au/wp-content/uploads/2024/11/experience-gallery-2.jpg"
+          />
+        </DualPanel>
+
         <GridLayout testID="grid-layout">
           <IconBlock
             testID="icon-block"
