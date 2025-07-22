@@ -7,6 +7,7 @@ interface TitleProps extends Common.ElementProps {
 }
 
 export const Text = ({
+  testID,
   component = "p",
   children,
   ...props
@@ -14,6 +15,7 @@ export const Text = ({
   React.createElement(
     component,
     {
+      "data-testid": testID,
       className: clsx(styles.frame, props.className),
       ...props,
     },

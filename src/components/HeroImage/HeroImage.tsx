@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HeroImage.module.css";
 import { CardPanel } from "../CardPanel/CardPanel";
+import { DualPanel } from "../DualPanel/DualPanel";
 
 interface HeroImageProps extends Common.ComponentProps {
   image: string;
@@ -16,7 +17,7 @@ const HeroImage = ({ testID, ...props }: HeroImageProps) => {
       className={styles.frame}
       style={{ backgroundImage: `url(${props.image})` }}
     >
-      <div className={styles.content}>
+      <DualPanel testID={`${testID}.dual-panel`}>
         <CardPanel
           testID={`${testID}.panel`}
           title={props.title}
@@ -24,7 +25,8 @@ const HeroImage = ({ testID, ...props }: HeroImageProps) => {
           description={props.description}
           buttonText={props.buttonText}
         />
-      </div>
+        <div />
+      </DualPanel>
     </section>
   );
 };

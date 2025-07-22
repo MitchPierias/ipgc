@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Whole Body MRI™ | Full-Body Cancer Screening Using 3T MRI",
@@ -58,7 +55,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Whole Body MRI™" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

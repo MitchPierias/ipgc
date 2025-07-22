@@ -1,7 +1,6 @@
 .frame {
-    display: grid;
-    grid-template-columns: 1fr minmax(320px, 960px) 1fr;
-    grid-template-rows: 1fr auto 1fr;
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,9 +15,4 @@
         aspect-ratio: 16 / 9;
         padding: 21px;
     }
-}
-
-.content {
-    grid-column: 2/3;
-    grid-row: 2/3;
 }
