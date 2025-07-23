@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { StoryblokProvider } from "src/providers/StoryblokProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Interventional Pain GC | Full-Body Cancer Screening Using MRI",
@@ -56,7 +57,10 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           />
           <link rel="manifest" href="/site.webmanifest" />
         </head>
-        <body>{children}</body>
+        <body>
+          {children}
+          <SpeedInsights />
+        </body>
       </html>
     </StoryblokProvider>
   );
