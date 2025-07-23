@@ -1,3 +1,4 @@
+import { storyblokEditable } from "@storyblok/react";
 import { StoryblokImageMeta } from "../Section/Section.transform";
 import { ImagePanel as ImagePanelComponent } from "./ImagePanel";
 
@@ -9,6 +10,10 @@ export type ImagePanelBlok = {
 
 export const ImagePanel = ({ blok }: { blok: ImagePanelBlok }) => {
   return (
-    <ImagePanelComponent testID={"image-panel"} image={blok.image.filename} />
+    <ImagePanelComponent
+      testID={"image-panel"}
+      image={blok.image.filename}
+      {...storyblokEditable(blok)}
+    />
   );
 };

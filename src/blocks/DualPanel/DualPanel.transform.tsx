@@ -1,4 +1,4 @@
-import { StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { DualPanel as DualPanelComponent } from "./DualPanel";
 
 export type DualPanelBlok = {
@@ -25,6 +25,7 @@ export const DualPanel = ({ blok }: { blok: DualPanelBlok }) => {
       variant={blok.variant || "transparent"}
       full={blok.full}
       gutter={blok.gutter}
+      {...storyblokEditable(blok)}
     >
       {blok.contents?.map((nestedBlok) => (
         <StoryblokComponent key={nestedBlok._uid} blok={nestedBlok} />

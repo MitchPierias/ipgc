@@ -1,4 +1,4 @@
-import { StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { Section as SectionComponent } from "./Section";
 import { type DualPanelBlok } from "../DualPanel/DualPanel.transform";
 
@@ -40,6 +40,7 @@ export const Section = ({ blok }: { blok: SectionBlok }) => {
             }
           : undefined
       }
+      {...storyblokEditable(blok)}
     >
       {blok.contents?.map((nestedBlok) => (
         <StoryblokComponent key={nestedBlok._uid} blok={nestedBlok} />

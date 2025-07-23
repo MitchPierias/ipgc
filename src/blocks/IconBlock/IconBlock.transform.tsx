@@ -1,3 +1,4 @@
+import { storyblokEditable } from "@storyblok/react";
 import { IconBlock as IconBlockComponent } from "./IconBlock";
 
 export type IconBlockBlok = {
@@ -13,6 +14,7 @@ export const IconBlock = ({ blok }: { blok: IconBlockBlok }) => {
       testID={"icon-block"}
       title={blok.title}
       description={blok.description || ""}
+      {...storyblokEditable(blok)}
     />
   );
 };

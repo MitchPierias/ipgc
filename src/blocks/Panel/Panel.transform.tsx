@@ -1,3 +1,4 @@
+import { storyblokEditable } from "@storyblok/react";
 import { Panel as PanelComponent } from "./Panel";
 
 export type PanelBlok = {
@@ -19,6 +20,7 @@ export const Panel = ({ blok }: { blok: PanelBlok }) => {
       description={blok.description}
       buttonText={blok.buttonText}
       variant={blok.variant}
+      {...storyblokEditable(blok)}
     />
   );
 };

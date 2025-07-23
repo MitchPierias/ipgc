@@ -1,6 +1,4 @@
-"use client";
-
-import { StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { Carousel as CarouselComponent } from "./Carousel";
 import { ArticleBlok } from "../ArticleCard/ArticleCard.transform";
 
@@ -18,6 +16,7 @@ export const Carousel = ({ blok }: { blok: CarouselBlok }) => {
       stepInterval={blok.step_interval}
       pauseOnHover={blok.pause_on_hover}
       transitionDuration={blok.transition_duration}
+      {...storyblokEditable(blok)}
     >
       {blok.contents.map((content) => (
         <StoryblokComponent key={content._uid} blok={content} />

@@ -1,5 +1,4 @@
-"use client";
-
+import { storyblokEditable } from "@storyblok/react";
 import { StoryblokImageMeta } from "../Section/Section.transform";
 import { ArticleCard as ArticleCardComponent } from "./ArticleCard";
 
@@ -24,6 +23,7 @@ export const ArticleCard = ({ blok }: { blok: ArticleBlok }) => {
           src: blok.media.filename,
         }
       }
+      {...storyblokEditable(blok)}
     />
   );
 };
