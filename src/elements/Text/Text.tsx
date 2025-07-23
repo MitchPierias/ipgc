@@ -16,8 +16,8 @@ export const Text = ({
     component,
     {
       "data-testid": testID,
-      className: clsx(styles.frame, props.className),
       ...props,
+      className: clsx(props.className, styles.frame, styles.blurIn),
     },
     children
   );

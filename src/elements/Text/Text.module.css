@@ -29,3 +29,24 @@
     font-family: 'Aeonik', system-ui, sans-serif;
     font-weight: 400;
 }
+
+.blurIn {
+    animation: blurIn 1s 0s linear forwards;
+}
+
+@keyframes blurIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    50% {
+        opacity: 0.6;
+        filter: blur(6px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
