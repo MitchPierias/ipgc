@@ -1,12 +1,62 @@
 .frame {
     width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
 }
 
-.stacker {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: var(--size-600);
-    padding: var(--size-600);
+.container {
+    width: 100%;
+    max-width: var(--content-width, 1200px);
+    overflow: visible;
+    position: relative;
+}
+
+.track {
+    display: flex;
+    gap: 24px;
+    width: fit-content;
+    transform: translateX(0);
+    transition: transform 500ms ease-in-out;
+}
+
+.card {
+    flex: 0 0 auto;
+    min-width: 360px;
+}
+
+/* Center the track within the container when there are fewer cards */
+.track:first-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        min-width: 280px;
+    }
+
+    .track {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-width: 240px;
+    }
+
+    .track {
+        gap: 12px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        transition: none;
+    }
 }

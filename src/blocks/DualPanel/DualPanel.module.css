@@ -1,0 +1,24 @@
+.frame {
+    grid-column: content;
+    grid-row: content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 0.6fr));
+    gap: var(--size-500);
+    padding: var(--size-500);
+    max-height: 100%;
+}
+
+.gutter {
+    grid-column: gutter;
+    grid-row: content;
+}
+
+.full {
+    grid-column: full;
+    grid-row: content;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+}

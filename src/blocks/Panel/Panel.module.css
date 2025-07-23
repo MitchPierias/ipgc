@@ -1,8 +1,18 @@
 .frame {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.invert {
+    color: var(--color-white);
+}
+
+.overlay {
+    position: relative;
     color: var(--color-white);
     display: grid;
     grid-auto-flow: row;
-    position: relative;
     z-index: 1;
     padding: var(--size-600);
     gap: var(--size-600);

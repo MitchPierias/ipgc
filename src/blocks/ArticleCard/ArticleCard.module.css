@@ -1,14 +1,16 @@
 .frame {
     max-width: 460px;
-    aspect-ratio: 3 / 4;
     background-color: var(--color-secondary);
     border-radius: var(--size-600);
     overflow: hidden;
 }
 
 .image {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .content {

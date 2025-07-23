@@ -1134,6 +1134,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storyblok/js@npm:4.2.1":
+  version: 4.2.1
+  resolution: "@storyblok/js@npm:4.2.1"
+  dependencies:
+    "@storyblok/richtext": "npm:3.5.0"
+    storyblok-js-client: "npm:7.1.1"
+  checksum: 10c0/fe47c074af541565d1d0494568917d8bca6d7e9db105c024b5f29e7e6b8a112ae1c40da6d77b91f9d759737a31e7a3f968b7a897b1c4b859702d4a4d6f6cd890
+  languageName: node
+  linkType: hard
+
+"@storyblok/react@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "@storyblok/react@npm:5.4.1"
+  dependencies:
+    "@storyblok/js": "npm:4.2.1"
+  peerDependencies:
+    next: ^13 || ^14 || ^15
+    react: ^17 || ^18 || ^19
+    react-dom: ^17 || ^18 || ^19
+  peerDependenciesMeta:
+    next:
+      optional: true
+  checksum: 10c0/788deef6fcb9a995bc6f1ef53d91ab2d9c3e0641d95bd7d1bfe8377daa32e5c3e268ecf8708f85e8b3dd91456790e6e767e6058bc87df0d7d8a8ce95f0ecfea5
+  languageName: node
+  linkType: hard
+
+"@storyblok/richtext@npm:3.5.0":
+  version: 3.5.0
+  resolution: "@storyblok/richtext@npm:3.5.0"
+  checksum: 10c0/234af01bd47c6c821cae6fac8a09d1533ff095bef4b2364f610ab9e95ac8c23d5524ebf7db58116fee164a10417007ac861df54bb7482fcd01c0bdda6c5fd13b
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-a11y@npm:^9.0.17":
   version: 9.0.17
   resolution: "@storybook/addon-a11y@npm:9.0.17"
@@ -6186,6 +6219,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"storyblok-js-client@npm:7.1.1":
+  version: 7.1.1
+  resolution: "storyblok-js-client@npm:7.1.1"
+  checksum: 10c0/6935e3ab86d31da4b2b11776e16a65b70ca50c72036463717456542b79cf9e023dabbe1f419d03671df852f627bab048016ea981677db2cd4e9aa18180a411c6
+  languageName: node
+  linkType: hard
+
 "storybook@npm:^9.0.17":
   version: 9.0.17
   resolution: "storybook@npm:9.0.17"
@@ -7143,6 +7183,7 @@ __metadata:
   resolution: "whole-body-mri-website@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:^4.0.1"
+    "@storyblok/react": "npm:^5.4.1"
     "@storybook/addon-a11y": "npm:^9.0.17"
     "@storybook/addon-docs": "npm:^9.0.17"
     "@storybook/addon-onboarding": "npm:^9.0.17"

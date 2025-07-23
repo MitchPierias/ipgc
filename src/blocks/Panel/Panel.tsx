@@ -8,11 +8,15 @@ interface PanelProps extends Common.ComponentProps {
   subtitle?: string;
   description?: string;
   buttonText?: string;
+  variant?: "overlay" | "invert";
 }
 
 export const Panel = ({ testID, ...props }: PanelProps) => {
   return (
-    <div data-testid={testID} className={styles.frame}>
+    <div
+      data-testid={testID}
+      className={clsx(styles.frame, props.variant && styles[props.variant])}
+    >
       <Title testID={`${testID}.title`}>{props.title}</Title>
       <Subtitle testID={`${testID}.subtitle`}>{props.subtitle}</Subtitle>
       <Text testID={`${testID}.description`}>{props.description}</Text>

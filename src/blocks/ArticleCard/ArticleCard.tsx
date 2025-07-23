@@ -6,6 +6,11 @@ interface ArticleCardProps extends Common.ComponentProps {
   title: string;
   description?: string;
   tags?: string[];
+  media?: {
+    type: "image" | "video";
+    format: "jpg" | "jpeg" | "png" | "gif" | "mp4" | "webm" | string;
+    src: string;
+  };
 }
 
 export const ArticleCard = ({
@@ -15,7 +20,10 @@ export const ArticleCard = ({
 }: ArticleCardProps) => {
   return (
     <div data-testid={testID} className={styles.frame}>
-      <div className={styles.image} />
+      <div
+        className={styles.image}
+        style={{ backgroundImage: `url(${props.media?.src})` }}
+      />
       <div className={styles.content}>
         <div data-testid={`${testID}.tags`} className={styles.tags}>
           {tags.map((label) => (

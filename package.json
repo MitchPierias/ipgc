@@ -15,6 +15,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@storyblok/react": "^5.4.1",
     "classnames": "^2.5.1",
     "lucide-react": "^0.454.0",
     "next": "^15.0.3",
