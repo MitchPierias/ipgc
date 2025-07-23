@@ -1,0 +1,12 @@
+.frame {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.stacker {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: var(--size-600);
+    padding: var(--size-600);
+}

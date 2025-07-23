@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "~/components/Header/Header";
+import { Header } from "src/blocks/Header/Header";
 import { HeroVideo } from "~/components/HeroVideo/HeroVideo";
-import { Footer } from "src/sections/Footer/Footer";
+import { Footer } from "src/blocks/Footer/Footer";
 import { DualPanel } from "~/components/DualPanel/DualPanel";
 import { Panel } from "~/components/Panel/Panel";
 import { HeroBanner } from "~/components/HeroBanner/HeroBanner";
@@ -10,6 +10,7 @@ import { ArticleCard } from "~/components/ArticleCard/ArticleCard";
 import { GridLayout } from "~/components/GridLayout/GridLayout";
 import { IconBlock } from "~/components/IconBlock/IconBlock";
 import { ImagePanel } from "~/components/ImagePanel/ImagePanel";
+import { Carousel } from "src/blocks/Carousel/Carousel";
 
 export default function Home() {
   return (
@@ -53,48 +54,33 @@ export default function Home() {
           buttonText={"Journey into the known with a Whole Body MRI scan"}
         />
 
-        <div
-          style={{
-            width: "100%",
-            overflowY: "hidden",
-            overflowX: "auto",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
-              gap: "var(--size-600)",
-              padding: "var(--size-600)",
-            }}
-          >
-            <ArticleCard
-              testID="article-card"
-              title="Is your brain ageing faster than it should?"
-              tags={["Brain health", "Conditions detected", "MRI"]}
-            />
-            <ArticleCard
-              testID="article-card"
-              title="Is your brain ageing faster than it should?"
-              tags={["Brain health", "Conditions detected", "MRI"]}
-            />
-            <ArticleCard
-              testID="article-card"
-              title="Is your brain ageing faster than it should?"
-              tags={["Brain health", "Conditions detected", "MRI"]}
-            />
-            <ArticleCard
-              testID="article-card"
-              title="Is your brain ageing faster than it should?"
-              tags={["Brain health", "Conditions detected", "MRI"]}
-            />
-            <ArticleCard
-              testID="article-card"
-              title="The Best of Both Worlds: Why Whole Body MRI Includes Low-Dose CT Chest Screening"
-              tags={["Full-body MRI", "Imaging Science", "MRI", "Screening"]}
-            />
-          </div>
-        </div>
+        <Carousel testID="carousel">
+          <ArticleCard
+            testID="article-card"
+            title="Is your brain ageing faster than it should?"
+            tags={["Brain health", "Conditions detected", "MRI"]}
+          />
+          <ArticleCard
+            testID="article-card"
+            title="Is your brain ageing faster than it should?"
+            tags={["Brain health", "Conditions detected", "MRI"]}
+          />
+          <ArticleCard
+            testID="article-card"
+            title="Is your brain ageing faster than it should?"
+            tags={["Brain health", "Conditions detected", "MRI"]}
+          />
+          <ArticleCard
+            testID="article-card"
+            title="Is your brain ageing faster than it should?"
+            tags={["Brain health", "Conditions detected", "MRI"]}
+          />
+          <ArticleCard
+            testID="article-card"
+            title="The Best of Both Worlds: Why Whole Body MRI Includes Low-Dose CT Chest Screening"
+            tags={["Full-body MRI", "Imaging Science", "MRI", "Screening"]}
+          />
+        </Carousel>
 
         <DualPanel testID="image-panel">
           <ImagePanel
