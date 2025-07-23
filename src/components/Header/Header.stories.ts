@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Header from "./Header";
+import { Header } from "./Header";
 
-const meta: Meta<typeof Header> = {
+export default {
   title: "Components/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",
   },
-};
+} satisfies Meta<React.ComponentProps<typeof Header>>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export const Default = {} satisfies StoryObj<
+  Meta<React.ComponentProps<typeof Header>>
+>;
 
-export const Default: Story = {};
-
-export const WithSearchOpen: Story = {
+export const WithSearchOpen = {
   parameters: {
     docs: {
       description: {
@@ -25,9 +24,9 @@ export const WithSearchOpen: Story = {
   play: async ({ canvasElement }) => {
     // You can add interactions here if needed
   },
-};
+} satisfies StoryObj<Meta<React.ComponentProps<typeof Header>>>;
 
-export const WithMobileMenuOpen: Story = {
+export const WithMobileMenuOpen = {
   parameters: {
     viewport: {
       defaultViewport: "mobile1",
@@ -38,4 +37,4 @@ export const WithMobileMenuOpen: Story = {
       },
     },
   },
-};
+} satisfies StoryObj<Meta<React.ComponentProps<typeof Header>>>;

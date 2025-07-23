@@ -1,0 +1,29 @@
+.frame {
+    display: flex;
+    gap: 21px;
+}
+
+.link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid white;
+    border-radius: 100vw;
+    padding: 10px;
+    transition: filter 200ms ease;
+
+    &:hover {
+        filter: blur(1px);
+    }
+}
+
+.icon {
+    width: 100%;
+    aspect-ratio: 1;
+
+    &:hover {
+        filter: blur(2px);
+    }
+}

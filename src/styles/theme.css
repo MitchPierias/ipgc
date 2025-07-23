@@ -1,7 +1,7 @@
 :root {
     --content-width: 960px;
     --gutter-width: 64px;
-    --full-size: calc(var(--content-width) + 2 * var(--gutter-width));
+    --full-width: calc(var(--content-width) + 2 * var(--gutter-width));
 
     --color-white: #fff;
     --color-black: #000;

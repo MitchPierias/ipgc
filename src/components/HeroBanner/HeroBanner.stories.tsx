@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { HeroBanner } from "./HeroBanner";
 
-const meta: Meta<typeof HeroBanner> = {
+export default {
   title: "Components/HeroBanner",
   component: HeroBanner,
   parameters: {
@@ -12,9 +12,8 @@ const meta: Meta<typeof HeroBanner> = {
     description:
       "State of the art equipment. Respected Doctors. Unparalleled experience.",
   },
-};
+} satisfies Meta<React.ComponentProps<typeof HeroBanner>>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+export const Default = {} satisfies StoryObj<
+  Meta<React.ComponentProps<typeof HeroBanner>>
+>;

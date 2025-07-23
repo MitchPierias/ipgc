@@ -6,7 +6,7 @@ import { Title } from "src/elements/Text/Text";
 
 interface HeroVideoProps extends Common.ComponentProps {}
 
-const HeroVideo = ({ testID, ...props }: HeroVideoProps) => {
+export const HeroVideo = ({ testID, ...props }: HeroVideoProps) => {
   return (
     <section data-testid={testID} className={styles.frame}>
       <div>
@@ -30,5 +30,3 @@ const HeroVideo = ({ testID, ...props }: HeroVideoProps) => {
     </section>
   );
 };
-
-export default HeroVideo;

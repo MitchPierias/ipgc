@@ -3,6 +3,6 @@
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: var(--size-600);
     padding: var(--size-600);
-    max-width: var(--full-size);
+    max-width: var(--full-width);
     margin: 0 auto;
 }

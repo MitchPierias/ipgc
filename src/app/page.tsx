@@ -1,11 +1,11 @@
 import React from "react";
 import { Header } from "~/components/Header/Header";
-import HeroVideo from "~/components/HeroVideo/HeroVideo";
-import Footer from "~/components/Footer/Footer";
+import { HeroVideo } from "~/components/HeroVideo/HeroVideo";
+import { Footer } from "src/sections/Footer/Footer";
 import { DualPanel } from "~/components/DualPanel/DualPanel";
 import { Panel } from "~/components/Panel/Panel";
 import { HeroBanner } from "~/components/HeroBanner/HeroBanner";
-import HeroImage from "~/components/HeroImage/HeroImage";
+import { HeroImage } from "~/components/HeroImage/HeroImage";
 import { ArticleCard } from "~/components/ArticleCard/ArticleCard";
 import { GridLayout } from "~/components/GridLayout/GridLayout";
 import { IconBlock } from "~/components/IconBlock/IconBlock";

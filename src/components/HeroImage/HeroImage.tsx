@@ -11,7 +11,7 @@ interface HeroImageProps extends Common.ComponentProps {
   buttonText?: string;
 }
 
-const HeroImage = ({ testID, ...props }: HeroImageProps) => {
+export const HeroImage = ({ testID, ...props }: HeroImageProps) => {
   return (
     <section
       className={styles.frame}
@@ -30,5 +30,3 @@ const HeroImage = ({ testID, ...props }: HeroImageProps) => {
     </section>
   );
 };
-
-export default HeroImage;
