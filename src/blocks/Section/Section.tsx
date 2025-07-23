@@ -33,7 +33,7 @@ export const Section = ({
       {props.media?.type === "video" && (
         <video className={styles.video} playsInline autoPlay muted loop>
           <source
-            src="https://wholebodymri.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4"
+            src="https://ipgc.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4"
             type={`video/mp4`}
           />
         </video>

@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 const sampleCards = [
   {
     title: "Advanced MRI Technology",
-    description: "Learn about our cutting-edge 3T MRI scanners",
+    description: "Learn about our cutting-edge MRI scanners",
     tags: ["Technology", "Innovation"],
   },
   {

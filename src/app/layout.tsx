@@ -3,23 +3,23 @@ import "../styles/globals.css";
 import { StoryblokProvider } from "src/providers/StoryblokProvider";
 
 export const metadata: Metadata = {
-  title: "Whole Body MRI™ | Full-Body Cancer Screening Using 3T MRI",
+  title: "Interventional Pain GC | Full-Body Cancer Screening Using MRI",
   description:
-    "Whole Body MRI™ offers Australia's most comprehensive 3T full-body MRI for proactive health screening. Based on the Gold Coast.",
+    "Interventional Pain GC offers Australia's most comprehensive full-body MRI for proactive health screening. Based on the Gold Coast.",
   keywords: [
     "MRI",
-    "whole body MRI",
+    "Interventional Pain GC",
     "cancer screening",
-    "3T MRI",
+    "MRI",
     "health screening",
     "Gold Coast",
   ],
   openGraph: {
-    title: "Whole Body MRI™ | Full-Body Cancer Screening Using 3T MRI",
+    title: "Interventional Pain GC | Full-Body Cancer Screening Using MRI",
     description:
-      "Whole Body MRI™ offers Australia's most comprehensive 3T full-body MRI for proactive health screening. Based on the Gold Coast.",
-    url: "https://wholebodymri.com.au",
-    siteName: "Whole Body MRI™",
+      "Interventional Pain GC offers Australia's most comprehensive full-body MRI for proactive health screening. Based on the Gold Coast.",
+    url: "https://ipgc.com.au",
+    siteName: "Interventional Pain GC",
     locale: "en_AU",
     type: "website",
   },
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
@@ -50,7 +50,10 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
             sizes="180x180"
             href="/apple-touch-icon.png"
           />
-          <meta name="apple-mobile-web-app-title" content="Whole Body MRI™" />
+          <meta
+            name="apple-mobile-web-app-title"
+            content="Interventional Pain GC"
+          />
           <link rel="manifest" href="/site.webmanifest" />
         </head>
         <body>{children}</body>

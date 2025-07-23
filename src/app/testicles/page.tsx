@@ -22,7 +22,7 @@ export default function HomePage() {
           media={{
             type: "video",
             format: "mp4",
-            src: "https://wholebodymri.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4",
+            src: "https://ipgc.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4",
           }}
         >
           <DualPanel testID="hero-section">
@@ -60,7 +60,7 @@ export default function HomePage() {
           media={{
             type: "image",
             format: "jpg",
-            src: "https://wholebodymri.com.au/wp-content/uploads/2024/11/cta-bg.jpg",
+            src: "https://ipgc.com.au/wp-content/uploads/2024/11/cta-bg.jpg",
           }}
         >
           <DualPanel testID="dual-panel">
@@ -83,16 +83,18 @@ export default function HomePage() {
           media={{
             type: "image",
             format: "jpeg",
-            src: "https://wholebodymri.com.au/wp-content/uploads/2024/11/cta-bg.jpg",
+            src: "https://ipgc.com.au/wp-content/uploads/2024/11/cta-bg.jpg",
           }}
         >
           <DualPanel testID="dual-panel">
             <Panel
               testID="dual-panel-left"
               title={"Start your journey"}
-              subtitle={"Why should I consider a Whole Body MRI scan?"}
-              description="A Whole Body MRI scan is ideal for proactive healthcare, particularly for individuals with a family history of certain diseases, those undergoing cancer treatment, or anyone seeking to take control of their health by detecting conditions early."
-              buttonText={"Journey into the known with a Whole Body MRI scan"}
+              subtitle={"Why should I consider a Interventional Pain GC scan?"}
+              description="A Interventional Pain GC scan is ideal for proactive healthcare, particularly for individuals with a family history of certain diseases, those undergoing cancer treatment, or anyone seeking to take control of their health by detecting conditions early."
+              buttonText={
+                "Journey into the known with a Interventional Pain GC scan"
+              }
               variant={"overlay"}
             />
             <div />
@@ -103,11 +105,11 @@ export default function HomePage() {
           <DualPanel testID="image-panel" full>
             <ImagePanel
               testID="image-panel"
-              image="https://wholebodymri.com.au/wp-content/uploads/2024/11/experience-gallery-1.jpg"
+              image="https://ipgc.com.au/wp-content/uploads/2024/11/experience-gallery-1.jpg"
             />
             <ImagePanel
               testID="image-panel"
-              image="https://wholebodymri.com.au/wp-content/uploads/2024/11/experience-gallery-2.jpg"
+              image="https://ipgc.com.au/wp-content/uploads/2024/11/experience-gallery-2.jpg"
             />
           </DualPanel>
         </Section>
@@ -126,12 +128,12 @@ export default function HomePage() {
           <IconBlock
             testID="icon-block"
             title="Safe"
-            description="There is no known harm from an MRI scan, making Whole Body MRI™ a safe option for thorough screening."
+            description="There is no known harm from an MRI scan, making Interventional Pain GC a safe option for thorough screening."
           />
           <IconBlock
             testID="icon-block"
             title="Unmatched Accuracy"
-            description="Leveraging cutting-edge 3 Tesla MRI technology, Whole Body MRI™ offers unparalleled image quality, ensuring early and accurate detection of abnormalities."
+            description="Leveraging cutting-edge 3 Tesla MRI technology, Interventional Pain GC offers unparalleled image quality, ensuring early and accurate detection of abnormalities."
           />
           <IconBlock
             testID="icon-block"
@@ -148,7 +150,7 @@ export default function HomePage() {
           <DualPanel testID={"dual-panel"} variant={"card"} full>
             <Panel
               testID="dual-panel-left"
-              subtitle="Journey into the known with a Whole Body MRI™ scan"
+              subtitle="Journey into the known with a Interventional Pain GC scan"
             />
             <div>
               <Button

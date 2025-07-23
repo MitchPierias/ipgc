@@ -19,8 +19,8 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
           <div className={styles.leftColumn}>
             <Link href="/" className={styles.logo}>
               <img
-                src="https://wholebodymri.com.au/wp-content/uploads/2024/10/logo-text.svg"
-                alt="Whole Body MRI™"
+                src="https://ipgc.com.au/wp-content/uploads/2024/10/logo-text.svg"
+                alt="Interventional Pain GC"
                 className={styles.logoImage}
               />
             </Link>
@@ -66,8 +66,8 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
           <div className={styles.panel}>
             <Link href="/" className={styles.logo}>
               <img
-                src="https://wholebodymri.com.au/wp-content/uploads/2024/10/logo.svg"
-                alt="Whole Body MRI™"
+                src="https://ipgc.com.au/wp-content/uploads/2024/10/logo.svg"
+                alt="Interventional Pain GC"
                 className={styles.image}
               />
             </Link>
