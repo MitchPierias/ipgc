@@ -7,14 +7,14 @@ interface SectionProps extends Common.ComponentProps {
     format: string;
     src: string;
   };
-  full?: boolean;
+  width?: Common.Layout;
+  height?: Common.Layout;
   padded?: boolean;
 }
 
 export const Section = ({
   testID,
   padded = false,
-  full = false,
   ...props
 }: React.PropsWithChildren<SectionProps>) => {
   return (
@@ -22,8 +22,9 @@ export const Section = ({
       data-testid={testID}
       className={clsx(
         styles.frame,
-        padded && styles.padded,
-        full && styles.full
+        styles[props.width || "content"],
+        styles[props.height || "content"],
+        padded && styles.padded
       )}
       style={{
         backgroundImage:

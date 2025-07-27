@@ -1,0 +1,18 @@
+.frame {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: 2px dashed yellow;
+    background-image: url('/images/orange-texture.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    outline: 2px solid red;
+    color: white;
+}

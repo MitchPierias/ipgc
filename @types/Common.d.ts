@@ -10,4 +10,6 @@ declare namespace Common {
   type Size = "small" | "medium" | "large";
 
   type Variant = "primary" | "secondary" | "accent";
+
+  type Layout = "full" | "content" | "gutter";
 }

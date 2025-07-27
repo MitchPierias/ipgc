@@ -1,0 +1,27 @@
+.frame {
+    grid-column: content;
+    grid-row: content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 21px;
+    gap: 21px;
+    min-height: 33vh;
+}
+
+.gutter {
+    grid-column: gutter;
+    grid-row: gutter;
+    min-height: 66vh;
+}
+
+.full {
+    grid-column: full;
+    grid-row: full;
+    min-height: 66vh;
+}
+
+.item {
+    background-color: var(--color-background-secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}

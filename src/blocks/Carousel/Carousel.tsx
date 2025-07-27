@@ -22,13 +22,9 @@ export const Carousel = ({
   const carouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Convert children to array for easier manipulation
   const childrenArray = React.Children.toArray(children);
-
-  // Duplicate children to create seamless infinite loop
   const duplicatedChildren = [...childrenArray, ...childrenArray];
 
-  // Calculate step distance and handle stepping
   const stepForward = useCallback(() => {
     if (!carouselRef.current) return;
 
@@ -37,15 +33,8 @@ export const Carousel = ({
 
     if (!firstCard) return;
 
-    // Get computed styles to access CSS variables and gap
-    const computedStyle = getComputedStyle(carousel);
-    const gap = parseInt(computedStyle.gap) || 24;
-    const cardWidth = firstCard.offsetWidth;
-    const stepDistance = cardWidth + gap;
-
     setCurrentStep((prev) => {
       const nextStep = prev + 1;
-
       // Reset to beginning when we've moved through all original cards
       if (nextStep >= childrenArray.length) {
         // Instantly reset to start position after transition completes
