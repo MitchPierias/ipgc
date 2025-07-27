@@ -23,13 +23,14 @@ export default function HomePage() {
         <Header />
         <main role="main">
           <ScrollBlock testID="scroll-block">
-            <div>
-              <Title testID={"title"}>Our facility</Title>
-              <Subtitle testID={"subtitle"}>
-                Our World-class Gold Cast Facility
-              </Subtitle>
-            </div>
+            <Panel
+              testID="panel"
+              title={"Our facility"}
+              subtitle={"Our World-class Gold Coast Facility"}
+              variant={"invert"}
+            />
           </ScrollBlock>
+
           <Section
             testID="section"
             media={{
