@@ -8,6 +8,7 @@ import { navigationItems, socialLinks } from "./Footer.constants";
 import { SocialLinks } from "~/components/SocialLinks/SocialLinks";
 import clsx from "classnames";
 import { Button } from "src/elements/Buttons/Button";
+import Image from "next/image";
 
 interface FooterProps extends Common.ComponentProps {}
 
@@ -65,10 +66,11 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
         <div className={styles.footerBottom}>
           <div className={styles.panel}>
             <Link href="/" className={styles.logo}>
-              <img
-                src="https://ipgc.com.au/wp-content/uploads/2024/10/logo.svg"
+              <Image
+                src="/svg/ipgc_logo.svg"
                 alt="Interventional Pain GC"
-                className={styles.image}
+                width={300}
+                height={100}
               />
             </Link>
             <Link href="/privacy-policy" className={styles.link}>
@@ -80,17 +82,6 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
           </div>
 
           <div className={styles.panel}>
-            <span className="ff-roboto f_16 text-uppercase">
-              <span className={styles.text}>Website by</span>{" "}
-              <Link
-                className={styles.link}
-                href="https://antient.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Antient
-              </Link>
-            </span>
             <div className={clsx(styles.text, styles.tagline)}>
               <span>Journey into</span>
               <span>the known.</span>

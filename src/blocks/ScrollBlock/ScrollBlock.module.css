@@ -1,12 +1,6 @@
 .frame {
     position: relative;
     height: 300vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    outline: 2px dashed yellow;
-
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 
     svg {
         /* outline: 1px solid green; */
@@ -28,20 +22,14 @@
     background-image: url('/images/orange-texture.avif');
     background-repeat: no-repeat;
     background-size: cover;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 50%));
 }
 
 .content {
     position: relative;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    width: 60%;
     height: 100%;
-}
-
-.content svg {
-    max-width: 90%;
-    max-height: 90%;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }

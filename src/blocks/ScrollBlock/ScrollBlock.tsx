@@ -76,34 +76,35 @@ export const ScrollBlock = ({
   return (
     <div data-testid={testID} className={styles.frame} ref={target}>
       <div className={styles.wrapper}>
-        <svg
-          width={svgSize}
-          height={svgSize}
-          viewBox={`0 0 ${svgSize} ${svgSize}`}
-          style={{
-            transform: `rotate(${scrollRotation}deg)`,
-          }}
-        >
-          {allItems.map((item, index) => {
-            const position = getItemPosition(index, allItems.length);
+        <div className={styles.content}>
+          <svg
+            width={svgSize}
+            height={svgSize}
+            viewBox={`0 0 ${svgSize} ${svgSize}`}
+            style={{
+              transform: `rotate(${scrollRotation}deg)`,
+            }}
+          >
+            {allItems.map((item, index) => {
+              const position = getItemPosition(index, allItems.length);
 
-            // Calculate the actual line angle from center to position
-            const lineAngle =
-              Math.atan2(centerY - position.y, position.x - centerX) *
-              (180 / Math.PI) *
-              -1;
+              // Calculate the actual line angle from center to position
+              const lineAngle =
+                Math.atan2(centerY - position.y, position.x - centerX) *
+                (180 / Math.PI) *
+                -1;
 
-            // Position text slightly beyond the line endpoint
-            const textOffset = 15; // Distance from line endpoint
-            const textX =
-              position.x + textOffset * Math.cos((lineAngle * Math.PI) / 180);
-            const textY =
-              position.y - textOffset * Math.sin((lineAngle * Math.PI) / 180);
+              // Position text slightly beyond the line endpoint
+              const textOffset = 15; // Distance from line endpoint
+              const textX =
+                position.x + textOffset * Math.cos((lineAngle * Math.PI) / 180);
+              const textY =
+                position.y - textOffset * Math.sin((lineAngle * Math.PI) / 180);
 
-            return (
-              <g key={`${item.sectionIndex}-${index}`}>
-                {/* Line from center to item */}
-                {/* <line
+              return (
+                <g key={`${item.sectionIndex}-${index}`}>
+                  {/* Line from center to item */}
+                  {/* <line
                 x1={centerX}
                 y1={centerY}
                 x2={position.x}
@@ -112,22 +113,23 @@ export const ScrollBlock = ({
                 strokeWidth={item.isTitle ? "2" : "1"}
               /> */}
 
-                <text
-                  x={textX}
-                  y={textY}
-                  fill="white"
-                  fontSize={item.isTitle ? "32" : "21"}
-                  fontWeight={"normal"}
-                  textAnchor={"start"}
-                  dominantBaseline={"middle"}
-                  transform={`rotate(${lineAngle}, ${textX}, ${textY})`}
-                >
-                  {item.text}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
+                  <text
+                    x={textX}
+                    y={textY}
+                    fill="white"
+                    fontSize={item.isTitle ? "32" : "21"}
+                    fontWeight={"normal"}
+                    textAnchor={"start"}
+                    dominantBaseline={"middle"}
+                    transform={`rotate(${lineAngle}, ${textX}, ${textY})`}
+                  >
+                    {item.text}
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
         {props.children}
       </div>
     </div>

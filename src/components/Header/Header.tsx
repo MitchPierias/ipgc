@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import styles from "./Header.module.css";
+import Image from "next/image";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,12 @@ export const Header: React.FC = () => {
   return (
     <header id="header" role="banner" className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <img src="/svg/logo.svg" alt="Logo" />
+        <Image
+          src="/svg/ipgc_logo.svg"
+          alt="Interventional Pain GC"
+          width={300}
+          height={100}
+        />
       </Link>
 
       <div className={styles.headerRight}>
