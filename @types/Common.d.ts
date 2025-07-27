@@ -12,4 +12,7 @@ declare namespace Common {
   type Variant = "primary" | "secondary" | "accent";
 
   type Layout = "full" | "content" | "gutter";
+
+  type Width = "full" | "content" | "gutter";
+  type Height = "full" | "content" | "gutter";
 }
