@@ -1,5 +1,6 @@
 .header {
-    @apply max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between py-4;
+    @apply max-w-7xl mx-auto flex items-center justify-between;
+    padding-right: 32px;
     position: fixed;
     top: 20px;
     left: 20px;
@@ -26,7 +27,8 @@
 
 .logo img,
 .logo svg {
-    @apply h-8 w-auto fill-current;
+    height: 70px;
+    width: auto;
     fill: #fff;
 }
 

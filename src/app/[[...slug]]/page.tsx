@@ -2,7 +2,7 @@ import { StoryblokStory } from "@storyblok/react/rsc";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { getStoryblokApi } from "src/lib/storyblok";
-import { ScrollBlock } from "src/blocks/ScrollBlock/ScrollBlock";
+import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { Panel } from "src/blocks/Panel/Panel";
 
 export default async function Page({
@@ -24,14 +24,14 @@ export default async function Page({
       <Header />
       <main role="main">
         <StoryblokStory story={data.story} />
-        <ScrollBlock testID="scroll-block">
+        <ScrollWheel testID="scroll-block">
           <Panel
             testID="panel"
             title={"Our facility"}
             subtitle={"Our World-class Gold Coast Facility"}
             variant={"invert"}
           />
-        </ScrollBlock>
+        </ScrollWheel>
       </main>
       <Footer testID="footer" />
     </div>

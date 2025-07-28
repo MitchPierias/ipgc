@@ -13,7 +13,7 @@ import { Button } from "src/elements/Buttons/Button";
 import { Section } from "src/blocks/Section/Section";
 import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
 import { Subtitle, Title } from "src/elements/Text/Text";
-import { ScrollBlock } from "src/blocks/ScrollBlock/ScrollBlock";
+import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function HomePage() {
@@ -22,14 +22,14 @@ export default function HomePage() {
       <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 ">
         <Header />
         <main role="main">
-          <ScrollBlock testID="scroll-block">
+          <ScrollWheel testID="scroll-block">
             <Panel
               testID="panel"
               title={"Our facility"}
               subtitle={"Our World-class Gold Coast Facility"}
               variant={"invert"}
             />
-          </ScrollBlock>
+          </ScrollWheel>
 
           <Section
             testID="section"

@@ -1,22 +1,22 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import styles from "./ScrollBlock.module.css";
+import styles from "./ScrollWheel.module.css";
 import { useParallax } from "react-scroll-parallax";
 import { Title } from "src/elements/Text/Text";
 import { scrollListData } from "./constants";
 
-interface ScrollBlockProps extends Common.ComponentProps {
+interface ScrollWheelProps extends Common.ComponentProps {
   startAngle?: number; // Starting angle in degrees (default: 0)
   endAngle?: number; // Ending angle in degrees (default: 180)
 }
 
-export const ScrollBlock = ({
+export const ScrollWheel = ({
   testID,
   startAngle = 0,
   endAngle = 180,
   ...props
-}: React.PropsWithChildren<ScrollBlockProps>) => {
+}: React.PropsWithChildren<ScrollWheelProps>) => {
   const target = useRef<HTMLDivElement>(null);
   const [scrollRotation, setScrollRotation] = useState(0);
 
