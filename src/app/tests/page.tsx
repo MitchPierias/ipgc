@@ -12,9 +12,10 @@ import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel";
 import { Button } from "src/elements/Buttons/Button";
 import { Section } from "src/blocks/Section/Section";
 import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
-import { Subtitle, Title } from "src/elements/Text/Text";
+import { Subtitle, Title, Text, Heading } from "src/elements/Text/Text";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,28 @@ export default function HomePage() {
               variant={"invert"}
             />
           </ScrollWheel>
+
+          <ParallaxStack testID="parallax-stack">
+            <Panel testID="panel" variant={"glass"}>
+              <Heading testID={`subtitle`}>1 in 3</Heading>
+              <Text testID={`title`}>
+                patients discover early signs of possible future disease
+              </Text>
+            </Panel>
+            <Panel testID="panel" variant={"glass"}>
+              <Heading testID={`subtitle`}>8%</Heading>
+              <Text testID={`title`}>
+                patients have uncovered a serious heart problem
+              </Text>
+            </Panel>
+            <Panel testID="panel" variant={"glass"}>
+              <Heading testID={`subtitle`}>50%</Heading>
+              <Text testID={`title`}>
+                of members shows an improvement in their metabolic health in
+                their 6 month re-testing
+              </Text>
+            </Panel>
+          </ParallaxStack>
 
           <Section
             testID="section"
@@ -111,7 +134,7 @@ export default function HomePage() {
                 buttonText={
                   "Journey into the known with a Interventional Pain GC scan"
                 }
-                variant={"overlay"}
+                variant={"glass"}
               />
               <div />
             </DualPanel>

@@ -4,6 +4,8 @@ import { Header } from "~/components/Header/Header";
 import { getStoryblokApi } from "src/lib/storyblok";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { Panel } from "src/blocks/Panel/Panel";
+import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
+import { Heading, Text } from "src/elements/Text/Text";
 
 export default async function Page({
   params,
@@ -24,6 +26,27 @@ export default async function Page({
       <Header />
       <main role="main">
         <StoryblokStory story={data.story} />
+        <ParallaxStack testID="parallax-stack">
+          <Panel testID="panel" variant={"glass"}>
+            <Heading testID={`subtitle`}>1 in 3</Heading>
+            <Text testID={`title`}>
+              patients discover early signs of possible future disease
+            </Text>
+          </Panel>
+          <Panel testID="panel" variant={"glass"}>
+            <Heading testID={`subtitle`}>8%</Heading>
+            <Text testID={`title`}>
+              patients have uncovered a serious heart problem
+            </Text>
+          </Panel>
+          <Panel testID="panel" variant={"glass"}>
+            <Heading testID={`subtitle`}>50%</Heading>
+            <Text testID={`title`}>
+              of members shows an improvement in their metabolic health in their
+              6 month re-testing
+            </Text>
+          </Panel>
+        </ParallaxStack>
         <ScrollWheel testID="scroll-block">
           <Panel
             testID="panel"

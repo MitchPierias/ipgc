@@ -8,10 +8,24 @@ interface PanelProps extends Common.ComponentProps {
   subtitle?: string;
   description?: string;
   buttonText?: string;
-  variant?: "overlay" | "invert";
+  variant?: "glass" | "invert";
 }
 
-export const Panel = ({ testID, ...props }: PanelProps) => {
+export const Panel = ({
+  testID,
+  ...props
+}: React.PropsWithChildren<PanelProps>) => {
+  if (props.children) {
+    return (
+      <div
+        data-testid={testID}
+        className={clsx(styles.frame, props.variant && styles[props.variant])}
+      >
+        {props.children}
+      </div>
+    );
+  }
+
   return (
     <div
       data-testid={testID}

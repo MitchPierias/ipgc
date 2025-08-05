@@ -1,36 +1,38 @@
 .frame {
     display: flex;
     flex-direction: column;
-    gap: 19px;
+    /* gap: 19px; */
 }
 
 .invert {
     color: var(--color-white);
 }
 
-.overlay {
+.glass {
     position: relative;
     color: var(--color-white);
     display: grid;
     grid-auto-flow: row;
     z-index: 1;
     padding: var(--size-600);
-    gap: var(--size-600);
-    overflow: hidden;
+    /* gap: var(--size-600); */
     transition: border-radius 300ms ease, padding 300ms ease, gap 300ms ease;
 
     @media (min-width: 1024px) {
         padding: var(--size-900);
         border-radius: var(--size-900);
-        gap: var(--size-900);
+        /* gap: var(--size-900); */
     }
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.2);
         z-index: -1;
-        backdrop-filter: blur(25px);
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: var(--size-100);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.8px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.35);
     }
 }
