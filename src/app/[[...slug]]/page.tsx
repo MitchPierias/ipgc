@@ -6,6 +6,7 @@ import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { Panel } from "src/blocks/Panel/Panel";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
 import { Heading, Text } from "src/elements/Text/Text";
+import { BlockIcon } from "src/elements/Icons/Block";
 
 export default async function Page({
   params,
@@ -28,18 +29,27 @@ export default async function Page({
         <StoryblokStory story={data.story} />
         <ParallaxStack testID="parallax-stack">
           <Panel testID="panel" variant={"glass"}>
+            <div style={{ width: "2rem", height: "2rem" }}>
+              <BlockIcon />
+            </div>
             <Heading testID={`subtitle`}>1 in 3</Heading>
             <Text testID={`title`}>
               patients discover early signs of possible future disease
             </Text>
           </Panel>
           <Panel testID="panel" variant={"glass"}>
+            <div style={{ width: "2rem", height: "2rem" }}>
+              <BlockIcon />
+            </div>
             <Heading testID={`subtitle`}>8%</Heading>
             <Text testID={`title`}>
               patients have uncovered a serious heart problem
             </Text>
           </Panel>
           <Panel testID="panel" variant={"glass"}>
+            <div style={{ width: "2rem", height: "2rem" }}>
+              <BlockIcon />
+            </div>
             <Heading testID={`subtitle`}>50%</Heading>
             <Text testID={`title`}>
               of members shows an improvement in their metabolic health in their
