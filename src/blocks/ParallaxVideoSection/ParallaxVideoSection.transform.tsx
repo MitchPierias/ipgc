@@ -1,25 +1,44 @@
-import { ParallaxVideoSection } from "./ParallaxVideoSection";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import { ParallaxVideoSection as Component } from "./ParallaxVideoSection";
+import { DualPanelBlok } from "../DualPanel/DualPanel.transform";
 
-const transform = (data: any) => {
-  return {
-    component: ParallaxVideoSection,
-    props: {
-      testID: data._uid,
-      media: data.media?.filename
-        ? {
-            type: "video",
-            src: data.media.filename,
-            format: data.media.content_type || "video/mp4",
-          }
-        : undefined,
-      backgroundSpeed: data.background_speed || 0.2,
-      contentSpeed: data.content_speed || 0.6,
-      width: data.width || "full",
-      height: data.height || "full",
-      padded: data.padded || false,
-    },
-    children: data.body,
+export type ParallaxVideoSectionBlok = {
+  _uid: string;
+  component: "ParallaxVideoSection";
+  media: {
+    filename: string;
+    content_type: string;
   };
+  background_speed: number;
+  content_speed: number;
+  width: string;
+  height: string;
+  padded: boolean;
+  contents?: DualPanelBlok[];
 };
-
-export default transform;
+export const ParallaxVideoSection = ({
+  blok,
+}: {
+  blok: ParallaxVideoSectionBlok;
+}) => {
+  return (
+    <Component
+      testID={"parallax-video-section"}
+      media={{
+        type: "video",
+        src: blok.media.filename,
+        format: blok.media.content_type || "video/mp4",
+      }}
+      backgroundSpeed={blok.background_speed || 0.2}
+      contentSpeed={blok.content_speed || 0.6}
+      width={blok.width || "full"}
+      height={blok.height || "full"}
+      padded={blok.padded || false}
+      {...storyblokEditable(blok)}
+    >
+      {blok.contents?.map((nestedBlok) => (
+        <StoryblokComponent key={nestedBlok._uid} blok={nestedBlok} />
+      ))}
+    </Component>
+  );
+};

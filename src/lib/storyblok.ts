@@ -9,6 +9,7 @@ import { ArticleCard } from "src/blocks/ArticleCard/ArticleCard.transform";
 import { Carousel } from "src/blocks/Carousel/Carousel.transform";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel.transform";
 import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
+import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection.transform";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -26,5 +27,6 @@ export const getStoryblokApi = storyblokInit({
     IconBlock,
     ArticleCard,
     GridLayout,
+    ParallaxVideoSection,
   },
 });
