@@ -1,0 +1,110 @@
+.frame {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] minmax(240px, 960px) [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
+    grid-template-rows: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] auto [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
+    align-items: center;
+    justify-items: center;
+}
+
+.container {
+    /* Changed to fixed positioning to create parallax effect */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Lowered z-index so video stays behind all content */
+    /* Removed will-change transform since we're not animating */
+    outline: 2px solid green;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7) contrast(1.1);
+    /* Removed will-change and transition since no JS transforms */
+    outline: 2px solid blue;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+
+    outline: 2px solid red;
+}
+
+.content {
+    grid-column: content;
+    grid-row: content;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Layout variants */
+.full {
+    width: 100%;
+    height: 100vh;
+}
+
+.content {
+    width: 100%;
+    max-width: 960px;
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh;
+}
+
+.auto {
+    width: auto;
+    height: auto;
+    min-height: 100vh;
+}
+
+.padded {
+    padding: var(--size-900);
+}
+
+.padded .content {
+    padding: var(--size-600);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contentLayer {
+        padding: 1rem;
+    }
+
+    .backgroundVideo {
+        filter: brightness(0.6) contrast(1.2);
+    }
+}
+
+/* Performance optimizations */
+.parallaxContainer * {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}

@@ -1,0 +1,29 @@
+.frame {
+    padding: 16px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    animation: scroll linear infinite;
+    width: max-content;
+}
+
+.image {
+    flex-shrink: 0;
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

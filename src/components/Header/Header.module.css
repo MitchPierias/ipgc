@@ -1,5 +1,7 @@
 .header {
-    @apply max-w-7xl mx-auto flex items-center justify-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-right: 32px;
     position: fixed;
     top: 20px;
@@ -8,6 +10,8 @@
     z-index: 20;
     color: #fff;
     font-family: 'Aeonik', system-ui, sans-serif;
+    max-width: var(--full-width);
+    margin-inline: auto;
 
     &::before {
         content: "";
@@ -18,7 +22,7 @@
         backdrop-filter: blur(25px) saturate(140%);
         border-radius: 100vw;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 

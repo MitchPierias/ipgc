@@ -16,6 +16,8 @@ import { Subtitle, Title, Text, Heading } from "src/elements/Text/Text";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
+import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection";
+import AutoSlider from "~/components/AutoSlider/AutoSlider";
 
 export default function HomePage() {
   return (
@@ -23,6 +25,30 @@ export default function HomePage() {
       <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 ">
         <Header />
         <main role="main">
+          <ParallaxVideoSection
+            media={{
+              type: "video",
+              format: "mp4",
+              src: "https://ipgc.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4",
+            }}
+            testID={"parallax-video-section"}
+          >
+            <Panel testID="panel">
+              <Heading testID="heading">Heading</Heading>
+            </Panel>
+          </ParallaxVideoSection>
+          <AutoSlider
+            testID="auto-slider"
+            resources={[
+              { src: "/images/WBMRI-3-scaled.jpg", alt: "Image 1" },
+              { src: "/images/WBMRI-34.jpg", alt: "Image 2" },
+              { src: "/images/WBMRI-3-scaled.jpg", alt: "Image 1" },
+              { src: "/images/WBMRI-34.jpg", alt: "Image 2" },
+              { src: "/images/WBMRI-34.jpg", alt: "Image 2" },
+              { src: "/images/WBMRI-3-scaled.jpg", alt: "Image 1" },
+              { src: "/images/WBMRI-34.jpg", alt: "Image 2" },
+            ]}
+          />
           <ScrollWheel testID="scroll-block">
             <Panel
               testID="panel"
