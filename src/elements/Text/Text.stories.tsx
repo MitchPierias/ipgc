@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Heading, Headline, Subheading, Subtitle, Text, Title } from "./Text";
+import { Heading, Subtitle, Paragraph, Text, Microcopy } from "./Text";
 
 export default {
   title: "Elements/Text",
@@ -16,12 +16,11 @@ export const Variations = {
   name: "Text",
   render: (props) => (
     <div>
-      <Headline {...props}>Headline</Headline>
       <Heading {...props}>Heading</Heading>
-      <Subheading {...props}>Subheading</Subheading>
-      <Title {...props}>Title</Title>
       <Subtitle {...props}>Subtitle</Subtitle>
+      <Paragraph {...props}>Paragraph</Paragraph>
       <Text {...props}>Text</Text>
+      <Microcopy {...props}>Microcopy</Microcopy>
     </div>
   ),
 } satisfies StoryObj<Meta<React.ComponentProps<typeof Text>>>;

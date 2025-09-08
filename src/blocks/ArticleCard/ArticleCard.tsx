@@ -1,4 +1,4 @@
-import { Subheading } from "src/elements/Text/Text";
+import { Heading } from "src/elements/Text/Text";
 import styles from "./ArticleCard.module.css";
 import { Button } from "src/elements/Buttons/Button";
 
@@ -21,18 +21,25 @@ export const ArticleCard = ({
   return (
     <div data-testid={testID} className={styles.frame}>
       <div
+        data-testid={`${testID}.image`}
         className={styles.image}
         style={{ backgroundImage: `url(${props.media?.src})` }}
       />
-      <div className={styles.content}>
+      <div data-testid={`${testID}.content`} className={styles.content}>
         <div data-testid={`${testID}.tags`} className={styles.tags}>
           {tags.map((label) => (
-            <span key={label} className={styles.tag}>
+            <span
+              data-testid={`${testID}.tag`}
+              key={label}
+              className={styles.tag}
+            >
               {label}
             </span>
           ))}
         </div>
-        <Subheading testID={`${testID}.title`}>{props.title}</Subheading>
+        <Heading testID={`${testID}.title`} animate>
+          {props.title}
+        </Heading>
         <Button testID={`${testID}.button`} variant={"primary"} size={"small"}>
           Read more
         </Button>

@@ -1,27 +1,13 @@
 .frame {
-    font-family: 'Aeonik', system-ui, sans-serif;
-    font-weight: 300;
     font-size: 19px;
+    font-weight: 300;
+    font-family: 'Aeonik', system-ui, sans-serif;
 }
 
 .heading {
     font-size: 40px;
-    font-family: 'Aeonik', system-ui, sans-serif;
     font-weight: 400;
-}
-
-.subheading {
-    font-size: var(--size-800);
     font-family: 'Aeonik', system-ui, sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: 200;
-    font-size: 16px;
-    font-family: 'Roboto Mono', system-ui, sans-serif;
-    text-transform: uppercase
 }
 
 .subtitle {
@@ -30,8 +16,17 @@
     font-weight: 400;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 .blurIn {
-    animation: blurIn 1s 0s linear forwards;
+    animation: none;
+
+    /* Only animate if user hasn't requested reduced motion */
+    @media (prefers-reduced-motion: no-preference) {
+        animation: blurIn 1s 0s linear forwards;
+    }
 }
 
 @keyframes blurIn {

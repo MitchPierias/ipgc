@@ -3,7 +3,6 @@
 import { useRef, useEffect, useState } from "react";
 import styles from "./ScrollWheel.module.css";
 import { useParallax } from "react-scroll-parallax";
-import { Title } from "src/elements/Text/Text";
 import { scrollListData } from "./constants";
 
 interface ScrollWheelProps extends Common.ComponentProps {

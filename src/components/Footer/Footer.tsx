@@ -9,6 +9,10 @@ import { SocialLinks } from "~/components/SocialLinks/SocialLinks";
 import clsx from "classnames";
 import { Button } from "src/elements/Buttons/Button";
 import Image from "next/image";
+import {
+  REFERRAL_FORM_PATH,
+  REFERRAL_FORM_DOWNLOAD_NAME,
+} from "src/constants/app";
 
 interface FooterProps extends Common.ComponentProps {}
 
@@ -30,13 +34,14 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
               <div className={styles.title}>
                 Referral/Screening Request Form
               </div>
-              <Button
-                testID="download-button"
-                variant="secondary"
-                size={"small"}
+              <a
+                data-testid="download-button"
+                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded font-medium transition-colors duration-200 inline-block text-center no-underline text-sm"
+                href={REFERRAL_FORM_PATH}
+                download={REFERRAL_FORM_DOWNLOAD_NAME}
               >
                 Download Form
-              </Button>
+              </a>
             </div>
           </div>
 

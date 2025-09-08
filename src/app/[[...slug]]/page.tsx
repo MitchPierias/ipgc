@@ -32,8 +32,10 @@ export default async function Page({
             <div style={{ width: "2rem", height: "2rem" }}>
               <BlockIcon />
             </div>
-            <Heading testID={`subtitle`}>1 in 3</Heading>
-            <Text testID={`title`}>
+            <Heading testID={`subtitle`} animate>
+              1 in 3
+            </Heading>
+            <Text testID={`title`} animate>
               patients discover early signs of possible future disease
             </Text>
           </Panel>
@@ -41,8 +43,10 @@ export default async function Page({
             <div style={{ width: "2rem", height: "2rem" }}>
               <BlockIcon />
             </div>
-            <Heading testID={`subtitle`}>8%</Heading>
-            <Text testID={`title`}>
+            <Heading testID={`subtitle`} animate>
+              8%
+            </Heading>
+            <Text testID={`title`} animate>
               patients have uncovered a serious heart problem
             </Text>
           </Panel>
@@ -50,8 +54,10 @@ export default async function Page({
             <div style={{ width: "2rem", height: "2rem" }}>
               <BlockIcon />
             </div>
-            <Heading testID={`subtitle`}>50%</Heading>
-            <Text testID={`title`}>
+            <Heading testID={`subtitle`} animate>
+              50%
+            </Heading>
+            <Text testID={`title`} animate>
               of members shows an improvement in their metabolic health in their
               6 month re-testing
             </Text>

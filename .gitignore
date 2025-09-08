@@ -85,3 +85,7 @@ coverage/
 
 *storybook.log
 storybook-static
+
+# Temporary upload files
+tmp/*
+!tmp/.gitkeep

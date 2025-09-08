@@ -1,7 +1,7 @@
 import clsx from "classnames";
 import styles from "./Panel.module.css";
 import { Button } from "src/elements/Buttons/Button";
-import { Subtitle, Text, Title } from "src/elements/Text/Text";
+import { Subtitle, Text } from "src/elements/Text/Text";
 
 interface PanelProps extends Common.ComponentProps {
   title?: string;
@@ -31,7 +31,9 @@ export const Panel = ({
       data-testid={testID}
       className={clsx(styles.frame, props.variant && styles[props.variant])}
     >
-      <Title testID={`${testID}.title`}>{props.title}</Title>
+      <Text testID={`${testID}.title`} uppercase>
+        {props.title}
+      </Text>
       <Subtitle testID={`${testID}.subtitle`}>{props.subtitle}</Subtitle>
       <Text testID={`${testID}.description`}>{props.description}</Text>
       {props.buttonText && (

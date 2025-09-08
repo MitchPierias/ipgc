@@ -4,13 +4,13 @@ import clsx from "classnames";
 interface ButtonProps
   extends Common.ComponentProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: Common.Variant;
+  variant?: Common.Variant;
   size?: Common.Size;
 }
 
 export const Button = ({
   testID,
-  variant,
+  variant = "primary",
   size = "medium",
   ...props
 }: React.PropsWithChildren<ButtonProps>) => {

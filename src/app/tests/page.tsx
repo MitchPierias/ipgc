@@ -12,7 +12,7 @@ import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel";
 import { Button } from "src/elements/Buttons/Button";
 import { Section } from "src/blocks/Section/Section";
 import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
-import { Subtitle, Title, Text, Heading } from "src/elements/Text/Text";
+import { Subtitle, Text, Heading } from "src/elements/Text/Text";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
@@ -34,7 +34,9 @@ export default function HomePage() {
             testID={"parallax-video-section"}
           >
             <Panel testID="panel">
-              <Heading testID="heading">Heading</Heading>
+              <Heading testID="heading" animate>
+                Heading
+              </Heading>
             </Panel>
           </ParallaxVideoSection>
           <AutoSlider
@@ -60,20 +62,26 @@ export default function HomePage() {
 
           <ParallaxStack testID="parallax-stack">
             <Panel testID="panel" variant={"glass"}>
-              <Heading testID={`subtitle`}>1 in 3</Heading>
-              <Text testID={`title`}>
+              <Heading testID={`subtitle`} animate>
+                1 in 3
+              </Heading>
+              <Text testID={`title`} animate>
                 patients discover early signs of possible future disease
               </Text>
             </Panel>
             <Panel testID="panel" variant={"glass"}>
-              <Heading testID={`subtitle`}>8%</Heading>
-              <Text testID={`title`}>
+              <Heading testID={`subtitle`} animate>
+                8%
+              </Heading>
+              <Text testID={`title`} animate>
                 patients have uncovered a serious heart problem
               </Text>
             </Panel>
             <Panel testID="panel" variant={"glass"}>
-              <Heading testID={`subtitle`}>50%</Heading>
-              <Text testID={`title`}>
+              <Heading testID={`subtitle`} animate>
+                50%
+              </Heading>
+              <Text testID={`title`} animate>
                 of members shows an improvement in their metabolic health in
                 their 6 month re-testing
               </Text>
@@ -182,7 +190,9 @@ export default function HomePage() {
           <Section testID="section">
             <MosaicLayout testID="mosaic-layout" width={"full"}>
               <div>
-                <Title testID={"title"}>Our facility</Title>
+                <Text testID={"title"} uppercase>
+                  Our facility
+                </Text>
                 <Subtitle testID={"subtitle"}>
                   Our World-class Gold Cast Facility
                 </Subtitle>

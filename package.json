@@ -15,11 +15,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.12.1",
     "@storyblok/react": "^5.4.1",
     "@vercel/speed-insights": "^1.2.0",
     "classnames": "^2.5.1",
+    "formidable": "^3.5.4",
     "lucide-react": "^0.454.0",
     "next": "^15.0.3",
+    "nodemailer": "^7.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll-parallax": "^3.4.5"
@@ -32,7 +35,9 @@
     "@storybook/addon-vitest": "^9.0.17",
     "@storybook/nextjs-vite": "^9.0.17",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/formidable": "^3",
     "@types/node": "^22.8.1",
+    "@types/nodemailer": "^7.0.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitest/browser": "^3.2.4",

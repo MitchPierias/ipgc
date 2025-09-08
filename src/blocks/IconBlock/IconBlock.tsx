@@ -1,4 +1,4 @@
-import { Subheading, Text } from "src/elements/Text/Text";
+import { Heading, Text } from "src/elements/Text/Text";
 import styles from "./IconBlock.module.css";
 
 interface IconBlockProps extends Common.ComponentProps {
@@ -11,8 +11,12 @@ export const IconBlock = ({ testID, ...props }: IconBlockProps) => {
     <div data-testid={testID} className={styles.frame}>
       <div data-testid={`${testID}.icon`} className={styles.icon} />
       <div data-testid={`${testID}.content`} className={styles.content}>
-        <Subheading testID={`${testID}.title`}>{props.title}</Subheading>
-        <Text testID={`${testID}.description`}>{props.description}</Text>
+        <Heading testID={`${testID}.title`} animate>
+          {props.title}
+        </Heading>
+        <Text testID={`${testID}.description`} animate>
+          {props.description}
+        </Text>
       </div>
     </div>
   );
