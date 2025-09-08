@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./SocialLinks.module.css";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export const SocialLinks = ({ testID, ...props }: SocialLinksProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={social.icon} alt={social.name} className={styles.icon} />
+          <Image src={social.icon} alt={social.name} className={styles.icon} />
         </Link>
       ))}
     </div>

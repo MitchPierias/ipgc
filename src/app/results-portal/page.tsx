@@ -70,6 +70,7 @@ export default async function ResultsPortal() {
                 </Text>
 
                 <Button
+                  testID="new-user-button"
                   href="https://wiseradiology.com.au/Portal/app#/terms-of-service/accept"
                   target="_blank"
                   rel="noopener noreferrer"

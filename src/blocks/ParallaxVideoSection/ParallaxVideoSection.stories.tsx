@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ParallaxVideoSection } from "./ParallaxVideoSection";
 import { Panel } from "../Panel/Panel";
-import { Text } from "../../elements/Text/Text";
+import { Heading, Paragraph, Text } from "../../elements/Text/Text";
 
 const meta: Meta<typeof ParallaxVideoSection> = {
   title: "Blocks/ParallaxVideoSection",
@@ -46,15 +46,13 @@ export const Default: Story = {
     backgroundSpeed: 0.2,
     contentSpeed: 0.6,
     children: (
-      <Panel>
-        <Text variant="display" size="large">
-          Parallax Video Section
-        </Text>
-        <Text variant="body" size="medium">
+      <Panel testID="panel">
+        <Heading testID="heading">Parallax Video Section</Heading>
+        <Paragraph testID="paragraph">
           This section demonstrates parallax scrolling with a video background.
           The background moves slowly while the content moves at a different
           speed, creating a depth effect as you scroll.
-        </Text>
+        </Paragraph>
       </Panel>
     ),
   },
@@ -81,21 +79,17 @@ export const WithMultiplePanels: Story = {
     ...Default.args,
     children: (
       <>
-        <Panel>
-          <Text variant="display" size="large">
-            Main Heading
-          </Text>
-          <Text variant="body" size="medium">
+        <Panel testID="panel">
+          <Heading testID="heading">Main Heading</Heading>
+          <Paragraph testID="paragraph">
             This is the primary content panel with important information.
-          </Text>
+          </Paragraph>
         </Panel>
-        <Panel>
-          <Text variant="heading" size="medium">
-            Secondary Information
-          </Text>
-          <Text variant="body" size="small">
+        <Panel testID="panel">
+          <Heading testID="heading">Secondary Information</Heading>
+          <Paragraph testID="paragraph">
             Additional details that support the main content above.
-          </Text>
+          </Paragraph>
         </Panel>
       </>
     ),

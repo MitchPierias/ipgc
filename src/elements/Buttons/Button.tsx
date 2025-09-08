@@ -6,6 +6,9 @@ interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Common.Variant;
   size?: Common.Size;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export const Button = ({
@@ -14,6 +17,25 @@ export const Button = ({
   size = "medium",
   ...props
 }: React.PropsWithChildren<ButtonProps>) => {
+  if (props.href) {
+    return (
+      <a
+        href={props.href}
+        data-testid={testID}
+        target={props.target}
+        rel={props.rel}
+        className={clsx(
+          props.className,
+          styles.frame,
+          styles[variant],
+          styles[size]
+        )}
+      >
+        {props.children}
+      </a>
+    );
+  }
+
   return (
     <button
       data-testid={testID}

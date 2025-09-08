@@ -23,7 +23,7 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
         <div className={styles.topSection}>
           <div className={styles.leftColumn}>
             <Link href="/" className={styles.logo}>
-              <img
+              <Image
                 src="https://ipgc.com.au/wp-content/uploads/2024/10/logo-text.svg"
                 alt="Interventional Pain GC"
                 className={styles.logoImage}

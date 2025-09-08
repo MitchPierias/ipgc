@@ -11,8 +11,8 @@ export type ParallaxVideoSectionBlok = {
   };
   background_speed: number;
   content_speed: number;
-  width: string;
-  height: string;
+  width: Common.Layout;
+  height: Common.Layout;
   padded: boolean;
   contents?: DualPanelBlok[];
 };
