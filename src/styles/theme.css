@@ -1,7 +1,10 @@
 :root {
     --content-width: 960px;
-    --gutter-width: 64px;
-    --full-width: calc(var(--content-width) + 2 * var(--gutter-width));
+    --gutter-size: 64px;
+
+    --layout-md: 960px;
+    --layout-lg: calc(var(--layout-md) + var(--gutter-size) * 2);
+    --layout-xl: calc(var(--layout-lg) + 2 * var(--gutter-size));
 
     --color-white: #fff;
     --color-black: #000;

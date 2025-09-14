@@ -23,7 +23,13 @@ export const SocialLinks = ({ testID, ...props }: SocialLinksProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src={social.icon} alt={social.name} className={styles.icon} />
+          <Image
+            src={social.icon}
+            alt={social.name}
+            className={styles.icon}
+            width={42}
+            height={42}
+          />
         </Link>
       ))}
     </div>

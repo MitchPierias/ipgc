@@ -1,11 +1,11 @@
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { Heading, Text } from "src/elements/Text/Text";
-import { Button } from "src/elements/Buttons/Button";
 import {
   REFERRAL_FORM_PATH,
   REFERRAL_FORM_DOWNLOAD_NAME,
 } from "src/constants/app";
+import { Button } from "src/elements/Buttons/Button";
 
 export default function ReferralPage() {
   return (
@@ -15,22 +15,11 @@ export default function ReferralPage() {
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-center mb-8">
-              <Heading
-                testID="referral-form-title"
-                className="text-3xl font-bold text-gray-900 mb-4"
-              >
-                Referral Form
-              </Heading>
-              <Text
-                testID="all-referrals-accepted"
-                className="text-xl font-semibold text-green-700 mb-4"
-              >
+              <Heading testID="referral-form-title">Referral Form</Heading>
+              <Text testID="all-referrals-accepted">
                 All referrals accepted
               </Text>
-              <Text
-                testID="referral-form-description"
-                className="text-lg text-gray-600"
-              >
+              <Text testID="referral-form-description">
                 Clinicians are able to make referrals via:
               </Text>
             </div>
@@ -54,14 +43,13 @@ export default function ReferralPage() {
                       print
                     </Text>
                   </div>
-                  <a
-                    data-testid="download-referral-form-button"
+                  <Button
+                    testID="download-referral-form-button"
                     href={REFERRAL_FORM_PATH}
                     download={REFERRAL_FORM_DOWNLOAD_NAME}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 inline-block text-center no-underline"
                   >
                     Download PDF
-                  </a>
+                  </Button>
                 </div>
               </div>
 
@@ -74,16 +62,10 @@ export default function ReferralPage() {
                         1
                       </div>
                       <div>
-                        <Heading
-                          testID="medical-objects-title"
-                          className="font-semibold text-gray-900 mb-2"
-                        >
+                        <Heading testID="medical-objects-title">
                           Specialist Referral Letter via Medical Objects
                         </Heading>
-                        <Text
-                          testID="medical-objects-description"
-                          className="text-gray-600"
-                        >
+                        <Text testID="medical-objects-description">
                           Send your referral letter through the Medical Objects
                           platform for secure electronic transmission.
                         </Text>
@@ -97,17 +79,11 @@ export default function ReferralPage() {
                         2
                       </div>
                       <div>
-                        <Heading
-                          testID="medical-director-title"
-                          className="font-semibold text-gray-900 mb-2"
-                        >
+                        <Heading testID="medical-director-title">
                           Specialist Referral Letter via Medical Director or
                           Best Practice
                         </Heading>
-                        <Text
-                          testID="medical-director-description"
-                          className="text-gray-600"
-                        >
+                        <Text testID="medical-director-description">
                           Submit your referral letter through Medical Director
                           or Best Practice practice management systems.
                         </Text>
@@ -121,16 +97,10 @@ export default function ReferralPage() {
                         3
                       </div>
                       <div>
-                        <Heading
-                          testID="referral-form-title-option"
-                          className="font-semibold text-gray-900 mb-2"
-                        >
+                        <Heading testID="referral-form-title-option">
                           Using the Referral Form below
                         </Heading>
-                        <Text
-                          testID="referral-form-description-option"
-                          className="text-gray-600"
-                        >
+                        <Text testID="referral-form-description-option">
                           Download and complete our PDF referral form, then
                           submit it according to the instructions provided.
                         </Text>

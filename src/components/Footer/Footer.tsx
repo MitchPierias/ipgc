@@ -7,7 +7,6 @@ import styles from "./Footer.module.css";
 import { navigationItems, socialLinks } from "./Footer.constants";
 import { SocialLinks } from "~/components/SocialLinks/SocialLinks";
 import clsx from "classnames";
-import { Button } from "src/elements/Buttons/Button";
 import Image from "next/image";
 import {
   REFERRAL_FORM_PATH,
@@ -26,6 +25,8 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
               <Image
                 src="https://ipgc.com.au/wp-content/uploads/2024/10/logo-text.svg"
                 alt="Interventional Pain GC"
+                width={420}
+                height={100}
                 className={styles.logoImage}
               />
             </Link>

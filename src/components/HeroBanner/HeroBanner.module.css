@@ -5,7 +5,7 @@
 
 .content {
     width: 100%;
-    max-width: var(--full-width);
+    max-width: var(--layout-xl);
     margin-inline: auto;
     gap: var(--size-500);
     padding: var(--size-500);

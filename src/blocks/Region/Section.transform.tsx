@@ -28,8 +28,8 @@ export const Section = ({ blok }: { blok: SectionBlok }) => {
     <SectionComponent
       testID="section"
       padded={blok.padded || false}
-      width={blok.size || "full"}
-      height={blok.size || "full"}
+      width={blok.size || "content"}
+      height={blok.size || "content"}
       media={
         blok.background_image?.filename && blok.background_image.filename !== ""
           ? {

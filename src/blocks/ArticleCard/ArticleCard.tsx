@@ -40,7 +40,7 @@ export const ArticleCard = ({
         <Heading testID={`${testID}.title`} animate>
           {props.title}
         </Heading>
-        <Button testID={`${testID}.button`} variant={"primary"} size={"small"}>
+        <Button testID={`${testID}.button`} variant={"secondary"} size={"sm"}>
           Read more
         </Button>
       </div>

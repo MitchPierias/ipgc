@@ -18,6 +18,7 @@
     grid-column: full;
     grid-row: full;
     min-height: 66vh;
+    max-width: 100%;
 }
 
 .item {

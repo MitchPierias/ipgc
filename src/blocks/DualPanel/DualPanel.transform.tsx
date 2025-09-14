@@ -5,8 +5,7 @@ export type DualPanelBlok = {
   _uid: string;
   component: "DualPanel";
   variant?: "card" | "transparent";
-  full?: boolean;
-  gutter?: boolean;
+  layout?: Common.Layout;
   contents?: {
     _uid: string;
     component: "Panel";
@@ -23,8 +22,7 @@ export const DualPanel = ({ blok }: { blok: DualPanelBlok }) => {
     <DualPanelComponent
       testID="dual-panel"
       variant={blok.variant || "transparent"}
-      full={blok.full}
-      gutter={blok.gutter}
+      layout={blok.layout || "content"}
       {...storyblokEditable(blok)}
     >
       {blok.contents?.map((nestedBlok) => (

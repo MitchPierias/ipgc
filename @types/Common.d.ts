@@ -7,9 +7,9 @@ declare namespace Common {
     className?: string;
   }
 
-  type Size = "small" | "medium" | "large";
+  type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
-  type Variant = "primary" | "secondary" | "accent";
+  type Variant = "primary" | "secondary" | "accent" | "tertiary";
 
   type Layout = "full" | "content" | "gutter";
 

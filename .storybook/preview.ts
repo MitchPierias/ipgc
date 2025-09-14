@@ -4,6 +4,7 @@ import "../src/styles/globals.css";
 const preview: Preview = {
   parameters: {
     controls: {
+      exclude: ["testID", "className", "children"],
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,

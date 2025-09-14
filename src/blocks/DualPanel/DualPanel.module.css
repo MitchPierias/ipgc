@@ -8,14 +8,22 @@
     max-height: 100%;
 }
 
+.content {
+    grid-column: content;
+    grid-row: content;
+    max-width: var(--layout-md);
+}
+
 .gutter {
     grid-column: gutter;
     grid-row: content;
+    max-width: var(--layout-lg);
 }
 
 .full {
     grid-column: full;
     grid-row: content;
+    max-width: 100%;
 }
 
 .card {

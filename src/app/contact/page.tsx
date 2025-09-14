@@ -315,7 +315,6 @@ export default function ContactPage() {
                 )}
               </div>
 
-              {/* Captcha */}
               <div className="flex justify-center">
                 <HCaptcha
                   ref={captchaRef}
@@ -329,18 +328,12 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Submit Button */}
               <div className="flex justify-center">
                 <Button
                   testID="submit"
                   variant="primary"
                   type="submit"
                   disabled={isSubmitting || !captchaToken}
-                  className={`px-8 py-3 rounded-lg font-medium transition-colors duration-200 ${
-                    isSubmitting || !captchaToken
-                      ? "bg-gray-400 cursor-not-allowed text-white"
-                      : "bg-blue-600 hover:bg-blue-700 text-white"
-                  }`}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>

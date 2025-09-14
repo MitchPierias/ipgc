@@ -1,52 +1,31 @@
+import { IProps } from "./Button.interface";
 import styles from "./Button.module.css";
 import clsx from "classnames";
+import React from "react";
 
-interface ButtonProps
-  extends Common.ComponentProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: Common.Variant;
-  size?: Common.Size;
-  href?: string;
-  target?: string;
-  rel?: string;
-}
-
-export const Button = ({
-  testID,
-  variant = "primary",
-  size = "medium",
-  ...props
-}: React.PropsWithChildren<ButtonProps>) => {
-  if (props.href) {
-    return (
-      <a
-        href={props.href}
-        data-testid={testID}
-        target={props.target}
-        rel={props.rel}
-        className={clsx(
+const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IProps>(
+  (
+    { testID, variant = "primary", size = "md", children, disabled, ...props },
+    ref
+  ) =>
+    React.createElement(
+      props.href ? "a" : "button",
+      {
+        ...props,
+        "data-testid": testID,
+        className: clsx(
           props.className,
           styles.frame,
           styles[variant],
-          styles[size]
-        )}
-      >
-        {props.children}
-      </a>
-    );
-  }
+          styles[size],
+          disabled && styles.disabled
+        ),
+        ref,
+      },
+      children
+    )
+);
 
-  return (
-    <button
-      data-testid={testID}
-      className={clsx(
-        props.className,
-        styles.frame,
-        styles[variant],
-        styles[size]
-      )}
-    >
-      {props.children}
-    </button>
-  );
-};
+Button.displayName = "Button";
+
+export { Button };

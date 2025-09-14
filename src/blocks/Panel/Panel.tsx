@@ -37,7 +37,7 @@ export const Panel = ({
       <Subtitle testID={`${testID}.subtitle`}>{props.subtitle}</Subtitle>
       <Text testID={`${testID}.description`}>{props.description}</Text>
       {props.buttonText && (
-        <Button testID={`${testID}.button`} variant={"secondary"}>
+        <Button testID={`${testID}.button`} variant={"primary"}>
           {props.buttonText}
         </Button>
       )}

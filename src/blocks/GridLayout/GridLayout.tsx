@@ -1,7 +1,8 @@
 import styles from "./GridLayout.module.css";
+import clsx from "classnames";
 
 interface GridLayoutProps extends Common.ComponentProps {
-  children: React.ReactNode;
+  layout?: Common.Layout;
 }
 
 export const GridLayout = ({
@@ -9,7 +10,10 @@ export const GridLayout = ({
   ...props
 }: React.PropsWithChildren<GridLayoutProps>) => {
   return (
-    <div data-testid={testID} className={styles.frame}>
+    <div
+      data-testid={testID}
+      className={clsx(styles.frame, styles[props.layout || "content"])}
+    >
       {props.children}
     </div>
   );

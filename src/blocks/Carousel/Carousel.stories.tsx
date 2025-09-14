@@ -70,7 +70,7 @@ export const Default: Story = {
       style={
         {
           padding: "2rem 0",
-          "--content-width": "1200px",
+          "--layout-md": "1200px",
         } as React.CSSProperties
       }
     >
@@ -101,7 +101,7 @@ export const FastStepping: Story = {
       style={
         {
           padding: "2rem 0",
-          "--content-width": "1000px",
+          "--layout-md": "1000px",
         } as React.CSSProperties
       }
     >
@@ -132,7 +132,7 @@ export const SlowStepping: Story = {
       style={
         {
           padding: "2rem 0",
-          "--content-width": "1400px",
+          "--layout-md": "1400px",
         } as React.CSSProperties
       }
     >
@@ -161,7 +161,7 @@ export const NarrowContent: Story = {
   render: (args) => (
     <div
       style={
-        { padding: "2rem 0", "--content-width": "800px" } as React.CSSProperties
+        { padding: "2rem 0", "--layout-md": "800px" } as React.CSSProperties
       }
     >
       <Carousel {...args}>

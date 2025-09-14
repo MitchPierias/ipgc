@@ -16,6 +16,10 @@ interface TextProps extends Common.ElementProps {
     | "small"
     | "strong";
   uppercase?: boolean;
+  /**
+   * Animates the text in with a blur effect when
+   * reduced motion is not preferred
+   */
   animate?: boolean;
 }
 
@@ -51,7 +55,7 @@ export const Subtitle = (props: React.ComponentProps<typeof Text>) => (
 );
 
 export const Paragraph = (props: React.ComponentProps<typeof Text>) => (
-  <Text {...props} component="p" className={styles.subtitle} />
+  <Text {...props} component="p" />
 );
 
 export const Microcopy = (props: React.ComponentProps<typeof Text>) => (

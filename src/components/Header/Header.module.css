@@ -10,7 +10,7 @@
     z-index: 20;
     color: #fff;
     font-family: 'Aeonik', system-ui, sans-serif;
-    max-width: var(--full-width);
+    max-width: var(--layout-xl);
     margin-inline: auto;
 
     &::before {

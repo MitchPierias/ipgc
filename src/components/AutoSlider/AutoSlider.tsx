@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./AutoSlider.module.css";
 import clsx from "classnames";
 
@@ -33,7 +34,7 @@ export default function AutoSlider({
         }}
       >
         {props.resources.map((image, index) => (
-          <img
+          <Image
             key={`first-${index}`}
             src={image.src || "/placeholder.svg"}
             alt={image.alt}
@@ -44,7 +45,7 @@ export default function AutoSlider({
         ))}
         {/* Duplicate for seamless loop */}
         {props.resources.map((image, index) => (
-          <img
+          <Image
             key={`second-${index}`}
             src={image.src || "/placeholder.svg"}
             alt={image.alt}

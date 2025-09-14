@@ -175,7 +175,7 @@ export default function HomePage() {
           </Section>
 
           <Section testID="section">
-            <DualPanel testID="image-panel" full>
+            <DualPanel testID="image-panel" layout="full">
               <ImagePanel
                 testID="image-panel"
                 image="https://ipgc.com.au/wp-content/uploads/2024/11/experience-gallery-1.jpg"
@@ -243,7 +243,7 @@ export default function HomePage() {
             />
           </GridLayout>
           <Section testID="section" padded>
-            <DualPanel testID={"dual-panel"} variant={"card"} full>
+            <DualPanel testID={"dual-panel"} variant={"card"} layout="full">
               <Panel
                 testID="dual-panel-left"
                 subtitle="Journey into the known with a Interventional Pain GC scan"
@@ -252,7 +252,7 @@ export default function HomePage() {
                 <Button
                   testID="dual-panel-button"
                   variant={"primary"}
-                  size={"small"}
+                  size={"sm"}
                 >
                   Book your scan
                 </Button>

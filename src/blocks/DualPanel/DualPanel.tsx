@@ -4,25 +4,19 @@ import clsx from "classnames";
 
 interface DualPanelProps extends Common.ComponentProps {
   variant?: "card" | "transparent";
-  full?: boolean;
-  gutter?: boolean;
+  layout?: Common.Layout;
 }
 
 export const DualPanel = ({
   testID,
   variant = "transparent",
-  gutter = false,
-  full = false,
+  layout = "content",
   ...props
 }: React.PropsWithChildren<DualPanelProps>) => {
   return (
     <div
-      className={clsx(
-        styles.frame,
-        styles[variant],
-        gutter && styles.gutter,
-        full && styles.full
-      )}
+      data-testid={testID}
+      className={clsx(styles.frame, styles[variant], styles[layout])}
     >
       {props.children}
     </div>
