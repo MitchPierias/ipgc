@@ -3,6 +3,14 @@ import nodemailer from "nodemailer";
 import formidable from "formidable";
 import fs from "fs";
 import path from "path";
+import {
+  validateContactForm,
+  validateFile,
+  ContactFormData,
+  FileData,
+  ValidationResult,
+  HTTP_STATUS,
+} from "../../../lib/validation";
 
 // Verify hCaptcha token
 async function verifyHCaptcha(token: string): Promise<boolean> {
@@ -103,34 +111,56 @@ async function parseFormData(request: NextRequest): Promise<{
 }
 
 export async function POST(request: NextRequest) {
+  let files: Record<string, any> = {};
+
   try {
     // Parse form data
-    const { fields, files } = await parseFormData(request);
+    const { fields, files: parsedFiles } = await parseFormData(request);
+    files = parsedFiles;
 
-    const { name, phone, email, captchaToken } = fields;
-
-    // Validate required fields
-    if (!name || !phone || !email) {
+    // Validate form fields using validation library
+    const fieldValidation = validateContactForm(fields);
+    if (!fieldValidation.success) {
       return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
+        {
+          error: fieldValidation.error,
+          details: fieldValidation.errors,
+        },
+        { status: HTTP_STATUS.BAD_REQUEST }
       );
     }
+
+    const { name, phone, email, captchaToken } = fieldValidation.data!;
 
     // Verify hCaptcha
-    if (!captchaToken) {
-      return NextResponse.json(
-        { error: "Captcha verification required" },
-        { status: 400 }
-      );
-    }
-
     const captchaValid = await verifyHCaptcha(captchaToken);
     if (!captchaValid) {
       return NextResponse.json(
         { error: "Captcha verification failed" },
-        { status: 400 }
+        { status: HTTP_STATUS.BAD_REQUEST }
       );
+    }
+
+    // Validate file upload if present using validation library
+    const fileValidation = validateFile(parsedFiles.attachment);
+    if (!fileValidation.success) {
+      return NextResponse.json(
+        {
+          error: fileValidation.error,
+          details: fileValidation.errors,
+        },
+        { status: HTTP_STATUS.BAD_REQUEST }
+      );
+    }
+
+    console.log("✅ Validation passed for contact form submission:");
+    console.log("- Name:", name);
+    console.log("- Email:", email);
+    console.log("- Phone:", phone);
+    console.log("- File attached:", !!parsedFiles.attachment);
+    if (parsedFiles.attachment) {
+      console.log("- File type:", parsedFiles.attachment.mimetype);
+      console.log("- File size:", parsedFiles.attachment.size, "bytes");
     }
 
     // Create email transporter
@@ -138,10 +168,10 @@ export async function POST(request: NextRequest) {
 
     // Prepare email attachments
     const attachments = [];
-    if (files.attachment) {
+    if (parsedFiles.attachment) {
       attachments.push({
-        filename: files.attachment.originalFilename,
-        path: files.attachment.filepath,
+        filename: parsedFiles.attachment.originalFilename,
+        path: parsedFiles.attachment.filepath,
       });
     }
 
@@ -195,9 +225,9 @@ This message was sent from the IPGC website contact form.
     });
 
     // Clean up temporary files
-    if (files.attachment) {
+    if (parsedFiles.attachment) {
       try {
-        fs.unlinkSync(files.attachment.filepath);
+        fs.unlinkSync(parsedFiles.attachment.filepath);
       } catch (error) {
         console.error("Error cleaning up temporary file:", error);
       }
@@ -210,9 +240,39 @@ This message was sent from the IPGC website contact form.
   } catch (error) {
     console.error("Error processing contact form:", error);
 
+    // Clean up any temporary files in case of error
+    try {
+      if (files && files.attachment) {
+        fs.unlinkSync(files.attachment.filepath);
+      }
+    } catch (cleanupError) {
+      console.error(
+        "Error cleaning up temporary file after error:",
+        cleanupError
+      );
+    }
+
+    // Return more specific error messages based on error type
+    if (error instanceof Error) {
+      if (error.message.includes("email") || error.message.includes("SMTP")) {
+        return NextResponse.json(
+          { error: "Failed to send email. Please try again later." },
+          { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
+        );
+      }
+      if (error.message.includes("file") || error.message.includes("upload")) {
+        return NextResponse.json(
+          {
+            error: "File upload failed. Please check your file and try again.",
+          },
+          { status: HTTP_STATUS.BAD_REQUEST }
+        );
+      }
+    }
+
     return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
+      { error: "Internal server error. Please try again later." },
+      { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
     );
   }
 }

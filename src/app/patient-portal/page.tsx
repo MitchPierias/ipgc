@@ -3,6 +3,7 @@ import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { getStoryblokApi } from "src/lib/storyblok";
 import { Heading } from "src/elements/Text/Text";
+import styles from "./page.module.css";
 
 export default async function Page({
   params,

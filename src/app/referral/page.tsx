@@ -6,15 +6,16 @@ import {
   REFERRAL_FORM_DOWNLOAD_NAME,
 } from "src/constants/app";
 import { Button } from "src/elements/Buttons/Button";
+import styles from "./page.module.css";
 
 export default function ReferralPage() {
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
-      <main role="main" className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-center mb-8">
+      <main role="main" className={styles.container}>
+        <div className={styles.wrapper}>
+          <div className={styles.card}>
+            <div className={styles.header}>
               <Heading testID="referral-form-title">Referral Form</Heading>
               <Text testID="all-referrals-accepted">
                 All referrals accepted
@@ -24,20 +25,20 @@ export default function ReferralPage() {
               </Text>
             </div>
 
-            <div className="space-y-8">
+            <div className={styles.content}>
               {/* Download Section */}
-              <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
-                <div className="flex items-center justify-between">
+              <div className={styles.downloadSection}>
+                <div className={styles.downloadContainer}>
                   <div>
                     <Heading
                       testID="download-referral-form-title"
-                      className="text-xl font-semibold text-blue-900 mb-2"
+                      className={styles.downloadTitle}
                     >
                       Download Referral Form
                     </Heading>
                     <Text
                       testID="download-referral-form-description"
-                      className="text-blue-700"
+                      className={styles.downloadDescription}
                     >
                       Download our referral form as a PDF to complete offline or
                       print
@@ -54,13 +55,11 @@ export default function ReferralPage() {
               </div>
 
               {/* Referral Methods */}
-              <div className="space-y-6">
-                <div className="grid gap-6">
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
-                        1
-                      </div>
+              <div className={styles.referralMethods}>
+                <div className={styles.methodsGrid}>
+                  <div className={styles.methodCard}>
+                    <div className={styles.methodContent}>
+                      <div className={styles.methodNumber}>1</div>
                       <div>
                         <Heading testID="medical-objects-title">
                           Specialist Referral Letter via Medical Objects
@@ -73,11 +72,9 @@ export default function ReferralPage() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
-                        2
-                      </div>
+                  <div className={styles.methodCard}>
+                    <div className={styles.methodContent}>
+                      <div className={styles.methodNumber}>2</div>
                       <div>
                         <Heading testID="medical-director-title">
                           Specialist Referral Letter via Medical Director or
@@ -91,11 +88,9 @@ export default function ReferralPage() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
-                        3
-                      </div>
+                  <div className={styles.methodCard}>
+                    <div className={styles.methodContent}>
+                      <div className={styles.methodNumber}>3</div>
                       <div>
                         <Heading testID="referral-form-title-option">
                           Using the Referral Form below

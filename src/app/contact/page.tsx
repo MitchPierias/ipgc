@@ -6,6 +6,7 @@ import { Header } from "~/components/Header/Header";
 import { Heading, Microcopy, Text } from "src/elements/Text/Text";
 import { Button } from "src/elements/Buttons/Button";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import styles from "./page.module.css";
 
 interface FormData {
   name: string;
@@ -158,19 +159,16 @@ export default function ContactPage() {
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
-      <main role="main" className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-center mb-8">
-              <Heading
-                testID="contact-us-title"
-                className="text-3xl font-bold text-gray-900 mb-4"
-              >
+      <main role="main" className={styles.container}>
+        <div className={styles.wrapper}>
+          <div className={styles.card}>
+            <div className={styles.header}>
+              <Heading testID="contact-us-title" className={styles.title}>
                 Contact Us
               </Heading>
               <Text
                 testID="contact-us-description"
-                className="text-lg text-gray-600"
+                className={styles.description}
               >
                 Would you like to book an appointment? Got a question? Send us a
                 message
@@ -178,8 +176,11 @@ export default function ContactPage() {
             </div>
 
             {submitStatus === "success" && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <Microcopy testID="success-message" className="text-green-800">
+              <div className={styles.successMessage}>
+                <Microcopy
+                  testID="success-message"
+                  className={styles.successText}
+                >
                   {`Thank you for your message! We'll get back to you within 24-48
                   hours.`}
                 </Microcopy>
@@ -187,21 +188,18 @@ export default function ContactPage() {
             )}
 
             {submitStatus === "error" && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                <Microcopy testID="error-message" className="text-red-800">
+              <div className={styles.errorMessage}>
+                <Microcopy testID="error-message" className={styles.errorText}>
                   There was an error sending your message. Please try again or
                   contact us directly.
                 </Microcopy>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className={styles.form}>
               {/* Name Field */}
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="name" className={styles.label}>
                   Full Name *
                 </label>
                 <input
@@ -210,16 +208,13 @@ export default function ContactPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                    errors.name ? "border-red-500" : "border-gray-300"
+                  className={`${styles.input} ${
+                    errors.name ? styles.inputError : ""
                   }`}
                   placeholder="Enter your full name"
                 />
                 {errors.name && (
-                  <Microcopy
-                    testID="name-error"
-                    className="text-red-600 text-sm mt-1"
-                  >
+                  <Microcopy testID="name-error" className={styles.fieldError}>
                     {errors.name}
                   </Microcopy>
                 )}
@@ -227,10 +222,7 @@ export default function ContactPage() {
 
               {/* Phone Field */}
               <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="phone" className={styles.label}>
                   Phone Number *
                 </label>
                 <input
@@ -239,16 +231,13 @@ export default function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                    errors.phone ? "border-red-500" : "border-gray-300"
+                  className={`${styles.input} ${
+                    errors.phone ? styles.inputError : ""
                   }`}
                   placeholder="Enter your phone number"
                 />
                 {errors.phone && (
-                  <Microcopy
-                    testID="phone-error"
-                    className="text-red-600 text-sm mt-1"
-                  >
+                  <Microcopy testID="phone-error" className={styles.fieldError}>
                     {errors.phone}
                   </Microcopy>
                 )}
@@ -256,10 +245,7 @@ export default function ContactPage() {
 
               {/* Email Field */}
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="email" className={styles.label}>
                   Email Address *
                 </label>
                 <input
@@ -268,16 +254,13 @@ export default function ContactPage() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                    errors.email ? "border-red-500" : "border-gray-300"
+                  className={`${styles.input} ${
+                    errors.email ? styles.inputError : ""
                   }`}
                   placeholder="Enter your email address"
                 />
                 {errors.email && (
-                  <Microcopy
-                    testID="email-error"
-                    className="text-red-600 text-sm mt-1"
-                  >
+                  <Microcopy testID="email-error" className={styles.fieldError}>
                     {errors.email}
                   </Microcopy>
                 )}
@@ -285,10 +268,7 @@ export default function ContactPage() {
 
               {/* File Upload Field */}
               <div>
-                <label
-                  htmlFor="attachment"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label htmlFor="attachment" className={styles.label}>
                   Attach Referral (optional)
                 </label>
                 <input
@@ -297,25 +277,25 @@ export default function ContactPage() {
                   name="attachment"
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                  className={styles.fileInput}
                 />
                 <Text
                   testID="accepted-formats"
-                  className="text-gray-500 text-sm mt-1"
+                  className={styles.acceptedFormats}
                 >
                   Accepted formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)
                 </Text>
                 {formData.attachment && (
                   <Microcopy
                     testID="selected-attachment"
-                    className="text-green-600 text-sm mt-1"
+                    className={styles.selectedFile}
                   >
                     Selected: {formData.attachment.name}
                   </Microcopy>
                 )}
               </div>
 
-              <div className="flex justify-center">
+              <div className={styles.captchaContainer}>
                 <HCaptcha
                   ref={captchaRef}
                   sitekey={
@@ -328,7 +308,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="flex justify-center">
+              <div className={styles.submitContainer}>
                 <Button
                   testID="submit"
                   variant="primary"
@@ -341,25 +321,25 @@ export default function ContactPage() {
             </form>
 
             {/* Contact Information */}
-            <div className="mt-12 space-y-8">
-              <div className="bg-gray-50 rounded-lg p-6">
+            <div className={styles.contactInfo}>
+              <div className={styles.contactCard}>
                 <Heading
                   testID="call-email-message-title"
-                  className="text-xl font-semibold text-gray-900 mb-4"
+                  className={styles.contactTitle}
                 >
                   Call, email or direct message today
                 </Heading>
                 <Text
                   testID="call-email-message-description"
-                  className="text-gray-600 mb-4"
+                  className={styles.contactDescription}
                 >
                   One of our friendly staff will be able to assist you.
                 </Text>
-                <div className="space-y-3">
+                <div className={styles.contactDetails}>
                   <div>
                     <Text
                       testID="call-email-message-phone"
-                      className="font-bold text-blue-600 text-lg"
+                      className={styles.contactPhone}
                     >
                       0413 519 891
                     </Text>
@@ -367,7 +347,7 @@ export default function ContactPage() {
                   <div>
                     <Text
                       testID="call-email-message-email"
-                      className="text-blue-600"
+                      className={styles.contactEmail}
                     >
                       reception@ipgc.com.au
                     </Text>
@@ -375,7 +355,7 @@ export default function ContactPage() {
                   <div>
                     <Text
                       testID="call-email-message-whatsapp"
-                      className="text-blue-600"
+                      className={styles.contactWhatsapp}
                     >
                       Message us on WhatsApp
                     </Text>
@@ -383,31 +363,31 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 rounded-lg p-6">
+              <div className={styles.contactGrid}>
+                <div className={styles.contactCard}>
                   <Heading
                     testID="clinic-location-title"
-                    className="text-xl font-semibold text-gray-900 mb-4"
+                    className={styles.contactTitle}
                   >
                     Interventional Pain GC
                   </Heading>
-                  <div className="space-y-2">
+                  <div className={styles.contactDetails}>
                     <Text
                       testID="clinic-location-address"
-                      className="text-gray-600"
+                      className={styles.addressText}
                     >
                       94 Laver Drive, Robina Queensland 4226, Australia
                     </Text>
                     <Text
                       testID="clinic-location-description"
-                      className="text-sm text-gray-500"
+                      className={styles.addressSubtext}
                     >
                       Located inside WiSE Specialist Emergency Clinic
                     </Text>
-                    <div className="mt-4">
+                    <div>
                       <Text
                         testID="clinic-location-directions"
-                        className="text-blue-600 cursor-pointer hover:underline"
+                        className={styles.directionsLink}
                       >
                         Get directions
                       </Text>
@@ -415,24 +395,24 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-6">
+                <div className={styles.contactCard}>
                   <Heading
                     testID="office-hours-title"
-                    className="text-xl font-semibold text-gray-900 mb-4"
+                    className={styles.contactTitle}
                   >
                     Hours
                   </Heading>
-                  <div className="space-y-2">
+                  <div className={styles.contactDetails}>
                     <div>
                       <Text
                         testID="office-hours-monday-friday"
-                        className="font-medium text-gray-900"
+                        className={styles.hoursLabel}
                       >
                         Monday - Friday:
                       </Text>
                       <Text
                         testID="office-hours-monday-friday-time"
-                        className="text-gray-600"
+                        className={styles.hoursTime}
                       >
                         9AM–5PM
                       </Text>
@@ -440,13 +420,13 @@ export default function ContactPage() {
                     <div>
                       <Text
                         testID="office-hours-saturday-sunday"
-                        className="font-medium text-gray-900"
+                        className={styles.hoursLabel}
                       >
                         Saturday - Sunday:
                       </Text>
                       <Text
                         testID="office-hours-saturday-sunday-time"
-                        className="text-gray-600"
+                        className={styles.hoursTime}
                       >
                         CLOSED
                       </Text>

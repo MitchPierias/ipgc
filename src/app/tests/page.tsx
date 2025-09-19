@@ -3,6 +3,7 @@
 import React from "react";
 import { Header } from "~/components/Header/Header";
 import { Footer } from "~/components/Footer/Footer";
+import styles from "./page.module.css";
 import { DualPanel } from "src/blocks/DualPanel/DualPanel";
 import { Panel } from "src/blocks/Panel/Panel";
 import { HeroBanner } from "~/components/HeroBanner/HeroBanner";
