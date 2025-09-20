@@ -6,7 +6,7 @@ import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { Panel } from "src/blocks/Panel/Panel";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
 import { Heading, Text } from "src/elements/Text/Text";
-import { BlockIcon } from "src/elements/Icons/Block";
+import { BlockIcon } from "src/elements/Icons/BlockIcon";
 import styles from "./page.module.css";
 
 export default async function Page({

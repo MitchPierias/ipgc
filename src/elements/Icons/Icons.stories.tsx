@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { BlockIcon } from "./Block";
+import { BlockIcon } from "./BlockIcon";
 
 const meta: Meta<typeof BlockIcon> = {
   title: "Elements/Icons",

@@ -81,3 +81,14 @@
         /* Placeholder for animations that are disabled */
     }
 }
+
+:root {
+    --color-foreground: 23 23 23;
+    --color-background: 255 255 255;
+
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 18px;
+    --text-lg: 24px;
+    --text-xl: 32px;
+}
