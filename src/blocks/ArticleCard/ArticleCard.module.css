@@ -1,6 +1,6 @@
 .frame {
     max-width: 460px;
-    background-color: var(--color-secondary);
+    background-color: rgb(var(--color-secondary));
     border-radius: var(--size-600);
     overflow: hidden;
 }
@@ -28,7 +28,7 @@
 }
 
 .tag {
-    background-color: var(--color-white);
+    background-color: rgb(var(--color-white));
     padding: 6px var(--size-400);
     border-radius: 100vw;
     font-size: var(--size-200);

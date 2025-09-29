@@ -1,0 +1,16 @@
+.frame {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.spacing-sm {
+    gap: 0.5rem;
+}
+
+.spacing-md {
+    gap: 2rem;
+}
+
+.spacing-lg {
+    gap: 3rem;
+}

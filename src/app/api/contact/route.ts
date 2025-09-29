@@ -130,7 +130,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, phone, email, captchaToken } = fieldValidation.data!;
+    const { name, phone, email, message, captchaToken } = fieldValidation.data!;
 
     // Verify hCaptcha
     const captchaValid = await verifyHCaptcha(captchaToken);
@@ -157,6 +157,7 @@ export async function POST(request: NextRequest) {
     console.log("- Name:", name);
     console.log("- Email:", email);
     console.log("- Phone:", phone);
+    console.log("- Message:", message || "(none provided)");
     console.log("- File attached:", !!parsedFiles.attachment);
     if (parsedFiles.attachment) {
       console.log("- File type:", parsedFiles.attachment.mimetype);
@@ -182,7 +183,12 @@ New contact form submission:
 
 Name: ${name}
 Phone: ${phone}
-Email: ${email}
+Email: ${email}${
+      message
+        ? `
+Message: ${message}`
+        : ""
+    }
 
 ---
 This message was sent from the IPGC website contact form.
@@ -203,7 +209,15 @@ This message was sent from the IPGC website contact form.
           <tr>
             <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #eee;">Email:</td>
             <td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td>
-          </tr>
+          </tr>${
+            message
+              ? `
+          <tr>
+            <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #eee; vertical-align: top;">Message:</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${message}</td>
+          </tr>`
+              : ""
+          }
         </table>
         
         <hr style="margin: 20px 0;">

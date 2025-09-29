@@ -12,18 +12,18 @@
 }
 
 .primary {
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: rgb(var(--color-white));
+    background-color: rgb(var(--color-primary));
 }
 
 .secondary {
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: rgb(var(--color-black));
+    background-color: rgb(var(--color-white));
 }
 
 .tertiary {
-    color: var(--color-black);
-    background-color: var(--color-secondary);
+    color: rgb(var(--color-black));
+    background-color: rgb(var(--color-secondary));
 }
 
 .sm {

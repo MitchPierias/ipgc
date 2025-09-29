@@ -29,6 +29,13 @@ export const contactFormSchema = z.object({
     .email("Invalid email format")
     .refine((val) => !/[<>]/g.test(val), "HTML characters are not allowed"),
 
+  message: z
+    .string()
+    .max(1000, "Message must be less than 1000 characters")
+    .refine((val) => !/[<>]/g.test(val), "HTML characters are not allowed")
+    .transform((val) => val.trim())
+    .optional(),
+
   captchaToken: z.string().min(1, "Captcha verification is required"),
 });
 

@@ -1,0 +1,17 @@
+.frame {}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.inputError {
+    border-color: #ef4444;
+}
+
+.fieldError {
+    color: #dc2626;
+}

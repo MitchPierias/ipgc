@@ -2,13 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import { CrossIcon } from "src/elements/Icons/CrossIcon";
 import { MenuIcon } from "src/elements/Icons";
+import clsx from "classnames";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigationItems = [
     { label: "Home", href: "/" },
@@ -41,7 +44,13 @@ export const Header: React.FC = () => {
           <ul>
             {navigationItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={styles.navLink}>
+                <Link
+                  href={item.href}
+                  className={clsx(
+                    styles.navLink,
+                    pathname === item.href && styles.active
+                  )}
+                >
                   {item.label}
                 </Link>
               </li>
@@ -69,7 +78,10 @@ export const Header: React.FC = () => {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={styles.mobileNavLink}
+                    className={clsx(
+                      styles.mobileNavLink,
+                      pathname === item.href && styles.mobileNavLinkActive
+                    )}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

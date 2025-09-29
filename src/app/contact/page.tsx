@@ -7,11 +7,18 @@ import { Heading, Microcopy, Text } from "src/elements/Text/Text";
 import { Button } from "src/elements/Buttons/Button";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import styles from "./page.module.css";
+import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
+import { InlineLayout } from "src/elements/InlineLayout/InlineLayout";
+import { Notice } from "src/elements/Notice/Notice";
+import { Field } from "src/elements/Field/Field";
+import { Card } from "src/elements/Card/Card";
+import { GridLayout } from "src/elements/GridLayout/GridLayout";
 
 interface FormData {
   name: string;
   phone: string;
   email: string;
+  message: string;
   attachment: File | null;
 }
 
@@ -19,13 +26,16 @@ interface FormErrors {
   name?: string;
   phone?: string;
   email?: string;
+  message?: string;
 }
 
 export default function ContactPage() {
+  const testID = "contact-us" as const;
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
+    message: "",
     attachment: null,
   });
 
@@ -115,6 +125,7 @@ export default function ContactPage() {
     formDataToSend.append("name", formData.name);
     formDataToSend.append("phone", formData.phone);
     formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
     formDataToSend.append("captchaToken", captchaToken);
 
     if (formData.attachment) {
@@ -133,6 +144,7 @@ export default function ContactPage() {
           name: "",
           phone: "",
           email: "",
+          message: "",
           attachment: null,
         });
         setCaptchaToken(null);
@@ -157,127 +169,114 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
+    <div
+      data-testid={testID}
+      className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri"
+    >
       <Header />
       <main role="main" className={styles.container}>
         <div className={styles.wrapper}>
-          <div className={styles.card}>
-            <div className={styles.header}>
-              <Heading testID="contact-us-title" className={styles.title}>
-                Contact Us
-              </Heading>
+          <Card testID={`${testID}.card`} elevation="md">
+            <BlockLayout testID={`${testID}.header`} align={"center"}>
+              <Heading testID={`${testID}.title`}>Contact Us</Heading>
               <Text
-                testID="contact-us-description"
+                testID={`${testID}.description`}
                 className={styles.description}
               >
                 Would you like to book an appointment? Got a question? Send us a
                 message
               </Text>
-            </div>
+            </BlockLayout>
 
             {submitStatus === "success" && (
-              <div className={styles.successMessage}>
-                <Microcopy
-                  testID="success-message"
-                  className={styles.successText}
-                >
-                  {`Thank you for your message! We'll get back to you within 24-48
+              <Notice testID={`${testID}.success`} type="success">
+                {`Thank you for your message! We'll get back to you within 24-48
                   hours.`}
-                </Microcopy>
-              </div>
+              </Notice>
             )}
 
             {submitStatus === "error" && (
-              <div className={styles.errorMessage}>
-                <Microcopy testID="error-message" className={styles.errorText}>
-                  There was an error sending your message. Please try again or
-                  contact us directly.
-                </Microcopy>
-              </div>
+              <Notice testID={`${testID}.error`} type="error">
+                {`There was an error sending your message. Please try again or
+                contact us directly.`}
+              </Notice>
             )}
 
             <form onSubmit={handleSubmit} className={styles.form}>
-              {/* Name Field */}
-              <div>
-                <label htmlFor="name" className={styles.label}>
-                  Full Name *
-                </label>
+              <Field
+                testID={`${testID}.name`}
+                name="name"
+                label={`Full Name *`}
+                error={(errors.name && { message: errors.name }) || undefined}
+              >
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`${styles.input} ${
-                    errors.name ? styles.inputError : ""
-                  }`}
                   placeholder="Enter your full name"
                 />
-                {errors.name && (
-                  <Microcopy testID="name-error" className={styles.fieldError}>
-                    {errors.name}
-                  </Microcopy>
-                )}
-              </div>
+              </Field>
 
-              {/* Phone Field */}
-              <div>
-                <label htmlFor="phone" className={styles.label}>
-                  Phone Number *
-                </label>
+              <Field
+                testID={`${testID}.phone`}
+                name="phone"
+                label={`Phone Number *`}
+                error={(errors.phone && { message: errors.phone }) || undefined}
+              >
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`${styles.input} ${
-                    errors.phone ? styles.inputError : ""
-                  }`}
                   placeholder="Enter your phone number"
                 />
-                {errors.phone && (
-                  <Microcopy testID="phone-error" className={styles.fieldError}>
-                    {errors.phone}
-                  </Microcopy>
-                )}
-              </div>
+              </Field>
 
-              {/* Email Field */}
-              <div>
-                <label htmlFor="email" className={styles.label}>
-                  Email Address *
-                </label>
+              <Field
+                testID={`${testID}.email`}
+                name="email"
+                label={`Email Address *`}
+                error={(errors.email && { message: errors.email }) || undefined}
+              >
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`${styles.input} ${
-                    errors.email ? styles.inputError : ""
-                  }`}
                   placeholder="Enter your email address"
                 />
-                {errors.email && (
-                  <Microcopy testID="email-error" className={styles.fieldError}>
-                    {errors.email}
-                  </Microcopy>
-                )}
-              </div>
+              </Field>
 
-              {/* File Upload Field */}
-              <div>
-                <label htmlFor="attachment" className={styles.label}>
-                  Attach Referral (optional)
-                </label>
+              <Field
+                testID={`${testID}.message`}
+                name="message"
+                label={`Message (optional)`}
+              >
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Enter your message or question"
+                  rows={4}
+                />
+              </Field>
+
+              <Field
+                testID={`${testID}.attachment`}
+                name="attachment"
+                label={`Attach Referral (optional)`}
+              >
                 <input
                   type="file"
                   id="attachment"
                   name="attachment"
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                  className={styles.fileInput}
                 />
                 <Text
                   testID="accepted-formats"
@@ -293,149 +292,106 @@ export default function ContactPage() {
                     Selected: {formData.attachment.name}
                   </Microcopy>
                 )}
-              </div>
+              </Field>
 
-              <div className={styles.captchaContainer}>
-                <HCaptcha
-                  ref={captchaRef}
-                  sitekey={
-                    process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ||
-                    "10000000-ffff-ffff-ffff-000000000001"
-                  }
-                  onVerify={handleCaptchaVerify}
-                  onError={handleCaptchaError}
-                  onExpire={() => setCaptchaToken(null)}
-                />
-              </div>
+              <HCaptcha
+                ref={captchaRef}
+                sitekey={
+                  process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ||
+                  "10000000-ffff-ffff-ffff-000000000001"
+                }
+                onVerify={handleCaptchaVerify}
+                onError={handleCaptchaError}
+                onExpire={() => setCaptchaToken(null)}
+              />
 
-              <div className={styles.submitContainer}>
-                <Button
-                  testID="submit"
-                  variant="primary"
-                  type="submit"
-                  disabled={isSubmitting || !captchaToken}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </div>
+              <Button
+                testID="submit"
+                variant="primary"
+                type="submit"
+                disabled={isSubmitting || !captchaToken}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
             </form>
 
-            {/* Contact Information */}
-            <div className={styles.contactInfo}>
-              <div className={styles.contactCard}>
-                <Heading
-                  testID="call-email-message-title"
-                  className={styles.contactTitle}
-                >
-                  Call, email or direct message today
-                </Heading>
-                <Text
-                  testID="call-email-message-description"
-                  className={styles.contactDescription}
-                >
-                  One of our friendly staff will be able to assist you.
-                </Text>
-                <div className={styles.contactDetails}>
-                  <div>
-                    <Text
-                      testID="call-email-message-phone"
-                      className={styles.contactPhone}
-                    >
-                      0413 519 891
-                    </Text>
-                  </div>
-                  <div>
-                    <Text
-                      testID="call-email-message-email"
-                      className={styles.contactEmail}
-                    >
-                      reception@ipgc.com.au
-                    </Text>
-                  </div>
-                  <div>
-                    <Text
-                      testID="call-email-message-whatsapp"
-                      className={styles.contactWhatsapp}
-                    >
-                      Message us on WhatsApp
-                    </Text>
-                  </div>
-                </div>
-              </div>
+            <GridLayout testID={`${testID}.grid`} spacing="md">
+              <Card testID={`${testID}.contact`}>
+                <BlockLayout testID={`${testID}.layout`} spacing={"tight"}>
+                  <Heading testID={`${testID}.title`}>
+                    Call, email or direct message today
+                  </Heading>
+                  <Text testID={`${testID}.description`}>
+                    One of our friendly staff will be able to assist you.
+                  </Text>
+                  <Text testID={`${testID}.phone`}>0413 519 891</Text>
+                  <Text testID={`${testID}.email`}>reception@ipgc.com.au</Text>
+                  <Text testID={`${testID}.whatsapp`}>
+                    Message us on WhatsApp
+                  </Text>
+                </BlockLayout>
+              </Card>
 
-              <div className={styles.contactGrid}>
-                <div className={styles.contactCard}>
-                  <Heading
-                    testID="clinic-location-title"
-                    className={styles.contactTitle}
-                  >
+              <Card testID={`${testID}.location`}>
+                <BlockLayout testID={`${testID}.layout`}>
+                  <Heading testID={`${testID}.title`}>
                     Interventional Pain GC
                   </Heading>
-                  <div className={styles.contactDetails}>
-                    <Text
-                      testID="clinic-location-address"
-                      className={styles.addressText}
-                    >
-                      94 Laver Drive, Robina Queensland 4226, Australia
-                    </Text>
-                    <Text
-                      testID="clinic-location-description"
-                      className={styles.addressSubtext}
-                    >
-                      Located inside WiSE Specialist Emergency Clinic
-                    </Text>
-                    <div>
-                      <Text
-                        testID="clinic-location-directions"
-                        className={styles.directionsLink}
-                      >
-                        Get directions
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.contactCard}>
-                  <Heading
-                    testID="office-hours-title"
-                    className={styles.contactTitle}
+                  <Text
+                    testID={`${testID}.address`}
+                    className={styles.addressText}
                   >
-                    Hours
-                  </Heading>
-                  <div className={styles.contactDetails}>
-                    <div>
-                      <Text
-                        testID="office-hours-monday-friday"
-                        className={styles.hoursLabel}
-                      >
-                        Monday - Friday:
-                      </Text>
-                      <Text
-                        testID="office-hours-monday-friday-time"
-                        className={styles.hoursTime}
-                      >
-                        9AM–5PM
-                      </Text>
-                    </div>
-                    <div>
-                      <Text
-                        testID="office-hours-saturday-sunday"
-                        className={styles.hoursLabel}
-                      >
-                        Saturday - Sunday:
-                      </Text>
-                      <Text
-                        testID="office-hours-saturday-sunday-time"
-                        className={styles.hoursTime}
-                      >
-                        CLOSED
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    94 Laver Drive, Robina Queensland 4226, Australia
+                  </Text>
+                  <Text
+                    testID={`${testID}.description`}
+                    className={styles.addressSubtext}
+                  >
+                    Located inside WiSE Specialist Emergency Clinic
+                  </Text>
+                  <Button
+                    testID={`${testID}.directions`}
+                    variant="tertiary"
+                    href="https://www.google.com/maps/search/?api=1&query=94+Laver+Drive%2C+Robina+Queensland+4226%2C+Australia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get directions
+                  </Button>
+                </BlockLayout>
+              </Card>
+
+              <Card testID="office-hours">
+                <BlockLayout testID="office-hours">
+                  <Heading testID="office-hours-title">Hours</Heading>
+                  <InlineLayout
+                    testID={`${testID}.weekdays`}
+                    spacing={"tight"}
+                    padding={"none"}
+                  >
+                    <Text testID="office-hours-monday-friday" bold>
+                      Monday - Friday:
+                    </Text>
+                    <Text testID="office-hours-monday-friday-time">
+                      9AM–5PM
+                    </Text>
+                  </InlineLayout>
+                  <InlineLayout
+                    testID={`${testID}.weekends`}
+                    spacing={"tight"}
+                    padding={"none"}
+                  >
+                    <Text testID="office-hours-saturday-sunday" bold>
+                      Saturday - Sunday:
+                    </Text>
+                    <Text testID="office-hours-saturday-sunday-time">
+                      CLOSED
+                    </Text>
+                  </InlineLayout>
+                </BlockLayout>
+              </Card>
+            </GridLayout>
+          </Card>
         </div>
       </main>
       <Footer testID="footer" />

@@ -6,10 +6,21 @@
     --layout-lg: calc(var(--layout-md) + var(--gutter-size) * 2);
     --layout-xl: calc(var(--layout-lg) + 2 * var(--gutter-size));
 
-    --color-white: #fff;
-    --color-black: #000;
+    --color-white: 255 255 255;
+    --color-black: 0 0 0;
 
-    --color-secondary: #e5e5e5;
+    --color-primary: 0 0 0;
+
+    --color-secondary: 229 229 229;
+
+    --color-foreground: 23 23 23;
+    --color-background: 255 255 255;
+
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 18px;
+    --text-lg: 24px;
+    --text-xl: 32px;
 
     --size-100: 4px;
     --size-200: 8px;

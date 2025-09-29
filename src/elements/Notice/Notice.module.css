@@ -1,0 +1,17 @@
+.frame {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    &.success {
+        background-color: #ecfdf5;
+        border: 1px solid #bbf7d0;
+        color: #166534;
+    }
+
+    &.error {
+        background-color: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #991b1b;
+    }
+}

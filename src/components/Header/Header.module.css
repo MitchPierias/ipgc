@@ -30,13 +30,13 @@
         position: absolute;
         inset: var(--header-inset);
         z-index: -1;
-        background-color: rgb(var(--color-background) / .05);
+        background-color: rgb(var(--color-background) / .2);
         backdrop-filter: blur(8px) saturate(120%);
         border-radius: 100vw;
         box-shadow:
             0 4px 30px rgba(0, 0, 0, 0.1),
-            0 0 0 1px rgba(255, 255, 255, 0.3),
-            -1px -1px 0 0px rgba(255, 255, 255, 0.5),
+            0 0 0 1px rgba(255, 255, 255, 0.25),
+            -1px -1px 0 0px rgba(255, 255, 255, 0.45),
             1px 1px 0 0px rgba(0, 0, 0, 0.085);
     }
 }
@@ -51,10 +51,6 @@
         width: auto;
         fill: #fff;
     }
-}
-
-.controls {
-    padding-right: 2rem;
 }
 
 .nav {
@@ -72,13 +68,25 @@
 .nav ul {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0rem;
 }
 
 .navLink {
     font-family: 'Aeonik', system-ui, sans-serif;
     font-weight: 300;
     font-size: var(--text-md);
+    transition: color 200ms ease, background-color 200ms ease;
+    border-radius: 100vw;
+    padding: 0.75rem 1rem;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    &.active {
+        color: rgb(var(--color-white));
+        background-color: rgb(var(--color-primary));
+    }
 }
 
 .mobileControls {
@@ -134,15 +142,13 @@
 
 .mobileNav {
     max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
     padding: 1rem;
 }
 
 @media (min-width: 1024px) {
     .mobileNav {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-inline: 2rem;
     }
 }
 
@@ -154,14 +160,31 @@
 
 .mobileNavLink {
     color: rgb(var(--color-foreground));
-    transition: color 200ms;
+    transition: color 200ms ease, font-weight 200ms ease;
     display: block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-block: 0.5rem;
     font-family: 'Aeonik', system-ui, sans-serif;
     font-weight: 400;
 }
 
 .mobileNavLink:hover {
     color: #475569;
+}
+
+.mobileNavLinkActive {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.mobileNavLinkActive::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    border-radius: 2px;
 }

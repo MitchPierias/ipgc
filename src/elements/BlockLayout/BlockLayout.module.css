@@ -1,0 +1,45 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.spacing-none {
+    gap: 0;
+}
+
+.spacing-tight {
+    gap: 0.5rem;
+}
+
+.spacing-base {
+    gap: 1rem;
+}
+
+.spacing-loose {
+    gap: 3rem;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.padding-tight {
+    padding: 0.5rem;
+}
+
+.padding-base {
+    padding: 1rem;
+}
+
+.padding-loose {
+    padding: 3rem;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-right {
+    align-items: flex-end;
+}

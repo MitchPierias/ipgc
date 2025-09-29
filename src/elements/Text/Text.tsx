@@ -15,6 +15,7 @@ interface TextProps extends Common.ElementProps {
     | "div"
     | "small"
     | "strong";
+  bold?: boolean;
   uppercase?: boolean;
   /**
    * Animates the text in with a blur effect when
@@ -28,6 +29,7 @@ export const Text = ({
   component = "span",
   children,
   uppercase,
+  bold,
   animate,
   ...props
 }: React.PropsWithChildren<TextProps>) =>
@@ -37,21 +39,30 @@ export const Text = ({
       "data-testid": testID,
       ...props,
       className: clsx(
-        props.className,
         styles.frame,
+        props.className,
         animate && styles.blurIn,
-        uppercase && styles.uppercase
+        uppercase && styles.uppercase,
+        bold && styles.bold
       ),
     },
     children
   );
 
 export const Heading = (props: React.ComponentProps<typeof Text>) => (
-  <Text {...props} component="h2" className={styles.heading} />
+  <Text
+    {...props}
+    component="h2"
+    className={clsx(styles.heading, props.className)}
+  />
 );
 
 export const Subtitle = (props: React.ComponentProps<typeof Text>) => (
-  <Text {...props} component="h5" className={styles.subtitle} />
+  <Text
+    {...props}
+    component="h5"
+    className={clsx(styles.subtitle, props.className)}
+  />
 );
 
 export const Paragraph = (props: React.ComponentProps<typeof Text>) => (
@@ -59,5 +70,9 @@ export const Paragraph = (props: React.ComponentProps<typeof Text>) => (
 );
 
 export const Microcopy = (props: React.ComponentProps<typeof Text>) => (
-  <Text {...props} component="small" className={styles.microcopy} />
+  <Text
+    {...props}
+    component="small"
+    className={clsx(props.className, styles.microcopy)}
+  />
 );

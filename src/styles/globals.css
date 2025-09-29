@@ -82,13 +82,50 @@
     }
 }
 
-:root {
-    --color-foreground: 23 23 23;
-    --color-background: 255 255 255;
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 200ms;
+    border: 1px solid rgb(var(--color-primary) / 0.2);
 
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-md: 18px;
-    --text-lg: 24px;
-    --text-xl: 32px;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgb(var(--color-primary));
+        border-color: rgb(var(--color-primary));
+    }
+
+    &::file-selector-button {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 100vw;
+        border: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background-color: rgb(var(--color-primary));
+        color: rgb(var(--color-white));
+        transition: all 200ms;
+    }
+
+    &:hover::file-selector-button {
+        background-color: rgb(var(--color-primary) / .3);
+    }
+}
+
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 200ms;
+    border: 1px solid rgb(var(--color-primary) / 0.2);
+    resize: vertical;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.5;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgb(var(--color-primary));
+        border-color: rgb(var(--color-primary));
+    }
 }

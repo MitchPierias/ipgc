@@ -2,7 +2,7 @@ import styles from "./GridLayout.module.css";
 import clsx from "classnames";
 
 interface GridLayoutProps extends Common.ComponentProps {
-  layout?: Common.Layout;
+  className?: string;
   spacing?: "sm" | "md" | "lg";
 }
 
@@ -13,7 +13,11 @@ export const GridLayout = ({
   return (
     <div
       data-testid={testID}
-      className={clsx(styles.frame, styles[props.layout || "content"])}
+      className={clsx(
+        styles.frame,
+        props.className,
+        styles[`spacing-${props.spacing}`]
+      )}
     >
       {props.children}
     </div>
