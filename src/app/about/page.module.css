@@ -4,14 +4,18 @@
 }
 
 .wrapper {
-    max-width: 56rem;
+    max-width: 72rem;
     margin: 0 auto;
     padding: 1.5rem;
     padding-top: 6rem;
     padding-bottom: 3rem;
 }
 
-.description {
-    font-size: 1.125rem;
-    color: #4b5563;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wrapper {
+        max-width: 100%;
+        padding: 1rem;
+        padding-top: 5rem;
+    }
 }

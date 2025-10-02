@@ -1,30 +1,77 @@
-import { StoryblokStory } from "@storyblok/react/rsc";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { getStoryblokApi } from "src/lib/storyblok";
-import { Heading } from "src/elements/Text/Text";
+import { Heading, Text } from "src/elements/Text/Text";
+import { Button } from "src/elements/Buttons/Button";
+import { Card } from "src/elements/Card/Card";
+import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
+import { GridLayout } from "src/elements/GridLayout/GridLayout";
 import styles from "./page.module.css";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string[] }>;
-}) {
-  const { slug } = await params;
-
-  const fullSlug = slug ? slug.join("/") : "home";
-
-  const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${fullSlug}`, {
-    version: "draft",
-  });
+export default function PatientPortalPage() {
+  const testID = "patient-portal" as const;
 
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
-      <main role="main">
-        <Heading testID="patient-portal-title">Patient Portal</Heading>
-        <StoryblokStory story={data.story} />
+      <main role="main" className={styles.container}>
+        <div className={styles.wrapper}>
+          <Card testID={`${testID}.card`} elevation="md">
+            <BlockLayout testID={`${testID}.header`} align={"center"}>
+              <Heading testID={`${testID}.title`}>Patient Portal</Heading>
+              <Text
+                testID={`${testID}.description`}
+                className={styles.description}
+              >
+                Access important patient information and resources
+              </Text>
+            </BlockLayout>
+
+            <GridLayout testID={`${testID}.grid`} spacing="md">
+              <Card testID={`${testID}.rfa-fact-sheet`}>
+                <BlockLayout testID={`${testID}.rfa-layout`} spacing={"tight"}>
+                  <Heading testID={`${testID}.rfa-title`}>
+                    Radiofrequency Ablation (RFA) Fact Sheet
+                  </Heading>
+                  <Text testID={`${testID}.rfa-description`}>
+                    Learn about radiofrequency ablation procedures, what to
+                    expect, and important information for patients.
+                  </Text>
+                  <Button
+                    testID={`${testID}.rfa-download`}
+                    variant="primary"
+                    href="/pdf/rfa-fact-sheet.pdf"
+                    download="RFA-Fact-Sheet.pdf"
+                  >
+                    Download PDF
+                  </Button>
+                </BlockLayout>
+              </Card>
+
+              <Card testID={`${testID}.patient-info-flyer`}>
+                <BlockLayout
+                  testID={`${testID}.flyer-layout`}
+                  spacing={"tight"}
+                >
+                  <Heading testID={`${testID}.flyer-title`}>
+                    Patient Information Flyer
+                  </Heading>
+                  <Text testID={`${testID}.flyer-description`}>
+                    Essential information for patients including preparation
+                    instructions, what to bring, and post-procedure care.
+                  </Text>
+                  <Button
+                    testID={`${testID}.flyer-download`}
+                    variant="primary"
+                    href="/pdf/patient-information-flyer.pdf"
+                    download="Patient-Information-Flyer.pdf"
+                  >
+                    Download PDF
+                  </Button>
+                </BlockLayout>
+              </Card>
+            </GridLayout>
+          </Card>
+        </div>
       </main>
       <Footer testID="footer" />
     </div>
