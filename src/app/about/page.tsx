@@ -3,9 +3,7 @@ import { Header } from "~/components/Header/Header";
 import { Heading, Text } from "src/elements/Text/Text";
 import { Card } from "src/elements/Card/Card";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
-import Image from "next/image";
 import styles from "./page.module.css";
-import { InlineLayout } from "src/elements/InlineLayout/InlineLayout";
 import { StaffCard } from "src/components/StaffCard/StaffCard";
 
 export default function AboutPage() {
@@ -45,7 +43,7 @@ export default function AboutPage() {
                   "In his spare time Dr. Ngo will be spending his time with his wife and two sons on the water swimming and fishing.",
                 ]}
                 image={{
-                  src: "/images/team/don-van-ngo.webp",
+                  src: "/images/don-van-ngo.webp",
                   alt: "Dr. Don Van Ngo",
                   width: 400,
                   height: 400,
@@ -59,7 +57,7 @@ export default function AboutPage() {
                 qualifications={[]}
                 biography={[]}
                 image={{
-                  src: "/images/team/deidre-basson.webp",
+                  src: "/images/deidre-basson.webp",
                   alt: "Deidre Basson",
                   width: 400,
                   height: 400,
@@ -76,7 +74,7 @@ export default function AboutPage() {
                 ]}
                 biography={[]}
                 image={{
-                  src: "/images/team/ines-alansari.webp",
+                  src: "/images/ines-alansari.webp",
                   alt: "Ines Alansari",
                   width: 400,
                   height: 400,
@@ -94,7 +92,7 @@ export default function AboutPage() {
                 ]}
                 biography={[]}
                 image={{
-                  src: "/images/team/mersad-delic.webp",
+                  src: "/images/mersad-delic.webp",
                   alt: "Mersad Delic",
                   width: 400,
                   height: 400,
@@ -108,7 +106,7 @@ export default function AboutPage() {
                 qualifications={[]}
                 biography={[]}
                 image={{
-                  src: "/images/team/lorraine-landles.webp",
+                  src: "/images/lorraine-landles.webp",
                   alt: "Lorraine Landles",
                   width: 400,
                   height: 400,
@@ -122,7 +120,7 @@ export default function AboutPage() {
                 qualifications={[]}
                 biography={[]}
                 image={{
-                  src: "/images/team/chloe-glen.webp",
+                  src: "/images/chloe-glen.webp",
                   alt: "Chloe Glen",
                   width: 400,
                   height: 400,
