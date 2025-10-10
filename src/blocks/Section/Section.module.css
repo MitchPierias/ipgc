@@ -1,13 +1,20 @@
 .frame {
     position: relative;
     display: grid;
-    grid-template-columns: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] minmax(240px, 960px) [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
-    grid-template-rows: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] auto [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
+    /* Mobile default: 16px gutters */
+    grid-template-columns: [full-start] 1fr [gutter-start] minmax(0px, 16px) [content-start] minmax(240px, 960px) [content-end] minmax(0px, 16px) [gutter-end] 1fr [full-end];
+    grid-template-rows: [full-start] 1fr [gutter-start] minmax(0px, 16px) [content-start] auto [content-end] minmax(0px, 16px) [gutter-end] 1fr [full-end];
     max-height: 100vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
+
+    /* Web: 64px gutters for larger screens */
+    @media (min-width: 768px) {
+        grid-template-columns: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] minmax(240px, 960px) [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
+        grid-template-rows: [full-start] 1fr [gutter-start] minmax(0px, 64px) [content-start] auto [content-end] minmax(0px, 64px) [gutter-end] 1fr [full-end];
+    }
 
     &:has(.video) {
         height: 100vh;

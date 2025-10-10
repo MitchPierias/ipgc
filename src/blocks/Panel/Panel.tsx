@@ -2,6 +2,7 @@ import clsx from "classnames";
 import styles from "./Panel.module.css";
 import { Button } from "src/elements/Buttons/Button";
 import { Subtitle, Text } from "src/elements/Text/Text";
+import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 
 interface PanelProps extends Common.ComponentProps {
   title?: string;
@@ -9,6 +10,7 @@ interface PanelProps extends Common.ComponentProps {
   description?: string;
   buttonText?: string;
   variant?: "glass" | "invert";
+  padding?: Common.Space;
 }
 
 export const Panel = ({
@@ -17,19 +19,21 @@ export const Panel = ({
 }: React.PropsWithChildren<PanelProps>) => {
   if (props.children) {
     return (
-      <div
-        data-testid={testID}
-        className={clsx(styles.frame, props.variant && styles[props.variant])}
+      <BlockLayout
+        testID={testID}
+        className={clsx(props.variant && styles[props.variant])}
+        padding={props.padding}
       >
         {props.children}
-      </div>
+      </BlockLayout>
     );
   }
 
   return (
-    <div
-      data-testid={testID}
-      className={clsx(styles.frame, props.variant && styles[props.variant])}
+    <BlockLayout
+      testID={testID}
+      className={clsx(props.variant && styles[props.variant])}
+      padding={props.padding}
     >
       <Text testID={`${testID}.title`} uppercase>
         {props.title}
@@ -41,6 +45,6 @@ export const Panel = ({
           {props.buttonText}
         </Button>
       )}
-    </div>
+    </BlockLayout>
   );
 };
