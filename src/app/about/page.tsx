@@ -4,7 +4,7 @@ import { Heading, Text } from "src/elements/Text/Text";
 import { Card } from "src/elements/Card/Card";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 import styles from "./page.module.css";
-import { StaffCard } from "src/components/StaffCard/StaffCard";
+import { StaffCard } from "~/components/StaffCard/StaffCard";
 
 export default function AboutPage() {
   const testID = "about" as const;
@@ -25,108 +25,55 @@ export default function AboutPage() {
               </Text>
             </BlockLayout>
 
-            <BlockLayout testID={`${testID}.team-grid`} spacing={"loose"}>
+            <div className={styles.staffGrid}>
               <StaffCard
-                testID={`${testID}.dr-ngo`}
                 name="Dr. Don Van Ngo"
-                role="Radiologist"
-                qualifications={[
-                  "Bachelor of Medicine, Bachelor of Surgery",
-                  "Fellowship of the Royal Australian and New Zealand College of Radiologists",
-                ]}
-                biography={[
-                  "Dr. Don Van Ngo was born and raised in Melbourne, and moved to Queensland in 2008 to commence his Bachelor of Medicine, Bachelor of Surgery degree. Don graduated with a Dean's award top 5 in his class.",
-                  "He completed his Radiology training at the Gold Coast University Hospital. Dr. Ngo specialises in minimally invasive advanced pain management procedures including radiofrequency ablation, platelet rich plasma (PRP) and autologous tenocyte transplantation.",
-                  "Dr. Ngo currently participates in the weekly Gold Coast Hospital multidisciplinary meeting where interventional treatment options for complex and pallative pain cases are discussed.",
-                  "In 2019 Dr. Ngo was invited to present his findings on Spectral CT at the Asian Congress of Abdominal Radiology in Chengdu, China, for which he received the Top 20 prize.",
-                  "Dr. Ngo is a Radiology lecturer for Year 2 and 3 medical students at Bond University. Dr. Ngo also holds a Staff Specialist appointment at the Gold Coast University Hospital as well as Lecturer title at Griffith University.",
-                  "In his spare time Dr. Ngo will be spending his time with his wife and two sons on the water swimming and fishing.",
-                ]}
-                image={{
-                  src: "/images/don-van-ngo.webp",
-                  alt: "Dr. Don Van Ngo",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Radiologist"
+                location="Gold Coast, AU"
+                bio="Dr. Don Van Ngo graduated with a Dean's award top 5 in his class and completed his Radiology training at the Gold Coast University Hospital. He specialises in minimally invasive advanced pain management procedures and is a Radiology lecturer at Bond University."
+                imageUrl="/images/don-van-ngo.webp"
               />
 
               <StaffCard
-                testID={`${testID}.deidre`}
                 name="Deidre Basson"
-                role="Practice Manager"
-                qualifications={[]}
-                biography={[]}
-                image={{
-                  src: "/images/deidre-basson.webp",
-                  alt: "Deidre Basson",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Practice Manager"
+                location="Gold Coast, AU"
+                bio="Experienced practice manager ensuring smooth operations and exceptional patient care coordination. Dedicated to maintaining the highest standards of healthcare administration."
+                imageUrl="/images/deidre-basson.webp"
               />
 
               <StaffCard
-                testID={`${testID}.ines`}
                 name="Ines Alansari"
-                role="Patient Care Coordinator and Clinical Nurse"
-                qualifications={[
-                  "Bachelor of Nursing",
-                  "Graduate Certificate in Clinical Nursing and Teaching",
-                ]}
-                biography={[]}
-                image={{
-                  src: "/images/ines-alansari.webp",
-                  alt: "Ines Alansari",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Patient Care Coordinator"
+                location="Gold Coast, AU"
+                bio="Bachelor of Nursing with Graduate Certificate in Clinical Nursing and Teaching. Provides compassionate patient care and coordinates clinical activities to ensure optimal patient experiences."
+                imageUrl="/images/ines-alansari.webp"
               />
 
               <StaffCard
-                testID={`${testID}.mersad`}
                 name="Mersad Delic"
-                role="Chief Radiographer"
-                qualifications={[
-                  "Masters in Diagnostic Radiology",
-                  "Bachelor of Biomedical Science (Hons)",
-                  "Graduate diploma in Science (Health)",
-                ]}
-                biography={[]}
-                image={{
-                  src: "/images/mersad-delic.webp",
-                  alt: "Mersad Delic",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Chief Radiographer"
+                location="Gold Coast, AU"
+                bio="Masters in Diagnostic Radiology with Bachelor of Biomedical Science (Hons). Expert in advanced imaging techniques and leads the radiography team in delivering precise diagnostic results."
+                imageUrl="/images/mersad-delic.webp"
               />
 
               <StaffCard
-                testID={`${testID}.lorraine`}
                 name="Lorraine Landles"
-                role="Clinical Assistant"
-                qualifications={[]}
-                biography={[]}
-                image={{
-                  src: "/images/lorraine-landles.webp",
-                  alt: "Lorraine Landles",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Clinical Assistant"
+                location="Gold Coast, AU"
+                bio="Dedicated clinical assistant providing essential support to our medical team. Ensures patient comfort and assists with various clinical procedures and administrative tasks."
+                imageUrl="/images/lorraine-landles.webp"
               />
 
               <StaffCard
-                testID={`${testID}.chloe`}
                 name="Chloe Glen"
-                role="Clinical Assistant"
-                qualifications={[]}
-                biography={[]}
-                image={{
-                  src: "/images/chloe-glen.webp",
-                  alt: "Chloe Glen",
-                  width: 400,
-                  height: 400,
-                }}
+                title="Clinical Assistant"
+                location="Gold Coast, AU"
+                bio="Compassionate clinical assistant focused on patient care and support. Works closely with the medical team to ensure efficient clinic operations and positive patient experiences."
+                imageUrl="/images/chloe-glen.webp"
               />
-            </BlockLayout>
+            </div>
           </Card>
         </div>
       </main>

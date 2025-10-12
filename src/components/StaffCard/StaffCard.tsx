@@ -1,76 +1,57 @@
-import { Card } from "src/elements/Card/Card";
-import styles from "./StaffCard.module.css";
-import { InlineLayout } from "src/elements/InlineLayout/InlineLayout";
-import Image from "next/image";
-import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
-import { Heading, Text } from "src/elements/Text/Text";
+"use client";
 
-interface StaffCardProps extends Common.ComponentProps {
+import type React from "react";
+import Image from "next/image";
+import styles from "./StaffCard.module.css";
+
+export interface StaffCardProps {
   name: string;
-  role: string;
-  qualifications: string[];
-  biography: string[];
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  title: string;
+  location: string;
+  bio: string;
+  imageUrl: string;
 }
 
-export const StaffCard = ({
-  testID,
+export const StaffCard: React.FC<StaffCardProps> = ({
   name,
-  role,
-  qualifications,
-  biography,
-  image,
-}: StaffCardProps) => {
+  title,
+  location,
+  bio,
+  imageUrl,
+}) => {
   return (
-    <Card testID={`${testID}.staff-card`} className={styles.teamMemberCard}>
-      <InlineLayout testID={`${testID}.layout`} spacing={"loose"}>
-        <div className={styles.teamMemberWithImage}>
+    <div className={styles.cardContainer}>
+      <div className={styles.card}>
+        <div className={styles.imageSection}>
           <Image
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            className={styles.memberImage}
+            src={imageUrl || "/placeholder.svg"}
+            alt={name}
+            className={styles.image}
+            width={400}
+            height={400}
           />
         </div>
-        <BlockLayout testID={`${testID}.bio-layout`}>
-          <div className={styles.memberInfo}>
-            <div className={styles.teamMemberHeader}>
-              <Heading testID={`${testID}.name`} className={styles.memberName}>
-                {name}
-              </Heading>
-              <Text testID={`${testID}.role`} className={styles.memberRole}>
-                {role}
-              </Text>
+
+        <div className={styles.contentSection}>
+          <div className={styles.header}>
+            <Image
+              src={imageUrl || "/placeholder.svg"}
+              alt={name}
+              className={styles.avatar}
+              width={60}
+              height={60}
+            />
+            <div className={styles.headerText}>
+              <h2 className={styles.name}>{name}</h2>
+              <p className={styles.subtitle}>
+                {title} <span className={styles.dot}>•</span> {location}
+              </p>
             </div>
           </div>
 
-          <div className={styles.qualifications}>
-            {qualifications.map((qualification, index) => (
-              <Text
-                key={index}
-                testID={`${testID}.qual${index + 1}`}
-                className={styles.qualification}
-              >
-                {qualification}
-              </Text>
-            ))}
-          </div>
-
-          <div className={styles.biography}>
-            {biography.map((paragraph, index) => (
-              <Text key={index} testID={`${testID}.bio${index + 1}`}>
-                {paragraph}
-              </Text>
-            ))}
-          </div>
-        </BlockLayout>
-      </InlineLayout>
-    </Card>
+          <p className={styles.bio}>{bio}</p>
+        </div>
+      </div>
+    </div>
   );
 };
