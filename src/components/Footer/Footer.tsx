@@ -73,7 +73,7 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
           <div className={styles.panel}>
             <Link href="/" className={styles.logo}>
               <Image
-                src="/svg/ipgc_logo.svg"
+                src="/svg/logo.png"
                 alt="Interventional Pain GC"
                 width={300}
                 height={100}

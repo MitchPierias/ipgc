@@ -14,83 +14,88 @@ export default async function ResultsPortal() {
     >
       <Header />
       <main role="main" className={styles.container}>
-        <Heading testID={`${testID}.title`} className={styles.title}>
-          RESULTS PORTAL
-        </Heading>
-        <Panel testID={`${testID}.panel`} variant="glass">
-          <div className={styles.panelContent}>
-            <Subtitle testID={`${testID}.subtitle`} className={styles.subtitle}>
-              IPGC/WiSERadiology InteleConnect for Clinicians
-            </Subtitle>
-
-            <Paragraph
-              testID={`${testID}.description`}
-              className={styles.description}
-            >
-              InteleConnect is a no install, secure, web-portal which can be
-              accessed from any browser, on any device.
-            </Paragraph>
-
-            <Paragraph
-              testID="inteleconnect-features"
-              className={styles.features}
-            >
-              View images and reports instantly and 24/7. Email notifications
-              can be set up to alert you when reports have been completed.
-            </Paragraph>
-
-            <div className={styles.loginButtonContainer}>
-              <Button
-                testID="inteleconnect-login"
-                variant="primary"
-                href="https://img.wisemedical.com.au/"
-                target="_blank"
-                rel="noopener noreferrer"
+        <div className={styles.wrapper}>
+          <Heading testID={`${testID}.title`} className={styles.title}>
+            Results Portal
+          </Heading>
+          <Panel testID={`${testID}.panel`} variant="glass">
+            <div className={styles.panelContent}>
+              <Subtitle
+                testID={`${testID}.subtitle`}
+                className={styles.subtitle}
               >
-                Inteleconnect LOGIN
-              </Button>
-            </div>
+                IPGC/WiSERadiology InteleConnect for Clinicians
+              </Subtitle>
 
-            <div className={styles.newUserSection}>
               <Paragraph
                 testID={`${testID}.description`}
-                className={styles.newUserText}
+                className={styles.description}
               >
-                New user? To request InteleConnect access please follow the link
-                below:
+                InteleConnect is a no install, secure, web-portal which can be
+                accessed from any browser, on any device.
               </Paragraph>
 
-              <Button
-                testID={`${testID}.request`}
-                variant="secondary"
-                href="https://wiseradiology.com.au/Portal/app#/terms-of-service/accept"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Paragraph
+                testID="inteleconnect-features"
+                className={styles.features}
               >
-                Request inteleconnect access
-              </Button>
-            </div>
-          </div>
-        </Panel>
-        <div className={styles.additionalInfo}>
-          <Panel testID="additional-info-panel">
-            <div className={styles.supportInfo}>
-              <Text
-                testID="portal-info"
-                component="p"
-                className={styles.supportText}
-              >
-                For technical support or assistance with accessing the results
-                portal, please contact our support team at{" "}
-                <a
-                  href="mailto:support@ipgc.com.au"
-                  className={styles.supportLink}
+                View images and reports instantly and 24/7. Email notifications
+                can be set up to alert you when reports have been completed.
+              </Paragraph>
+
+              <div className={styles.loginButtonContainer}>
+                <Button
+                  testID="inteleconnect-login"
+                  variant="primary"
+                  href="https://img.wisemedical.com.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  support@ipgc.com.au
-                </a>
-              </Text>
+                  Inteleconnect LOGIN
+                </Button>
+              </div>
+
+              <div className={styles.newUserSection}>
+                <Paragraph
+                  testID={`${testID}.description`}
+                  className={styles.newUserText}
+                >
+                  New user? To request InteleConnect access please follow the
+                  link below:
+                </Paragraph>
+
+                <Button
+                  testID={`${testID}.request`}
+                  variant="secondary"
+                  href="https://wiseradiology.com.au/Portal/app#/terms-of-service/accept"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Request inteleconnect access
+                </Button>
+              </div>
             </div>
           </Panel>
+          <div className={styles.additionalInfo}>
+            <Panel testID="additional-info-panel">
+              <div className={styles.supportInfo}>
+                <Text
+                  testID="portal-info"
+                  component="p"
+                  className={styles.supportText}
+                >
+                  For technical support or assistance with accessing the results
+                  portal, please contact our support team at{" "}
+                  <a
+                    href="mailto:support@ipgc.com.au"
+                    className={styles.supportLink}
+                  >
+                    support@ipgc.com.au
+                  </a>
+                </Text>
+              </div>
+            </Panel>
+          </div>
         </div>
       </main>
       <Footer testID="footer" />

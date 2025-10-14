@@ -26,7 +26,7 @@ export default function PatientPortalPage() {
               </Text>
             </BlockLayout>
 
-            <GridLayout testID={`${testID}.grid`} spacing="md">
+            <GridLayout testID={`${testID}.grid`}>
               <Card testID={`${testID}.rfa-fact-sheet`}>
                 <BlockLayout testID={`${testID}.rfa-layout`} spacing={"tight"}>
                   <Heading testID={`${testID}.rfa-title`}>

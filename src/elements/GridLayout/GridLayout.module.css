@@ -3,14 +3,34 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-.spacing-sm {
+.spacing-none {
+    gap: 0;
+}
+
+.spacing-tight {
     gap: 0.5rem;
 }
 
-.spacing-md {
-    gap: 2rem;
+.spacing-base {
+    gap: 1rem;
 }
 
-.spacing-lg {
+.spacing-loose {
     gap: 3rem;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.padding-tight {
+    padding: 0.5rem;
+}
+
+.padding-base {
+    padding: 1rem;
+}
+
+.padding-loose {
+    padding: 3rem;
 }

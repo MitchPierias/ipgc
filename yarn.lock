@@ -2285,15 +2285,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-onboarding@npm:^9.0.17":
-  version: 9.1.8
-  resolution: "@storybook/addon-onboarding@npm:9.1.8"
-  peerDependencies:
-    storybook: ^9.1.8
-  checksum: 10c0/b9152be763eac56c6edbade5363b99b3466c41df53881f5b5271670eb64156b1c729dbb197152dfabb0fcd87bbacd3abc9bb646d65a7ff71282f9fa6787c6c0a
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-vitest@npm:^9.0.17":
   version: 9.1.8
   resolution: "@storybook/addon-vitest@npm:9.1.8"
@@ -8513,7 +8504,6 @@ __metadata:
     "@storyblok/react": "npm:^5.4.1"
     "@storybook/addon-a11y": "npm:^9.0.17"
     "@storybook/addon-docs": "npm:^9.0.17"
-    "@storybook/addon-onboarding": "npm:^9.0.17"
     "@storybook/addon-vitest": "npm:^9.0.17"
     "@storybook/nextjs-vite": "npm:^9.0.17"
     "@tailwindcss/typography": "npm:^0.5.15"

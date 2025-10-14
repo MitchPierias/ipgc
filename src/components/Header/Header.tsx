@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
     <header id="header" role="banner" className={styles.frame}>
       <Link href="/" className={styles.logo}>
         <Image
-          src="/svg/ipgc_logo.svg"
+          src="/svg/logo.png"
           alt="Interventional Pain GC"
           width={300}
           height={100}

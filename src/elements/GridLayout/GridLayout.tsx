@@ -3,11 +3,14 @@ import clsx from "classnames";
 
 interface GridLayoutProps extends Common.ComponentProps {
   className?: string;
-  spacing?: "sm" | "md" | "lg";
+  spacing?: "none" | "tight" | "base" | "loose";
+  padding?: "none" | "tight" | "base" | "loose";
 }
 
 export const GridLayout = ({
   testID,
+  spacing = "base",
+  padding = "base",
   ...props
 }: React.PropsWithChildren<GridLayoutProps>) => {
   return (
@@ -16,7 +19,8 @@ export const GridLayout = ({
       className={clsx(
         styles.frame,
         props.className,
-        styles[`spacing-${props.spacing}`]
+        styles[`spacing-${spacing}`],
+        styles[`padding-${padding}`]
       )}
     >
       {props.children}
