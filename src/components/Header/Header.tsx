@@ -15,11 +15,8 @@ export const Header: React.FC = () => {
 
   const navigationItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Referral Form", href: "/referral" },
-    { label: "Patient Portal", href: "/patient-portal" },
-    { label: "Results Portal", href: "/results-portal" },
+    { label: "Patient", href: "/patient" }, // Services, FAQ, Patient portal
+    { label: "Doctor", href: "/doctor" }, // Referral Form, Results Portal
     { label: "About", href: "/about" },
     { label: "Contact Us", href: "/contact" },
   ];

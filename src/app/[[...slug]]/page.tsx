@@ -5,9 +5,14 @@ import { getStoryblokApi } from "src/lib/storyblok";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel";
 import { Panel } from "src/blocks/Panel/Panel";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
-import { Heading, Text } from "src/elements/Text/Text";
+import { Heading, Subtitle, Text } from "src/elements/Text/Text";
 import { BlockIcon } from "src/elements/Icons/BlockIcon";
 import styles from "./page.module.css";
+import { Section } from "src/blocks/Section/Section";
+import { Button } from "src/elements/Buttons/Button";
+import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
+import { Leading } from "../../elements/Text/Text";
+import { Typewriter } from "~/components/Typewriter/Typewriter";
 
 export default async function Page({
   params,
@@ -28,7 +33,7 @@ export default async function Page({
       <Header />
       <main role="main">
         <StoryblokStory story={data.story} />
-        <ParallaxStack testID="parallax-stack">
+        {/* <ParallaxStack testID="parallax-stack">
           <Panel testID="panel" variant={"glass"}>
             <div style={{ width: "2rem", height: "2rem" }}>
               <BlockIcon />
@@ -71,7 +76,26 @@ export default async function Page({
             subtitle={"Our World-class Gold Coast Facility"}
             variant={"invert"}
           />
-        </ScrollWheel>
+        </ScrollWheel> */}
+        <Section
+          testID="section"
+          media={{
+            type: "image",
+            format: "jpg",
+            src: "/images/WBMRI-34.jpg",
+          }}
+          width="full"
+        >
+          <Typewriter
+            testID="typewriter"
+            title="The team you can trust."
+            subtitle="We have recruited a team of doctors with the highest level of expertise."
+            action={{
+              label: "About us",
+              href: "/about",
+            }}
+          />
+        </Section>
       </main>
       <Footer testID="footer" />
     </div>
