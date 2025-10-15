@@ -16,19 +16,13 @@ interface NavigationItem {
   children?: NavigationItem[];
 }
 
-interface NavigationSection {
-  title: string;
-  items: NavigationItem[];
-}
-
 export const Header = () => {
   const pathname = usePathname();
 
   const navigationItems = [
     { label: "Home", href: "/" },
-    { label: "Patient", href: "/patient" },
-    { label: "Doctor", href: "/doctor" },
     { label: "About", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -58,13 +52,13 @@ export const Header = () => {
         <div className={clsx(styles.overlay, styles.menu)}>
           <ul>
             <li>
-              <Link href="/" className={styles.link}>
-                Something
+              <Link href="/doctor" className={styles.link}>
+                Doctor
               </Link>
             </li>
             <li>
-              <Link href="/contact" className={styles.link}>
-                Contact Us
+              <Link href="/patient" className={styles.link}>
+                Patient
               </Link>
             </li>
           </ul>
