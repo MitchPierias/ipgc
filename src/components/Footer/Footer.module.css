@@ -17,6 +17,17 @@
 .logo {
     display: flex;
     align-items: center;
+    color: white;
+    height: 46px;
+
+    svg,
+    img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        fill: currentColor;
+        transition: fill 200ms ease;
+    }
 }
 
 .logoImage {

@@ -52,6 +52,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Moderna';
+    src: url('/fonts/moderna/Moderna.TTF') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 @layer base {
     html {
         font-family: 'Aeonik', system-ui, sans-serif;
@@ -74,6 +82,10 @@
 
     .ff-aeonik {
         font-family: 'Aeonik', system-ui, sans-serif;
+    }
+
+    .ff-moderna {
+        font-family: 'Moderna', system-ui, sans-serif;
     }
 
     /* Global utility classes that don't belong to specific components */

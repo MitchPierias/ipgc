@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
@@ -8,78 +8,45 @@ import Image from "next/image";
 import { CrossIcon } from "src/elements/Icons/CrossIcon";
 import { MenuIcon } from "src/elements/Icons";
 import clsx from "classnames";
+import { Logo } from "src/elements/Logo/Logo";
 
-export const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface NavigationItem {
+  label: string;
+  href?: string;
+  children?: NavigationItem[];
+}
+
+interface NavigationSection {
+  title: string;
+  items: NavigationItem[];
+}
+
+export const Header = () => {
   const pathname = usePathname();
 
   const navigationItems = [
     { label: "Home", href: "/" },
-    { label: "Patient", href: "/patient" }, // Services, FAQ, Patient portal
-    { label: "Doctor", href: "/doctor" }, // Referral Form, Results Portal
+    { label: "Patient", href: "/patient" },
+    { label: "Doctor", href: "/doctor" },
     { label: "About", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
-    <header id="header" role="banner" className={styles.frame}>
-      <Link href="/" className={styles.logo}>
-        <Image
-          src="/svg/logo.png"
-          alt="Interventional Pain GC"
-          width={300}
-          height={100}
-        />
-      </Link>
-
-      <div className={styles.controls}>
-        <nav
-          className={styles.nav}
-          itemScope
-          itemType="https://schema.org/SiteNavigationElement"
-        >
-          <ul>
-            {navigationItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={clsx(
-                    styles.navLink,
-                    pathname === item.href && styles.active
-                  )}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Mobile Controls */}
-        <div className={styles.mobileControls}>
-          <button
-            className={styles.hamburger}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <CrossIcon size={24} /> : <MenuIcon />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <nav className={styles.mobileNav}>
-            <ul className={styles.mobileNavList}>
+    <div className={styles.frame}>
+      <div className={styles.layout}>
+        <div className={clsx(styles.overlay, styles.menu, styles.padded)}>
+          <Link href="/" className={styles.logo}>
+            <Logo testID="logo" />
+          </Link>
+          <nav>
+            <ul className={styles.dense}>
               {navigationItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={clsx(
-                      styles.mobileNavLink,
-                      pathname === item.href && styles.mobileNavLinkActive
-                    )}
-                    onClick={() => setIsMenuOpen(false)}
+                    className={clsx(styles.link, {
+                      [styles.selected]: item.href === pathname,
+                    })}
                   >
                     {item.label}
                   </Link>
@@ -88,7 +55,21 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
-      )}
-    </header>
+        <div className={clsx(styles.overlay, styles.menu)}>
+          <ul>
+            <li>
+              <Link href="/" className={styles.link}>
+                Something
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className={styles.link}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };

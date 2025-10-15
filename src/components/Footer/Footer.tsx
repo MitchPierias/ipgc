@@ -12,6 +12,7 @@ import {
   REFERRAL_FORM_PATH,
   REFERRAL_FORM_DOWNLOAD_NAME,
 } from "src/constants/app";
+import { Logo } from "src/elements/Logo/Logo";
 
 interface FooterProps extends Common.ComponentProps {}
 
@@ -72,12 +73,7 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
         <div className={styles.footerBottom}>
           <div className={styles.panel}>
             <Link href="/" className={styles.logo}>
-              <Image
-                src="/svg/logo.png"
-                alt="Interventional Pain GC"
-                width={300}
-                height={100}
-              />
+              <Logo testID="logo" />
             </Link>
             <Link href="/privacy-policy" className={styles.link}>
               Privacy Policy
