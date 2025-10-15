@@ -70,30 +70,36 @@
     display: flex;
     align-items: center;
     color: rgb(var(--color-black));
-    padding: 0.4rem;
+    padding: 0.6rem;
 
     &.padded {
-        padding: 1.6rem;
-        gap: 1.6rem;
+        padding: 1.4rem;
+        gap: 2.4rem;
     }
 
     ul {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        height: 100%;
     }
 
     ul li {
         list-style: none;
+        height: 100%;
+        display: flex;
     }
 }
 
 .link {
     position: relative;
-    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 6px 14px;
     font-family: 'Aeonik', system-ui, sans-serif;
     border-radius: 100vw;
-    font-size: 1.1rem;
+    font-size: 1.025rem;
     font-weight: 500;
     color: rgb(var(--color-black));
     line-height: 140%;

@@ -27,7 +27,7 @@ export default async function Page({
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
-      <main role="main">
+      <main role="main" style={{ marginTop: "-162px" }}>
         <StoryblokStory story={data.story} />
         <ParallaxStack testID="parallax-stack">
           <Panel testID="panel" variant={"glass"}>
