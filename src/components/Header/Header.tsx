@@ -49,7 +49,7 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className={clsx(styles.overlay, styles.menu)}>
+        <div className={clsx(styles.overlay, styles.menu, styles.toggle)}>
           <ul>
             <li>
               <Link href="/doctor" className={styles.link}>
@@ -57,7 +57,7 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/patient" className={styles.link}>
+              <Link href="/patient" className={clsx(styles.link, styles.solid)}>
                 Patient
               </Link>
             </li>

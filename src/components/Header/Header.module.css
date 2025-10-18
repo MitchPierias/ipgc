@@ -95,6 +95,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     padding: 6px 14px;
     font-family: 'Aeonik', system-ui, sans-serif;
@@ -114,5 +115,29 @@
     &.selected {
         color: rgb(var(--color-white));
         background-color: rgb(var(--color-primary));
+    }
+
+    &.solid {
+        background-color: white;
+        border-color: transparent;
+    }
+}
+
+.toggle {
+    .link {
+        width: 100%;
+        padding: 14px 46px;
+    }
+
+    ul li {
+        transition: width 200ms ease;
+    }
+
+    ul:hover li {
+        width: 0%;
+    }
+
+    ul li:hover {
+        width: 100%;
     }
 }

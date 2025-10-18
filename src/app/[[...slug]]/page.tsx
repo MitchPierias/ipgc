@@ -78,7 +78,7 @@ export default async function Page({
           media={{
             type: "image",
             format: "jpg",
-            src: "/images/WBMRI-34.jpg",
+            src: "/images/IPGC-TEAM-3.png",
           }}
           width="full"
         >
