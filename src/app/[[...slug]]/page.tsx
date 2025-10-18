@@ -9,6 +9,7 @@ import { Heading, Text } from "src/elements/Text/Text";
 import { BlockIcon } from "src/elements/Icons/BlockIcon";
 import { Section } from "src/blocks/Section/Section";
 import { Typewriter } from "~/components/Typewriter/Typewriter";
+import Image from "next/image";
 
 export default async function Page({
   params,
@@ -73,25 +74,16 @@ export default async function Page({
             variant={"invert"}
           />
         </ScrollWheel>
-        <Section
-          testID="section"
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/team-background.jpg",
+
+        <Typewriter
+          testID="typewriter"
+          title="The team you can trust."
+          subtitle="We have recruited a team of doctors with the highest level of expertise."
+          action={{
+            label: "About us",
+            href: "/about",
           }}
-          width="full"
-        >
-          <Typewriter
-            testID="typewriter"
-            title="The team you can trust."
-            subtitle="We have recruited a team of doctors with the highest level of expertise."
-            action={{
-              label: "About us",
-              href: "/about",
-            }}
-          />
-        </Section>
+        />
       </main>
       <Footer testID="footer" />
     </div>

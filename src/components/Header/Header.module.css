@@ -73,7 +73,7 @@
     padding: 0.6rem;
 
     &.padded {
-        padding: 1.4rem;
+        padding: 1.1rem;
         gap: 2.4rem;
     }
 
@@ -126,7 +126,7 @@
 .toggle {
     .link {
         width: 100%;
-        padding: 14px 46px;
+        padding: 14px 32px;
     }
 
     ul li {
