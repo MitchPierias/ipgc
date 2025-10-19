@@ -21,6 +21,7 @@ interface TypewriterProps extends Common.ElementProps {
 
 export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [midgroundLoaded, setMidgroundLoaded] = useState(false);
   return (
     <Section
       testID="section"
@@ -31,6 +32,18 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
       }}
       width="full"
     >
+      <div className={styles.midground}>
+        <Image
+          src="/images/team-midground.png"
+          alt="Team"
+          width={1755}
+          height={1000}
+          className={clsx(styles.image, {
+            [styles.loaded]: midgroundLoaded,
+          })}
+          onLoad={() => setMidgroundLoaded(true)}
+        />
+      </div>
       <div data-testid={testID} className={styles.frame}>
         <BlockLayout
           testID={`${testID}-layout`}

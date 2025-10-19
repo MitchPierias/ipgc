@@ -15,6 +15,14 @@
     z-index: 5;
 }
 
+.midground {
+    position: absolute;
+    inset: 0;
+    object-fit: fill;
+    z-index: 0;
+    outline: 2px dashed red;
+}
+
 .image {
     object-fit: cover;
     width: 100%;
