@@ -39,10 +39,7 @@ export const ParallaxVideoSection = ({
       {/* Background Video Layer */}
       <div className={styles.container}>
         <video className={styles.video} playsInline autoPlay muted loop>
-          <source
-            src="/mp4/whole-body-mri-journey-into-the-known.mp4"
-            type={`video/mp4`}
-          />
+          <source src="/mp4/landing-video.mp4" type={`video/mp4`} />
           Your browser does not support the video tag.
         </video>
         <div className={styles.overlay} />

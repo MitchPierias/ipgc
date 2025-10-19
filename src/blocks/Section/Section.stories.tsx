@@ -115,7 +115,7 @@ export const WithVideo: Story = {
     media: {
       type: "video",
       format: "mp4",
-      src: "/mp4/whole-body-mri-journey-into-the-known.mp4",
+      src: "/mp4/landing-video.mp4",
     },
   },
   render: (args) => (

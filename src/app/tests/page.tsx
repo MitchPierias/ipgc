@@ -30,7 +30,7 @@ export default function HomePage() {
             media={{
               type: "video",
               format: "mp4",
-              src: "https://ipgc.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4",
+              src: "https://ipgc.com.au/wp-content/uploads/2024/11/landing-video.mp4",
             }}
             testID={"parallax-video-section"}
           >
@@ -94,7 +94,7 @@ export default function HomePage() {
             media={{
               type: "video",
               format: "mp4",
-              src: "https://ipgc.com.au/wp-content/uploads/2024/11/whole-body-mri-journey-into-the-known.mp4",
+              src: "https://ipgc.com.au/wp-content/uploads/2024/11/landing-video.mp4",
             }}
           >
             <DualPanel testID="hero-section">

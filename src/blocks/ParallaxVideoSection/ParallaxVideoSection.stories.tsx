@@ -41,7 +41,7 @@ export const Default: Story = {
   args: {
     media: {
       type: "video",
-      src: "/mp4/whole-body-mri-journey-into-the-known.mp4",
+      src: "/mp4/landing-video.mp4",
     },
     backgroundSpeed: 0.2,
     contentSpeed: 0.6,

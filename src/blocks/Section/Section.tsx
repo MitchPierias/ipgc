@@ -33,10 +33,7 @@ export const Section = ({
     >
       {props.media?.type === "video" && (
         <video className={styles.video} playsInline autoPlay muted loop>
-          <source
-            src="/mp4/whole-body-mri-journey-into-the-known.mp4"
-            type={`video/mp4`}
-          />
+          <source src="/mp4/landing-video.mp4" type={`video/mp4`} />
         </video>
       )}
       {props.children}
