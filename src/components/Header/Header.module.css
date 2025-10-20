@@ -124,20 +124,30 @@
 }
 
 .toggle {
-    .link {
-        width: 100%;
-        padding: 14px 32px;
+    display: none;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    ul {
+        position: relative;
+        overflow: visible;
     }
 
     ul li {
-        transition: width 200ms ease;
+        flex-shrink: 0;
+        transition:
+            width 320ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 320ms cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: width, transform, opacity;
+        overflow: hidden;
     }
 
-    ul:hover li {
-        width: 0%;
-    }
-
-    ul li:hover {
+    .link {
         width: 100%;
+        padding: 14px 32px;
+        white-space: nowrap;
     }
 }
