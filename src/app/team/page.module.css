@@ -1,0 +1,52 @@
+.container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+}
+
+.wrapper {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    padding-block: 3rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
+
+.staffGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Desktop and larger displays - 2 columns */
+@media (min-width: 768px) {
+    .staffGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Large desktop - maintain 2 columns with more spacing */
+@media (min-width: 1024px) {
+    .staffGrid {
+        gap: 3rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wrapper {
+        max-width: 100%;
+        padding: 1rem;
+        padding-top: 5rem;
+    }
+
+    .staffGrid {
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+}

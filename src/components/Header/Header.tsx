@@ -21,8 +21,10 @@ export const Header = () => {
 
   const navigationItems = [
     { label: "Home", href: "/" },
+    { label: "Patient", href: "/patient" },
+    { label: "Doctor", href: "/doctor" },
     { label: "About", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Team", href: "/team" },
   ];
 
   return (
@@ -52,13 +54,13 @@ export const Header = () => {
         <div className={clsx(styles.overlay, styles.menu, styles.toggle)}>
           <ul>
             <li>
-              <Link href="/doctor" className={styles.link}>
-                Doctor
+              <Link href="/locations" className={styles.link}>
+                Locations
               </Link>
             </li>
             <li>
-              <Link href="/patient" className={clsx(styles.link, styles.solid)}>
-                Patient
+              <Link href="/contact" className={clsx(styles.link, styles.solid)}>
+                Contact
               </Link>
             </li>
           </ul>
