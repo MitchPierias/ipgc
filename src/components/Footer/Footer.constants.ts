@@ -1,12 +1,10 @@
 export const navigationItems = [
+  { label: "Home", href: "/" },
+  { label: "Patient", href: "/patient" },
+  { label: "Doctor", href: "/doctor" },
   { label: "About", href: "/about" },
-  { label: "Packages", href: "/packages" },
-  { label: "Reports", href: "/our-reports" },
-  { label: "Experience", href: "/your-experience" },
-  { label: "Technology", href: "/our-technology" },
-  { label: "Difference", href: "/our-difference" },
-  { label: "Resources", href: "/resources" },
-  { label: "FAQ", href: "/frequently-asked-questions" },
+  { label: "Team", href: "/team" },
+  { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ];
 
