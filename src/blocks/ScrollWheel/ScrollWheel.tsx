@@ -58,8 +58,8 @@ export const ScrollWheel = ({
   // Calculate positions for each item around the configurable arc
   const getItemPosition = (index: number, total: number) => {
     // Start from top of circle (90°) and go clockwise
-    // Map index from 0 to total-1 across the startAngle to endAngle range
-    const progress = index / (total - 1);
+    // Map index from 0 to total-1 across the startAngle to endAngle range (inverted)
+    const progress = (total - 1 - index) / (total - 1);
     const angle = startAngle + progress * (endAngle - startAngle);
 
     // Convert to radians for trigonometry
