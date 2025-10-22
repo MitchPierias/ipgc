@@ -1,11 +1,16 @@
 .frame {
     position: relative;
     grid-column: content;
-    grid-row: content;
+    grid-row: full;
     gap: var(--size-500);
     padding: var(--size-500);
     max-height: 100%;
     color: white;
+
+    display: grid;
+    grid-template-rows: minmax(50%, auto) 1fr;
+    grid-template-columns: auto;
+    align-items: center;
 }
 
 .foreground {
@@ -34,4 +39,48 @@
 .image.loaded {
     opacity: 1;
     filter: blur(0);
+}
+
+.content {
+    padding-top: 64px;
+}
+
+.actions {
+    align-self: self-start;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    transform: translateX(0%) translateY(100%);
+    transition: opacity 0.3s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.actions.visible {
+    opacity: 1;
+    transform: translateX(0%) translateY(0);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateX(0%) translateY(100%);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(0%) translateY(-10%);
+    }
+
+    80% {
+        transform: translateX(0%) translateY(5%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) translateY(0);
+    }
+}
+
+.actions.animate {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
