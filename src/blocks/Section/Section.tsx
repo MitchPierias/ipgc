@@ -1,5 +1,6 @@
 import styles from "./Section.module.css";
 import clsx from "classnames";
+import { forwardRef } from "react";
 
 interface SectionProps extends Common.ComponentProps {
   media?: {
@@ -12,13 +13,13 @@ interface SectionProps extends Common.ComponentProps {
   padded?: boolean;
 }
 
-export const Section = ({
-  testID,
-  padded = false,
-  ...props
-}: React.PropsWithChildren<SectionProps>) => {
+export const Section = forwardRef<
+  HTMLElement,
+  React.PropsWithChildren<SectionProps>
+>(({ testID, padded = false, ...props }, ref) => {
   return (
     <section
+      ref={ref}
       data-testid={testID}
       className={clsx(
         styles.frame,
@@ -39,4 +40,6 @@ export const Section = ({
       {props.children}
     </section>
   );
-};
+});
+
+Section.displayName = "Section";
