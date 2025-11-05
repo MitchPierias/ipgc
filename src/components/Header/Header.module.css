@@ -7,6 +7,10 @@
     background-color: transparent;
     z-index: 100;
 
+    ul li {
+        list-style: none;
+    }
+
     @media (min-width: 768px) {
         padding: 40px;
     }
@@ -24,8 +28,11 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    height: 34px;
-    align-items: center;
+    height: 22px;
+
+    @media (min-width: 768px) {
+        height: 34px;
+    }
 
     img,
     svg {
@@ -77,17 +84,21 @@
         gap: 2.4rem;
     }
 
-    ul {
+    .list {
         display: flex;
         align-items: center;
-        /* gap: 0.5rem; */
-        height: 100%;
+        gap: 0.5rem;
     }
 
-    ul li {
-        list-style: none;
+    .item {
         height: 100%;
         display: flex;
+    }
+
+    nav {
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 }
 
@@ -120,34 +131,5 @@
     &.solid {
         background-color: white;
         border-color: transparent;
-    }
-}
-
-.animated {
-    display: flex;
-    overflow: hidden;
-
-    ul {
-        display: flex;
-        flex-direction: row;
-        max-width: 100%;
-        overflow: visible;
-        gap: 0px;
-    }
-
-    li {
-        flex: 1 1 0%;
-        overflow: hidden;
-        transition: flex-basis 320ms cubic-bezier(0.4, 0, 0.2, 1), opacity 320ms cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: flex-basis, opacity;
-        opacity: 1;
-    }
-
-    .link {
-        width: 100%;
-    }
-
-    &:hover ul li:not(:hover) {
-        opacity: 0;
     }
 }

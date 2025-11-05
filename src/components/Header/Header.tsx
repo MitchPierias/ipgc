@@ -9,6 +9,7 @@ import { CrossIcon } from "src/elements/Icons/CrossIcon";
 import { MenuIcon } from "src/elements/Icons";
 import clsx from "classnames";
 import { Logo } from "src/elements/Logo/Logo";
+import { FocusFlexList } from "src/elements/FocusFlexList/FocusFlexList";
 
 interface NavigationItem {
   label: string;
@@ -35,9 +36,9 @@ export const Header = () => {
             <Logo testID="logo" />
           </Link>
           <nav>
-            <ul className={styles.dense}>
+            <ul className={clsx(styles.dense, styles.list)}>
               {navigationItems.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className={styles.item}>
                   <Link
                     href={item.href}
                     className={clsx(styles.link, {
@@ -52,53 +53,16 @@ export const Header = () => {
           </nav>
         </div>
         <div className={clsx(styles.overlay, styles.menu)}>
-          <ExpandableMenuItems />
+          <FocusFlexList testID="focus-flex-list">
+            <Link href="/locations" className={styles.link}>
+              Locations
+            </Link>
+            <Link href="/contact" className={clsx(styles.link, styles.solid)}>
+              Contact
+            </Link>
+          </FocusFlexList>
         </div>
       </div>
     </div>
-  );
-};
-
-const ExpandableMenuItems = () => {
-  // Refs for the button group
-  const leftButtonRef = useRef<HTMLLIElement>(null);
-  const rightButtonRef = useRef<HTMLLIElement>(null);
-  const containerRef = useRef<HTMLUListElement>(null);
-
-  const handleButtonHover = ({
-    currentTarget,
-  }: React.MouseEvent<HTMLLIElement>) => {
-    if (currentTarget.tagName !== "LI") return;
-    currentTarget.style.flexBasis = "100%";
-  };
-
-  const handleButtonBlur = ({
-    currentTarget,
-  }: React.MouseEvent<HTMLLIElement>) => {
-    if (currentTarget.tagName !== "LI") return;
-    currentTarget.style.flexBasis = "0%";
-  };
-
-  return (
-    <ul className={styles.animated}>
-      <li
-        ref={leftButtonRef}
-        onMouseEnter={handleButtonHover}
-        onMouseLeave={handleButtonBlur}
-      >
-        <Link href="/locations" className={styles.link}>
-          Locations
-        </Link>
-      </li>
-      <li
-        ref={rightButtonRef}
-        onMouseEnter={handleButtonHover}
-        onMouseLeave={handleButtonBlur}
-      >
-        <Link href="/contact" className={clsx(styles.link, styles.solid)}>
-          Contact
-        </Link>
-      </li>
-    </ul>
   );
 };
