@@ -24,6 +24,11 @@
     margin-inline: auto;
 }
 
+.menuOverlay {
+    position: fixed;
+    top: 0;
+}
+
 .logo {
     display: flex;
     gap: 8px;
@@ -70,6 +75,14 @@
             0 0 0 1px rgba(255, 255, 255, 0.25),
             -1px -1px 0 0px rgba(255, 255, 255, 0.45),
             1px 1px 0 0px rgba(0, 0, 0, 0.085);
+    }
+}
+
+.mobile {
+    color: rgb(var(--color-black));
+
+    @media (min-width: 768px) {
+        display: none;
     }
 }
 
@@ -120,12 +133,13 @@
     transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
 
     &:hover {
-        border-color: rgba(var(--color-primary) / 0.5);
+        border-color: rgba(var(--color-white) / 0.25);
+        background-color: rgba(var(--color-white) / 0.15);
     }
 
     &.selected {
-        color: rgb(var(--color-white));
-        background-color: rgb(var(--color-primary));
+        color: rgb(var(--color-black));
+        background-color: rgb(var(--color-white));
     }
 
     &.primary:hover {
