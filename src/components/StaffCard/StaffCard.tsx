@@ -21,8 +21,8 @@ export const StaffCard: React.FC<StaffCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className={styles.frame}>
-      <div className={styles.imageSection}>
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
         <Image
           src={imageUrl || "/placeholder.svg"}
           alt={name}
@@ -30,26 +30,24 @@ export const StaffCard: React.FC<StaffCardProps> = ({
           width={400}
           height={400}
         />
-
-        <div className={styles.header}>
-          <Image
-            src={imageUrl || "/placeholder.svg"}
-            alt={name}
-            className={styles.avatar}
-            width={60}
-            height={60}
-          />
-          <div className={styles.headerText}>
-            <Heading testID={`${name}.title`}>{name}</Heading>
-            <Text testID={`${name}.subtitle`}>
-              {title} <span className={styles.dot}>•</span> {location}
-            </Text>
-          </div>
-        </div>
       </div>
 
-      <div className={styles.contentSection}>
-        <p className={styles.bio}>{bio}</p>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <Heading testID={`${name}.title`} className={styles.name}>
+            {name}
+          </Heading>
+          <Text testID={`${name}.subtitle`} className={styles.title}>
+            {title}
+          </Text>
+          {location && (
+            <Text className={styles.location}>{location}</Text>
+          )}
+        </div>
+
+        {bio && (
+          <p className={styles.bio}>{bio}</p>
+        )}
       </div>
     </div>
   );
