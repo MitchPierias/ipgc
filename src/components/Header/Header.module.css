@@ -128,8 +128,14 @@
         background-color: rgb(var(--color-primary));
     }
 
-    &.solid {
-        background-color: white;
+    &.primary:hover {
+        background-color: rgb(var(--color-white));
+        border-color: transparent;
+    }
+
+    &.accent {
+        color: rgb(var(--color-white));
+        background-color: rgb(var(--color-accent));
         border-color: transparent;
     }
 }

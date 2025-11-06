@@ -54,10 +54,13 @@ export const Header = () => {
         </div>
         <div className={clsx(styles.overlay, styles.menu)}>
           <FocusFlexList testID="focus-flex-list">
-            <Link href="/locations" className={styles.link}>
+            <Link
+              href="/locations"
+              className={clsx(styles.link, styles.primary)}
+            >
               Locations
             </Link>
-            <Link href="/contact" className={clsx(styles.link, styles.solid)}>
+            <Link href="/contact" className={clsx(styles.link, styles.accent)}>
               Contact
             </Link>
           </FocusFlexList>
