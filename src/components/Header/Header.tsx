@@ -10,6 +10,8 @@ import { MenuIcon } from "src/elements/Icons";
 import clsx from "classnames";
 import { Logo } from "src/elements/Logo/Logo";
 import { FocusFlexList } from "src/elements/FocusFlexList/FocusFlexList";
+import { Button } from "src/elements/Buttons/Button";
+import { Menu } from "lucide-react";
 
 interface NavigationItem {
   label: string;
@@ -27,6 +29,8 @@ export const Header = () => {
     { label: "About", href: "/about" },
     { label: "Team", href: "/team" },
   ];
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className={styles.frame}>
@@ -64,8 +68,28 @@ export const Header = () => {
               Contact
             </Link>
           </FocusFlexList>
+          <Button
+            testID={`more`}
+            color={"tertiary"}
+            size={"sm"}
+            className={styles.mobile}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu size={24} />
+          </Button>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className={styles.menuOverlay}>
+          <ul className={styles.menuContent}>
+            {navigationItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
