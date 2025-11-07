@@ -1,0 +1,18 @@
+.frame {
+    position: relative;
+    margin-inline: auto;
+
+    outline: 2px dashed orange;
+}
+
+.content {
+    max-width: var(--layout-md);
+}
+
+.gutter {
+    max-width: var(--layout-lg);
+}
+
+.full {
+    max-width: 100%;
+}

@@ -30,12 +30,6 @@
     }
 }
 
-.logoImage {
-    width: 100%;
-    max-width: 420px;
-    vertical-align: bottom;
-}
-
 .leftColumn {
     display: flex;
     flex-direction: column;

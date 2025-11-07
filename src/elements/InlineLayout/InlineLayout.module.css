@@ -1,6 +1,8 @@
 .frame {
     display: flex;
     flex-direction: row;
+
+    outline: 1px dashed green;
 }
 
 .spacing-none {

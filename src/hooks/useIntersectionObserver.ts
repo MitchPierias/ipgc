@@ -12,13 +12,13 @@ interface UseIntersectionObserverOptions {
  * Memory-efficient intersection observer hook that reuses a single observer instance
  * across multiple components to minimize performance impact.
  */
-export function useIntersectionObserver({
+export function useIntersectionObserver<T extends HTMLElement>({
   threshold = 0.1,
   rootMargin = "0px 0px -5% 0px",
   triggerOnce = true,
 }: UseIntersectionObserverOptions = {}) {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<T>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {

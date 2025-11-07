@@ -7,9 +7,10 @@ import { Leading } from "src/elements/Text/Text";
 import styles from "./Typewriter.module.css";
 import clsx from "classnames";
 import Image from "next/image";
-import { Section } from "src/blocks/Section/Section";
 import { useState, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "src/hooks/useIntersectionObserver";
+import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel";
+import { ImageContainer } from "src/blocks/ImageContainer/ImageContainer";
 
 interface TypewriterProps extends Common.ElementProps {
   title: string;
@@ -83,7 +84,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   };
 
   return (
-    <Section
+    <ImageContainer
       ref={elementRef}
       testID="section"
       media={{
@@ -91,7 +92,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
         format: "jpg",
         src: "/images/team-background.jpg",
       }}
-      width="full"
+      size={"full"}
     >
       <div
         className={styles.midground}
@@ -110,9 +111,10 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           onLoad={() => setMidgroundLoaded(true)}
         />
       </div>
-      <div
-        data-testid={testID}
+      <LayoutPanel
+        testID={testID}
         className={styles.frame}
+        size={"content"}
         style={{
           transform: getParallaxTransform(40, 60), // Medium parallax, starts 60px down
         }}
@@ -143,7 +145,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
             </Button>
           </div>
         )}
-      </div>
+      </LayoutPanel>
       <div
         className={styles.foreground}
         style={{
@@ -161,6 +163,6 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           onLoad={() => setImageLoaded(true)}
         />
       </div>
-    </Section>
+    </ImageContainer>
   );
 };

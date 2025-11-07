@@ -1,6 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
-import { Section as SectionComponent } from "./Section";
-import { type DualPanelBlok } from "../DualPanel/DualPanel.transform";
+import { ImageContainer as ImageContainerComponent } from "./ImageContainer";
+import { LayoutPanel } from "../LayoutPanel/LayoutPanel.transform";
 
 export type StoryblokImageMeta = {
   id: number;
@@ -16,20 +16,19 @@ export type StoryblokImageMeta = {
   is_external_url: boolean;
 };
 
-type SectionBlok = {
+type ImageContainerContent = React.ComponentProps<typeof LayoutPanel>["blok"];
+
+type ImageContainerBlok = {
   background_image?: StoryblokImageMeta;
-  padded?: boolean;
-  size?: Common.Layout;
-  contents?: DualPanelBlok[];
+  contents?: ImageContainerContent[];
 };
 
-export const Section = ({ blok }: { blok: SectionBlok }) => {
+export const ImageContainer = ({
+  blok,
+}: Common.BlokProps<ImageContainerBlok>) => {
   return (
-    <SectionComponent
-      testID="section"
-      padded={blok.padded || false}
-      width={blok.size || "full"}
-      height={blok.size || "full"}
+    <ImageContainerComponent
+      testID="image-container"
       media={
         blok.background_image?.filename && blok.background_image.filename !== ""
           ? {
@@ -46,6 +45,6 @@ export const Section = ({ blok }: { blok: SectionBlok }) => {
       {blok.contents?.map((nestedBlok) => (
         <StoryblokComponent key={nestedBlok._uid} blok={nestedBlok} />
       ))}
-    </SectionComponent>
+    </ImageContainerComponent>
   );
 };

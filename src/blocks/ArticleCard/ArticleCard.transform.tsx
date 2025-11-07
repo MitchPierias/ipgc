@@ -1,16 +1,14 @@
 import { storyblokEditable } from "@storyblok/react";
-import { StoryblokImageMeta } from "../Section/Section.transform";
 import { ArticleCard as ArticleCardComponent } from "./ArticleCard";
 
-export type ArticleBlok = {
-  _uid: string;
+type ArticleBlok = {
   component: "ArticleCard";
   title: string;
   tags: string[];
-  media?: StoryblokImageMeta;
+  media?: Common.ImageBlock;
 };
 
-export const ArticleCard = ({ blok }: { blok: ArticleBlok }) => {
+export const ArticleCard = ({ blok }: Common.BlokProps<ArticleBlok>) => {
   return (
     <ArticleCardComponent
       testID={"article-card"}

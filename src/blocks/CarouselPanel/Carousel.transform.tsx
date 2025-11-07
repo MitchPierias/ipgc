@@ -1,15 +1,15 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { Carousel as CarouselComponent } from "./Carousel";
-import { ArticleBlok } from "../ArticleCard/ArticleCard.transform";
+import { ArticleCard } from "../ArticleCard/ArticleCard.transform";
 
 type CarouselBlok = {
   step_interval?: number; // Time between steps in milliseconds
   pause_on_hover?: boolean;
   transition_duration?: number; // Duration of each step transition in milliseconds
-  contents: ArticleBlok[];
+  contents: Common.PickBlockProps<typeof ArticleCard>[];
 };
 
-export const Carousel = ({ blok }: { blok: CarouselBlok }) => {
+export const Carousel = ({ blok }: Common.BlokProps<CarouselBlok>) => {
   return (
     <CarouselComponent
       testID="carousel"

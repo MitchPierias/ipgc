@@ -1,6 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { ParallaxVideoSection as Component } from "./ParallaxVideoSection";
-import { DualPanelBlok } from "../DualPanel/DualPanel.transform";
+import { LayoutPanel } from "../LayoutPanel/LayoutPanel.transform";
 
 export type ParallaxVideoSectionBlok = {
   _uid: string;
@@ -14,7 +14,7 @@ export type ParallaxVideoSectionBlok = {
   width: Common.Layout;
   height: Common.Layout;
   padded: boolean;
-  contents?: DualPanelBlok[];
+  contents?: Common.PickBlockProps<typeof LayoutPanel>[];
 };
 export const ParallaxVideoSection = ({
   blok,

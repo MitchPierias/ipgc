@@ -6,11 +6,7 @@ interface ArticleCardProps extends Common.ComponentProps {
   title: string;
   description?: string;
   tags?: string[];
-  media?: {
-    type: "image" | "video";
-    format: "jpg" | "jpeg" | "png" | "gif" | "mp4" | "webm" | string;
-    src: string;
-  };
+  media?: Common.Media;
 }
 
 export const ArticleCard = ({

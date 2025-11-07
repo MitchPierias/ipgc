@@ -1,7 +1,5 @@
 .frame {
     position: relative;
-    grid-column: content;
-    grid-row: full;
     gap: var(--size-500);
     padding: var(--size-500);
     max-height: 100%;

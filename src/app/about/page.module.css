@@ -17,19 +17,9 @@
 
 .staffGrid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
-}
-
-
-
-/* Desktop - 3 columns */
-@media (min-width: 1024px) {
-    .staffGrid {
-        grid-template-columns: repeat(auto-fit, max(260px, 1fr));
-        gap: 2.5rem;
-    }
 }
 
 /* Responsive adjustments */

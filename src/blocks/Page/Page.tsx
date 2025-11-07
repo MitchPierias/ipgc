@@ -1,13 +1,17 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import styles from "./Page.module.css";
 
-type PageBlok = {
-  _uid: string;
+interface PageBlok {
   component: "Page";
-  body: any[];
-};
+  body: Common.Blok[];
+}
 
-export const Page = ({ blok }: { blok: PageBlok }) => (
-  <main {...storyblokEditable(blok)}>
+export const Page = ({ blok }: Common.BlokProps<PageBlok>) => (
+  <main
+    data-testid={"page"}
+    className={styles.frame}
+    {...storyblokEditable(blok)}
+  >
     {blok.body.map((nestedBlok) => (
       <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
     ))}

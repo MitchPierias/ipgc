@@ -41,13 +41,13 @@ export const StaffCard: React.FC<StaffCardProps> = ({
             {title}
           </Text>
           {location && (
-            <Text className={styles.location}>{location}</Text>
+            <Text testID={`${name}.location`} className={styles.location}>
+              {location}
+            </Text>
           )}
         </div>
 
-        {bio && (
-          <p className={styles.bio}>{bio}</p>
-        )}
+        {bio && <p className={styles.bio}>{bio}</p>}
       </div>
     </div>
   );

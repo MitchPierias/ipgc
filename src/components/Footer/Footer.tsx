@@ -22,13 +22,12 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
       <div className={styles.wrap}>
         <div className={styles.topSection}>
           <div className={styles.leftColumn}>
-            <Link href="/" className={styles.logo}>
+            <Link href="/">
               <Image
-                src="https://ipgc.com.au/wp-content/uploads/2024/10/logo-text.svg"
+                src="/images/logo-footer.png"
                 alt="Interventional Pain GC"
                 width={420}
-                height={100}
-                className={styles.logoImage}
+                height={420}
               />
             </Link>
 
@@ -84,10 +83,7 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
           </div>
 
           <div className={styles.panel}>
-            <div className={clsx(styles.text, styles.tagline)}>
-              <span>Journey into</span>
-              <span>the known.</span>
-            </div>
+            <div className={clsx(styles.text, styles.tagline)}></div>
           </div>
         </div>
       </div>

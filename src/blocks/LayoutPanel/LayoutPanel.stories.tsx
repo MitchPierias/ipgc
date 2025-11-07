@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { DualPanel } from "./DualPanel";
+import { LayoutPanel } from "./LayoutPanel";
 import { Panel } from "../Panel/Panel";
 import { ArticleCard } from "../ArticleCard/ArticleCard";
 
-const meta: Meta<typeof DualPanel> = {
-  title: "Blocks/DualPanel",
-  component: DualPanel,
+const meta: Meta<typeof LayoutPanel> = {
+  title: "Blocks/LayoutPanel",
+  component: LayoutPanel,
   parameters: {
     layout: "fullscreen",
   },
@@ -14,10 +14,6 @@ const meta: Meta<typeof DualPanel> = {
     variant: {
       control: "select",
       options: ["card", "transparent"],
-    },
-    layout: {
-      control: "select",
-      options: ["content", "gutter", "full"],
     },
   },
 };
@@ -31,7 +27,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <div style={{ padding: "2rem" }}>
-      <DualPanel {...args}>
+      <LayoutPanel {...args}>
         <Panel
           testID="left-panel"
           title="Health Screening"
@@ -48,7 +44,7 @@ export const Default: Story = {
           buttonText="View Technology"
           variant="glass"
         />
-      </DualPanel>
+      </LayoutPanel>
     </div>
   ),
 };
@@ -59,7 +55,7 @@ export const CardVariant: Story = {
   },
   render: (args) => (
     <div style={{ padding: "2rem" }}>
-      <DualPanel {...args}>
+      <LayoutPanel {...args}>
         <ArticleCard
           testID="card-1"
           title="MRI Technology Advancement"
@@ -82,7 +78,7 @@ export const CardVariant: Story = {
             src: "/images/WBMRI-34.jpg",
           }}
         />
-      </DualPanel>
+      </LayoutPanel>
     </div>
   ),
 };
