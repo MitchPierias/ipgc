@@ -8,6 +8,7 @@ import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
 import { Heading, Text } from "src/elements/Text/Text";
 import { BlockIcon } from "src/elements/Icons/BlockIcon";
 import { Typewriter } from "~/components/Typewriter/Typewriter";
+import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
 
 export default async function Page({
   params,
@@ -28,6 +29,9 @@ export default async function Page({
       <Header />
       <main role="main">
         <StoryblokStory story={data.story} />
+
+        <MosaicLayout testID="mosaic-layout" />
+
         <ParallaxStack testID="parallax-stack">
           <Panel testID="panel" variant={"glass"}>
             <div style={{ width: "2rem", height: "2rem" }}>

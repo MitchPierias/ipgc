@@ -2,27 +2,36 @@
     grid-column: content;
     grid-row: content;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 21px;
-    gap: 21px;
-    min-height: 33vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1rem;
+    gap: 1rem;
 }
 
-.gutter {
-    grid-column: gutter;
-    grid-row: gutter;
-    min-height: 66vh;
-}
-
-.full {
-    grid-column: full;
-    grid-row: full;
-    min-height: 66vh;
-    max-width: 100%;
-}
 
 .item {
-    background-color: var(--color-background-secondary);
-    padding: 1rem;
     border-radius: 0.5rem;
+    outline: 2px dashed cyan;
+    position: relative;
+    overflow: hidden;
+
+    &>span {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &.portrait {
+        grid-row: span 2;
+    }
+
+    &.landscape {
+        grid-column: span 2;
+    }
 }
