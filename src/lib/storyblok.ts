@@ -12,7 +12,7 @@ import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
 import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection.transform";
 import { Typewriter } from "src/components/Typewriter/Typewriter";
 import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
-import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
+import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack.transform";
 import { ContentIcon } from "src/blocks/ContentIcon/ContentIcon.transform";
 import { ContentText } from "src/blocks/ContentText/ContentText.transform";
 

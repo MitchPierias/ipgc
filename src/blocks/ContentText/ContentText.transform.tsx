@@ -10,6 +10,7 @@ import {
 } from "src/elements/Text/Text";
 
 interface ContentTextBlok extends Common.Blok {
+  component: "ContentText";
   body: string;
   type?:
     | "leading"

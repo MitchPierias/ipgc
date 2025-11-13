@@ -1,6 +1,7 @@
 import { BlockIcon } from "src/elements/Icons/BlockIcon";
 
 interface ContentIconBlok extends Common.Blok {
+  component: "ContentIcon";
   icon: string;
 }
 
