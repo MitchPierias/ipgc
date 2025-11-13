@@ -16,7 +16,7 @@ export type StoryblokImageMeta = {
   is_external_url: boolean;
 };
 
-type ImageContainerContent = React.ComponentProps<typeof LayoutPanel>["blok"];
+type ImageContainerContent = Common.PickBlockProps<typeof LayoutPanel>;
 
 type ImageContainerBlok = {
   background_image?: StoryblokImageMeta;
