@@ -10,6 +10,9 @@ import { Carousel } from "src/blocks/CarouselPanel/Carousel.transform";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel.transform";
 import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
 import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection.transform";
+import { Typewriter } from "src/components/Typewriter/Typewriter";
+import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
+import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -30,5 +33,8 @@ export const getStoryblokApi = storyblokInit({
     ArticleCard,
     GridLayout,
     ParallaxVideoSection,
+    Typewriter,
+    MosaicLayout,
+    ParallaxStack,
   },
 });
