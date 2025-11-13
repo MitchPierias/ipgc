@@ -10,7 +10,7 @@ import { Carousel } from "src/blocks/CarouselPanel/Carousel.transform";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel.transform";
 import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
 import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection.transform";
-import { Typewriter } from "src/components/Typewriter/Typewriter";
+import { Typewriter } from "src/components/Typewriter/Typewriter.transform";
 import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack.transform";
 import { ContentIcon } from "src/blocks/ContentIcon/ContentIcon.transform";

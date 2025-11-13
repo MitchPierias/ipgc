@@ -13,8 +13,8 @@ import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel";
 import { ImageContainer } from "src/blocks/ImageContainer/ImageContainer";
 
 interface TypewriterProps extends Common.ElementProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   action?: {
     label: string;
     href: string;
@@ -124,10 +124,14 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           testID={`${testID}-layout`}
           className={clsx(props.className, styles.content)}
         >
-          <Leading testID="title" typeDelay={300} typeOn>
-            {props.title}
-          </Leading>
-          <Subtitle testID="subtitle">{props.subtitle}</Subtitle>
+          {props.title && (
+            <Leading testID="title" typeDelay={300} typeOn>
+              {props.title}
+            </Leading>
+          )}
+          {props.subtitle && (
+            <Subtitle testID="subtitle">{props.subtitle}</Subtitle>
+          )}
         </BlockLayout>
         {props.action && (
           <div

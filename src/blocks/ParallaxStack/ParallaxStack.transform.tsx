@@ -19,7 +19,6 @@ export const ParallaxStack = ({
   blok: ParallaxStackBlok;
   children?: React.ReactNode;
 }) => {
-  console.log("HERE", blok.panels);
   return (
     <ParallaxStackComponent
       testID="parallax-stack"

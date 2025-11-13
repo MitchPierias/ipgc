@@ -32,42 +32,6 @@ export default async function Page({
 
         <MosaicLayout testID="mosaic-layout" />
 
-        <ParallaxStack testID="parallax-stack">
-          <Panel testID="panel" variant={"glass"}>
-            <div style={{ width: "2rem", height: "2rem" }}>
-              <BlockIcon />
-            </div>
-            <Heading testID={`subtitle`} animate>
-              Referral
-            </Heading>
-            <Text testID={`title`} animate>
-              Speak to your GP or specialist about obtaining a referral to IPGC.
-            </Text>
-          </Panel>
-          <Panel testID="panel" variant={"glass"}>
-            <div style={{ width: "2rem", height: "2rem" }}>
-              <BlockIcon />
-            </div>
-            <Heading testID={`subtitle`} animate>
-              Book
-            </Heading>
-            <Text testID={`title`} animate>
-              Call one of our friendly team members to book your appointment
-            </Text>
-          </Panel>
-          <Panel testID="panel" variant={"glass"}>
-            <div style={{ width: "2rem", height: "2rem" }}>
-              <BlockIcon />
-            </div>
-            <Heading testID={`subtitle`} animate>
-              Visit
-            </Heading>
-            <Text testID={`title`} animate>
-              Attend one of our dedicated facilities for expert care.
-            </Text>
-          </Panel>
-        </ParallaxStack>
-
         <ScrollWheel testID="scroll-block">
           <Panel
             testID="panel"
