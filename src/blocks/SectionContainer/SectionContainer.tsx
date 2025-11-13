@@ -4,7 +4,8 @@ import clsx from "classnames";
 
 interface SectionContainerProps extends Common.ComponentProps {
   children: React.ReactNode;
-  size?: Common.Layout;
+  width?: Common.Layout;
+  height?: Common.Layout;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -12,12 +13,12 @@ interface SectionContainerProps extends Common.ComponentProps {
 export const SectionContainer = React.forwardRef<
   HTMLElement,
   SectionContainerProps
->(({ testID, size = "full", className, ...props }, ref) => {
+>(({ testID, width = "full", height = "full", className, ...props }, ref) => {
   return (
     <section
       ref={ref}
       data-testid={testID}
-      className={clsx(className, styles.frame, styles[size])}
+      className={clsx(className, styles.frame, styles[width], styles[height])}
       style={props.style}
     >
       {props.children}

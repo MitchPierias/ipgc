@@ -20,7 +20,8 @@ export default function AboutPage() {
             format: "webp",
             src: "/images/WBMRI-3-scaled.jpg",
           }}
-          size="full"
+          width="full"
+          height="full"
         >
           <ImagePanel
             testID={`${testID}.image`}

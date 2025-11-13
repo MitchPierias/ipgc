@@ -1,3 +1,4 @@
+import { SectionContainer } from "../SectionContainer/SectionContainer";
 import styles from "./GridLayout.module.css";
 import clsx from "classnames";
 
@@ -8,14 +9,14 @@ interface GridLayoutProps extends Common.ComponentProps {
 
 export const GridLayout = ({
   testID,
+  layout = "content",
   ...props
 }: React.PropsWithChildren<GridLayoutProps>) => {
   return (
-    <div
-      data-testid={testID}
-      className={clsx(styles.frame, styles[props.layout || "content"])}
-    >
-      {props.children}
-    </div>
+    <SectionContainer testID={testID} width={layout} height={"full"}>
+      <div data-testid={testID} className={clsx(styles.frame)}>
+        {props.children}
+      </div>
+    </SectionContainer>
   );
 };

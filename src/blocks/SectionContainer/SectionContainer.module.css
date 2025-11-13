@@ -9,10 +9,12 @@
 
 .content {
     max-width: var(--layout-md);
+    min-height: var(--layout-md);
 }
 
 .gutter {
     max-width: var(--layout-lg);
+    min-height: var(--layout-lg);
 }
 
 .full {

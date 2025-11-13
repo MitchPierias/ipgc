@@ -20,7 +20,11 @@ type LayoutPanelBlok = {
 
 export const LayoutPanel = ({ blok }: Common.BlokProps<LayoutPanelBlok>) => {
   return (
-    <SectionContainer testID="section-container" size={blok.layout}>
+    <SectionContainer
+      testID="section-container"
+      width={blok.layout}
+      height="full"
+    >
       <LayoutPanelComponent
         testID="layout-panel"
         variant={blok.variant || "transparent"}

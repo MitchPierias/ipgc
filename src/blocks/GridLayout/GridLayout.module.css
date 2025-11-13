@@ -5,15 +5,3 @@
     padding: var(--size-600);
     margin: 0 auto;
 }
-
-.content {
-    max-width: var(--layout-md);
-}
-
-.gutter {
-    max-width: var(--layout-lg);
-}
-
-.full {
-    max-width: 100%;
-}

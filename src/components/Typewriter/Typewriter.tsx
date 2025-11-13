@@ -92,7 +92,8 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
         format: "jpg",
         src: "/images/team-background.jpg",
       }}
-      size={"full"}
+      width="full"
+      height="full"
     >
       <div
         className={styles.midground}

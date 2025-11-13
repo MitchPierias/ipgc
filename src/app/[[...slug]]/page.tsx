@@ -38,10 +38,10 @@ export default async function Page({
               <BlockIcon />
             </div>
             <Heading testID={`subtitle`} animate>
-              1 in 3
+              Referral
             </Heading>
             <Text testID={`title`} animate>
-              patients discover early signs of possible future disease
+              Speak to your GP or specialist about obtaining a referral to IPGC.
             </Text>
           </Panel>
           <Panel testID="panel" variant={"glass"}>
@@ -49,10 +49,10 @@ export default async function Page({
               <BlockIcon />
             </div>
             <Heading testID={`subtitle`} animate>
-              8%
+              Book
             </Heading>
             <Text testID={`title`} animate>
-              patients have uncovered a serious heart problem
+              Call one of our friendly team members to book your appointment
             </Text>
           </Panel>
           <Panel testID="panel" variant={"glass"}>
@@ -60,14 +60,14 @@ export default async function Page({
               <BlockIcon />
             </div>
             <Heading testID={`subtitle`} animate>
-              50%
+              Visit
             </Heading>
             <Text testID={`title`} animate>
-              of members shows an improvement in their metabolic health in their
-              6 month re-testing
+              Attend one of our dedicated facilities for expert care.
             </Text>
           </Panel>
         </ParallaxStack>
+
         <ScrollWheel testID="scroll-block">
           <Panel
             testID="panel"
