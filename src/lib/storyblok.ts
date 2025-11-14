@@ -11,10 +11,11 @@ import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel.transform";
 import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
 import { ParallaxVideoSection } from "src/blocks/ParallaxVideoSection/ParallaxVideoSection.transform";
 import { Typewriter } from "src/components/Typewriter/Typewriter.transform";
-import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout";
+import { MosaicLayout } from "src/blocks/MosaicLayout/MosaicLayout.transform";
 import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack.transform";
 import { ContentIcon } from "src/blocks/ContentIcon/ContentIcon.transform";
 import { ContentText } from "src/blocks/ContentText/ContentText.transform";
+import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel.transform";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -39,6 +40,7 @@ export const getStoryblokApi = storyblokInit({
     Typewriter,
     MosaicLayout,
     ParallaxStack,
+    ScrollWheel,
     ContentIcon,
     ContentText,
   },

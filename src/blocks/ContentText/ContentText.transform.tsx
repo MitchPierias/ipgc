@@ -12,7 +12,8 @@ import {
 interface ContentTextBlok extends Common.Blok {
   component: "ContentText";
   body: string;
-  type?:
+  invert?: boolean;
+  variant?:
     | "leading"
     | "heading"
     | "subheading"
@@ -27,7 +28,8 @@ export const ContentText = ({
   testID = "content-block",
   blok,
 }: Common.BlokProps<ContentTextBlok>) => {
-  switch (blok.type) {
+  console.log(blok.variant, blok.body);
+  switch (blok.variant) {
     case "leading":
       return <Leading testID={testID}>{blok.body}</Leading>;
     case "heading":
