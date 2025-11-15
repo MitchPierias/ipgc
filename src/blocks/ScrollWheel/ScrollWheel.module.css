@@ -1,6 +1,7 @@
 .frame {
     position: relative;
     height: 300vh;
+    color: rgb(var(--color-white));
 
     svg {
         /* outline: 1px solid green; */

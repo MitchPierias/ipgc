@@ -3,22 +3,25 @@
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
     max-width: 72rem;
     margin: 0 auto;
     padding: 1.5rem;
-    padding-block: 3rem;
-}
-
-.description {
-    font-size: 1.125rem;
-    color: #4b5563;
+    gap: 1.5rem;
 }
 
 .staffGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+}
+
+.header {
+    background-color: rgb(var(--color-primary));
+    border-radius: 1rem;
+    padding: 3rem;
+    color: rgb(var(--color-white));
 }
 
 /* Responsive adjustments */

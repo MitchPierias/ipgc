@@ -13,12 +13,9 @@ export default function TeamPage() {
       <Header />
       <main role="main" className={styles.container}>
         <div className={styles.wrapper}>
-          <BlockLayout testID={`${testID}.header`}>
+          <BlockLayout testID={`${testID}.header`} className={styles.header}>
             <Heading testID={`${testID}.title`}>About Us</Heading>
-            <Text
-              testID={`${testID}.description`}
-              className={styles.description}
-            >
+            <Text testID={`${testID}.description`}>
               Meet our dedicated team of healthcare professionals
             </Text>
           </BlockLayout>
