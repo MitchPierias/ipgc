@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 
@@ -12,7 +10,6 @@ import {
   REFERRAL_FORM_PATH,
   REFERRAL_FORM_DOWNLOAD_NAME,
 } from "src/constants/app";
-import { Logo } from "src/elements/Logo/Logo";
 
 interface FooterProps extends Common.ComponentProps {}
 
@@ -71,9 +68,6 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
 
         <div className={styles.footerBottom}>
           <div className={styles.panel}>
-            <Link href="/" className={styles.logo}>
-              <Logo testID="logo" />
-            </Link>
             <Link href="/privacy-policy" className={styles.link}>
               Privacy Policy
             </Link>

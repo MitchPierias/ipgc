@@ -5,7 +5,6 @@ import { ImageContainer } from "src/blocks/ImageContainer/ImageContainer.transfo
 import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel.transform";
 import { IconBlock } from "src/blocks/IconBlock/IconBlock.transform";
 import { Panel, Panel2 } from "src/blocks/Panel/Panel.transform";
-import { ArticleCard } from "src/blocks/ArticleCard/ArticleCard.transform";
 import { Carousel } from "src/blocks/CarouselPanel/Carousel.transform";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel.transform";
 import { GridLayout } from "src/blocks/GridLayout/GridLayout.transform";
@@ -34,7 +33,7 @@ export const getStoryblokApi = storyblokInit({
     Panel2,
     Carousel,
     IconBlock,
-    ArticleCard,
+    // ArticleCard,
     GridLayout,
     ParallaxVideoSection,
     Typewriter,
