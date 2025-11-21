@@ -18,7 +18,7 @@
 }
 
 .header {
-    background-color: rgb(var(--color-primary));
+    background: linear-gradient(79deg, #191919 15.16%, #6b665f 277.89%);
     border-radius: 1rem;
     padding: 3rem;
     color: rgb(var(--color-white));

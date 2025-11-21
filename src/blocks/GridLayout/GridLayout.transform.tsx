@@ -2,14 +2,13 @@ import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { IconBlockBlok } from "../IconBlock/IconBlock.transform";
 import { GridLayout as GridLayoutComponent } from "./GridLayout";
 
-export type GridLayoutBlok = {
-  _uid: string;
+export interface GridLayoutBlok extends Common.Blok {
   component: "GridLayout";
   contents: IconBlockBlok[];
   size?: Common.Layout;
-};
+}
 
-export const GridLayout = ({ blok }: { blok: GridLayoutBlok }) => {
+export const GridLayout = ({ blok }: Common.BlokProps<GridLayoutBlok>) => {
   return (
     <GridLayoutComponent
       testID={"grid-layout"}

@@ -15,6 +15,7 @@ import { ParallaxStack } from "src/blocks/ParallaxStack/ParallaxStack.transform"
 import { ContentIcon } from "src/blocks/ContentIcon/ContentIcon.transform";
 import { ContentText } from "src/blocks/ContentText/ContentText.transform";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel.transform";
+import { StaffBlock } from "src/blocks/StaffBlock/StaffBlock.transform";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -42,5 +43,6 @@ export const getStoryblokApi = storyblokInit({
     ScrollWheel,
     ContentIcon,
     ContentText,
+    StaffBlock,
   },
 });

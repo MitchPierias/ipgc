@@ -1,13 +1,12 @@
 .card {
     width: 100%;
-    background: white;
+    background: #f6f1e7;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
@@ -27,10 +26,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-}
-
-.card:hover .image {
-    transform: scale(1.05);
 }
 
 .content {

@@ -131,6 +131,7 @@
     letter-spacing: 0.0125rem;
     border: 1px solid transparent;
     transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+    text-wrap: nowrap;
 
     &:hover {
         border-color: rgba(var(--color-white) / 0.25);

@@ -65,7 +65,7 @@ export const Header = () => {
               Locations
             </Link>
             <Link href="/contact" className={clsx(styles.link, styles.accent)}>
-              Contact
+              Contact us
             </Link>
           </FocusFlexList>
           <Button

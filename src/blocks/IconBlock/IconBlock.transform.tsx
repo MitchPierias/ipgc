@@ -1,14 +1,13 @@
 import { storyblokEditable } from "@storyblok/react";
 import { IconBlock as IconBlockComponent } from "./IconBlock";
 
-export type IconBlockBlok = {
-  _uid: string;
+export interface IconBlockBlok extends Common.Blok {
   component: "IconBlock";
   title: string;
   description?: string;
-};
+}
 
-export const IconBlock = ({ blok }: { blok: IconBlockBlok }) => {
+export const IconBlock = ({ blok }: Common.BlokProps<IconBlockBlok>) => {
   return (
     <IconBlockComponent
       testID={"icon-block"}
