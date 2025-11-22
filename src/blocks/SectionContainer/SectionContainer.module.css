@@ -3,8 +3,6 @@
     position: relative;
     margin-inline: auto;
     align-items: center;
-
-    outline: 2px dashed orange;
 }
 
 .content {

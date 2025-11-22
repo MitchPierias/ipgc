@@ -1,7 +1,22 @@
 .frame {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--size-600);
     padding: var(--size-600);
     margin: 0 auto;
+}
+
+
+.content {
+    max-width: var(--layout-md);
+    min-height: var(--layout-md);
+}
+
+.gutter {
+    max-width: var(--layout-lg);
+    min-height: var(--layout-lg);
+}
+
+.full {
+    max-width: 100%;
 }

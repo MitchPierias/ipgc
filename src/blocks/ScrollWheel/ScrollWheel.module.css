@@ -4,7 +4,6 @@
     color: rgb(var(--color-white));
 
     svg {
-        /* outline: 1px solid green; */
         transform-origin: center;
         transition: transform 0.1s ease-out;
         overflow: visible;

@@ -1,31 +1,23 @@
-"use client";
-
 import type React from "react";
 import Image from "next/image";
 import styles from "./StaffCard.module.css";
 import { Heading, Text } from "src/elements/Text/Text";
 
-export interface StaffCardProps {
+export interface StaffCardProps extends Common.ComponentProps {
   name: string;
   title: string;
-  location: string;
+  education: string;
   bio: string;
   imageUrl: string;
 }
 
-export const StaffCard: React.FC<StaffCardProps> = ({
-  name,
-  title,
-  location,
-  bio,
-  imageUrl,
-}) => {
+export const StaffCard = ({ testID, ...props }: StaffCardProps) => {
   return (
-    <div className={styles.card}>
+    <div data-testid={testID} className={styles.card}>
       <div className={styles.imageContainer}>
         <Image
-          src={imageUrl || "/placeholder.svg"}
-          alt={name}
+          src={props.imageUrl || "/placeholder.svg"}
+          alt={props.name}
           className={styles.image}
           width={400}
           height={400}
@@ -34,20 +26,20 @@ export const StaffCard: React.FC<StaffCardProps> = ({
 
       <div className={styles.content}>
         <div className={styles.header}>
-          <Heading testID={`${name}.title`} className={styles.name}>
-            {name}
+          <Heading testID={`${testID}.title`} className={styles.name}>
+            {props.name}
           </Heading>
-          <Text testID={`${name}.subtitle`} className={styles.title}>
-            {title}
+          <Text testID={`${testID}.subtitle`} className={styles.title}>
+            {props.title}
           </Text>
-          {location && (
-            <Text testID={`${name}.location`} className={styles.location}>
-              {location}
+          {props.education && (
+            <Text testID={`${testID}.education`} className={styles.education}>
+              {props.education}
             </Text>
           )}
         </div>
 
-        {bio && <p className={styles.bio}>{bio}</p>}
+        {props.bio && <p className={styles.bio}>{props.bio}</p>}
       </div>
     </div>
   );

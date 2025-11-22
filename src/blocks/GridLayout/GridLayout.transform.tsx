@@ -1,10 +1,11 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { IconBlockBlok } from "../IconBlock/IconBlock.transform";
 import { GridLayout as GridLayoutComponent } from "./GridLayout";
+import { StaffBlockBlok } from "../StaffBlock/StaffBlock.transform";
 
 export interface GridLayoutBlok extends Common.Blok {
   component: "GridLayout";
-  contents: IconBlockBlok[];
+  contents: (IconBlockBlok | StaffBlockBlok)[];
   size?: Common.Layout;
 }
 

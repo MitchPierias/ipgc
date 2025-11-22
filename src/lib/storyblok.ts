@@ -16,6 +16,7 @@ import { ContentIcon } from "src/blocks/ContentIcon/ContentIcon.transform";
 import { ContentText } from "src/blocks/ContentText/ContentText.transform";
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel.transform";
 import { StaffBlock } from "src/blocks/StaffBlock/StaffBlock.transform";
+import { BlockHeader } from "src/blocks/BlockHeader/BlockHeader.transform";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -44,5 +45,6 @@ export const getStoryblokApi = storyblokInit({
     ContentIcon,
     ContentText,
     StaffBlock,
+    BlockHeader,
   },
 });

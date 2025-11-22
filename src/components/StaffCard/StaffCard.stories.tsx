@@ -16,9 +16,9 @@ const meta: Meta<typeof StaffCard> = {
       control: "text",
       description: "Professional title or role",
     },
-    location: {
+    education: {
       control: "text",
-      description: "Location or office",
+      description: "Education or qualifications",
     },
     bio: {
       control: "text",
@@ -38,7 +38,8 @@ export const Default: Story = {
   args: {
     name: "Dr. Sarah Johnson",
     title: "Senior Radiologist",
-    location: "Cape Town, SA",
+    education:
+      "Bachelor of Nursing, Graduate Certificate in Clinical Nursing and Teaching",
     bio: "Experienced radiologist specializing in MRI diagnostics with over 10 years in medical imaging. Expert in advanced scanning techniques and patient care.",
     imageUrl: "/images/chloe-glen.webp",
   },
@@ -48,7 +49,8 @@ export const LongBio: Story = {
   args: {
     name: "Dr. Alexandra Martinez",
     title: "Research Radiologist",
-    location: "Cape Town, SA",
+    education:
+      "Bachelor of Nursing, Graduate Certificate in Clinical Nursing and Teaching",
     bio: "Internationally recognized researcher in advanced MRI techniques with expertise in cardiac imaging, neurological disorders, and preventive medicine. Has published over 150 peer-reviewed articles and leads multiple clinical trials focused on early disease detection through innovative imaging protocols.",
     imageUrl: "/images/deidre-basson.webp",
   },

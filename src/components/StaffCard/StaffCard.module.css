@@ -43,26 +43,26 @@
 }
 
 .name {
-    font-size: 24px !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    color: #1a1a1a !important;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
     margin: 0;
 }
 
 .title {
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    color: #353839 !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #353839;
     margin: 0;
 }
 
-.location {
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    color: #6b7280 !important;
+.education {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6b7280;
     margin: 0;
 }
 
@@ -81,6 +81,6 @@
     }
 
     .name {
-        font-size: 26px !important;
+        font-size: 26px;
     }
 }

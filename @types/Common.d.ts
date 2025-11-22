@@ -1,5 +1,5 @@
 declare namespace Common {
-  interface BlokProps<T> extends ComponentProps {
+  interface BlokProps<T> extends Partial<ComponentProps> {
     blok: Blok & T;
   }
 
