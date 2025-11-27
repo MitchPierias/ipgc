@@ -53,45 +53,9 @@
     gap: 8px;
 }
 
-.name {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #1a1a1a;
-    margin: 0;
-}
-
-.title {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #353839;
-    margin: 0;
-}
-
-.education {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #6b7280;
-    margin: 0;
-}
-
-.bio {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #6b7280;
-    margin: 0;
-    text-align: left;
-}
-
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .content {
         padding: 28px;
-    }
-
-    .name {
-        font-size: 26px;
     }
 }

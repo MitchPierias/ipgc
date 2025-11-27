@@ -1,5 +1,6 @@
 .frame {
-    @apply text-white bg-slate-900;
+    color: rgb(var(--color-white));
+    background-color: rgb(var(--color-slate));
     padding: var(--size-900);
 }
 
@@ -11,13 +12,21 @@
 }
 
 .topSection {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
 }
 
 .logo {
     display: flex;
     align-items: center;
-    color: white;
+    color: rgb(var(--color-white));
     height: 46px;
 
     svg,
@@ -60,7 +69,7 @@
     .link {
         color: #fff;
         font-family: 'Aeonik', system-ui, sans-serif;
-        font-size: 42px;
+        font-size: 2.5rem;
         font-weight: 300;
         transition: filter 200ms ease;
 

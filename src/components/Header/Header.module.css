@@ -26,7 +26,22 @@
 
 .menuOverlay {
     position: fixed;
-    top: 0;
+    top: 96px;
+    left: 16px;
+    right: 16px;
+    background-color: white;
+    border-radius: 1.5rem;
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.menuContent {
+    display: grid;
+    padding: 1.5rem;
+    gap: 1.5rem;
 }
 
 .logo {

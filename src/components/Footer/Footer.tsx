@@ -29,9 +29,7 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
             </Link>
 
             <div className={styles.downloadSection}>
-              <div className={styles.title}>
-                Referral/Screening Request Form
-              </div>
+              <div className={styles.title}>Referral Form</div>
               <a
                 data-testid="download-button"
                 className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded font-medium transition-colors duration-200 inline-block text-center no-underline text-sm"
@@ -62,19 +60,19 @@ export const Footer = ({ testID, ...props }: FooterProps) => {
               </nav>
             </div>
 
-            <SocialLinks testID="socials" items={socialLinks} />
+            {/* <SocialLinks testID="socials" items={socialLinks} /> */}
           </div>
         </div>
 
         <div className={styles.footerBottom}>
-          <div className={styles.panel}>
+          {/* <div className={styles.panel}>
             <Link href="/privacy-policy" className={styles.link}>
               Privacy Policy
             </Link>
             <Link href="/terms-and-conditions" className={styles.link}>
               Terms and Conditions
             </Link>
-          </div>
+          </div> */}
 
           <div className={styles.panel}>
             <div className={clsx(styles.text, styles.tagline)}></div>

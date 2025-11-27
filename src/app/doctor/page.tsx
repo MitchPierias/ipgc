@@ -16,12 +16,11 @@ export default function ReferralPage() {
         <div className={styles.wrapper}>
           <div className={styles.card}>
             <div className={styles.header}>
-              <Heading testID="referral-form-title">Referral Form</Heading>
-              <Text testID="all-referrals-accepted">
-                All referrals accepted
-              </Text>
-              <Text testID="referral-form-description">
+              <Heading testID="referral-form-title">
                 Clinicians are able to make referrals via:
+              </Heading>
+              <Text testID="all-referrals-accepted">
+                All referrals accepted.
               </Text>
             </div>
 
@@ -47,7 +46,7 @@ export default function ReferralPage() {
                   <Button
                     testID="download-referral-form-button"
                     href={REFERRAL_FORM_PATH}
-                    download={REFERRAL_FORM_DOWNLOAD_NAME}
+                    download={REFERRAL_FORM_DOWNLOAD_NAME} // TODO: Make this download from the current site
                   >
                     Download PDF
                   </Button>

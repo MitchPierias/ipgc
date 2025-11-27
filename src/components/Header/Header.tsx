@@ -88,6 +88,17 @@ export const Header = () => {
               </li>
             ))}
           </ul>
+          <div className={styles.actions}>
+            <Link
+              href="/locations"
+              className={clsx(styles.link, styles.primary)}
+            >
+              Locations
+            </Link>
+            <Link href="/contact" className={clsx(styles.link, styles.accent)}>
+              Contact us
+            </Link>
+          </div>
         </div>
       )}
     </div>

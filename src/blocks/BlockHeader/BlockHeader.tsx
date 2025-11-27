@@ -9,7 +9,7 @@ interface BlockHeaderProps extends Common.ComponentProps {
 
 export const BlockHeader = ({ testID, ...props }: BlockHeaderProps) => {
   return (
-    <BlockLayout testID={testID} className={styles.frame}>
+    <BlockLayout testID={testID} className={styles.frame} padding="loose">
       <Heading testID={`${testID}.title`}>{props.title}</Heading>
       <Text testID={`${testID}.description`}>{props.description}</Text>
     </BlockLayout>

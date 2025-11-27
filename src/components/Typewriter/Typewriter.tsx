@@ -21,6 +21,8 @@ interface TypewriterProps extends Common.ElementProps {
   };
 }
 
+const DELAY = 5000;
+
 export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [midgroundLoaded, setMidgroundLoaded] = useState(false);
@@ -125,7 +127,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           className={clsx(props.className, styles.content)}
         >
           {props.title && (
-            <Leading testID="title" typeDelay={300} typeOn>
+            <Leading testID="title" typeDelay={3000} typeOn>
               {props.title}
             </Leading>
           )}

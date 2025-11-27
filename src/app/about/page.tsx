@@ -18,7 +18,7 @@ export default function AboutPage() {
           media={{
             type: "image",
             format: "webp",
-            src: "/images/WBMRI-3-scaled.jpg",
+            src: "/images/mosaic-still-02.png",
           }}
           width="full"
           height="full"

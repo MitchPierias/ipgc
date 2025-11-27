@@ -127,7 +127,7 @@ export const Title = (props: React.ComponentProps<typeof Text>) => (
   <Text
     {...props}
     component="h4"
-    className={clsx(styles.subtitle, props.className)}
+    className={clsx(styles.title, props.className)}
   />
 );
 
