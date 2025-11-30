@@ -13,10 +13,10 @@ export const GridLayout = ({
   ...props
 }: React.PropsWithChildren<GridLayoutProps>) => {
   return (
-    <SectionContainer testID={testID} width={layout} height={"full"}>
-      <div data-testid={testID} className={clsx(styles.frame, styles[layout])}>
-        {props.children}
-      </div>
-    </SectionContainer>
+    // <SectionContainer testID={testID} width={layout} height={"full"}>
+    <div data-testid={testID} className={clsx(styles.frame, styles[layout])}>
+      {props.children}
+    </div>
+    // </SectionContainer>
   );
 };
