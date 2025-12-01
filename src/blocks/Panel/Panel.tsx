@@ -17,8 +17,8 @@ interface PanelProps extends Common.ComponentProps {
 
 export const Panel = ({
   testID,
-  spacing = "base",
-  padding = "base",
+  spacing = "loose",
+  padding = "loose",
   ...props
 }: React.PropsWithChildren<PanelProps>) => {
   if (props.children) {
