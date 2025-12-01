@@ -88,7 +88,7 @@ export const Header = () => {
               </li>
             ))}
           </ul>
-          <div className={styles.actions}>
+          <span className={styles.actions}>
             <Link
               href="/locations"
               className={clsx(styles.link, styles.primary)}
@@ -98,7 +98,7 @@ export const Header = () => {
             <Link href="/contact" className={clsx(styles.link, styles.accent)}>
               Contact us
             </Link>
-          </div>
+          </span>
         </div>
       )}
     </div>

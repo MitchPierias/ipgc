@@ -2,12 +2,15 @@
     grid-column: content;
     grid-row: content;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 1rem;
     gap: 1rem;
-}
 
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 .item {
     border-radius: 0.5rem;

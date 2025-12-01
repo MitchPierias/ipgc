@@ -3,6 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./ParallaxStack.module.css";
 import clsx from "classnames";
+import { Panel } from "../Panel/Panel";
+import { Panel2, Panel as PanelTransform } from "../Panel/Panel.transform";
 
 interface ParallaxStackProps extends Common.ComponentProps {
   staggerDelay?: number; // Delay between items animation in milliseconds
@@ -68,6 +70,17 @@ export const ParallaxStack = ({
     return normalized * 100;
   };
 
+  // Check if a child is a Panel component instance
+  const isPanelInstance = (child: React.ReactNode): boolean => {
+    if (!React.isValidElement(child)) return false;
+    const childType = child.type;
+    return (
+      childType === Panel ||
+      childType === Panel2 ||
+      childType === PanelTransform
+    );
+  };
+
   return (
     <div
       ref={containerRef}
@@ -94,7 +107,11 @@ export const ParallaxStack = ({
             } as React.CSSProperties
           }
         >
-          {child}
+          {isPanelInstance(child)
+            ? React.cloneElement(child as React.ReactElement, {
+                index,
+              })
+            : child}
         </div>
       ))}
     </div>

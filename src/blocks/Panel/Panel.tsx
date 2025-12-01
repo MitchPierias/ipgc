@@ -11,10 +11,14 @@ interface PanelProps extends Common.ComponentProps {
   buttonText?: string;
   variant?: "glass" | "invert";
   padding?: Common.Space;
+  spacing?: Common.Space;
+  index?: number;
 }
 
 export const Panel = ({
   testID,
+  spacing = "base",
+  padding = "base",
   ...props
 }: React.PropsWithChildren<PanelProps>) => {
   if (props.children) {
@@ -22,7 +26,8 @@ export const Panel = ({
       <BlockLayout
         testID={testID}
         className={clsx(props.variant && styles[props.variant])}
-        padding={props.padding}
+        padding={padding}
+        spacing={spacing}
       >
         {props.children}
       </BlockLayout>
@@ -33,7 +38,8 @@ export const Panel = ({
     <BlockLayout
       testID={testID}
       className={clsx(props.variant && styles[props.variant])}
-      padding={props.padding}
+      padding={padding}
+      spacing={spacing}
     >
       <Text testID={`${testID}.title`} uppercase>
         {props.title}
