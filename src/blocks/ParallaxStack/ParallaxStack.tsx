@@ -59,15 +59,18 @@ export const ParallaxStack = ({
     };
   }, [staggerDelay, childrenArray.length]);
 
-  // Generate a pseudo-random but deterministic horizontal offset between -100% and 100% for each item
+  // Generate a deterministic horizontal offset from left to right as index increases
+  // Constrained to keep items within the container bounds
   const getHorizontalOffset = (index: number): number => {
-    // Simple seeded random function for consistent staggering
-    const seed = (index + 1) * 12345;
-    const random = Math.sin(seed) * 10000;
-    const normalized = random - Math.floor(random);
-    console.log(normalized, "Normalized", normalized * 100);
-    // Return a deterministic random number between -100% and 100%
-    return normalized * 100;
+    // Map index from 0 to childrenArray.length-1 to range -35% to +35%
+    // So index 0 starts on the left, and higher indices move to the right
+    // This keeps items within the container while maintaining visual progression
+    const totalItems = childrenArray.length;
+    if (totalItems === 1) return 0; // Center single item
+
+    const normalizedIndex = index / (totalItems - 1); // 0 to 1
+    // Map 0 to -35%, 1 to +35% (70% total range)
+    return normalizedIndex * 70 - 35;
   };
 
   // Check if a child is a Panel component instance
