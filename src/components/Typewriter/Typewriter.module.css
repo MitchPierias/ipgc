@@ -10,6 +10,8 @@
     grid-template-rows: minmax(50%, auto) 1fr;
     grid-template-columns: auto;
     align-items: center;
+
+    margin-bottom: 45%;
 }
 
 .foreground {

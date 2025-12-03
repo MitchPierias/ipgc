@@ -9,11 +9,13 @@ import { Button } from "src/elements/Buttons/Button";
 import styles from "./page.module.css";
 import { BlankBlock } from "src/blocks/BlankBlock/BlankBlock";
 
-export default function ReferralPage() {
+const testID = "doctor-portal" as const;
+
+export default function DoctorPortalPage() {
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
-      <BlankBlock testID="blank-block" height="base" />
+      <BlankBlock testID={`${testID}.spacer`} height="base" />
       <main role="main" className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.card}>
@@ -48,7 +50,7 @@ export default function ReferralPage() {
                   <Button
                     testID="download-referral-form-button"
                     href={REFERRAL_FORM_PATH}
-                    download={REFERRAL_FORM_DOWNLOAD_NAME} // TODO: Make this download from the current site
+                    download={REFERRAL_FORM_DOWNLOAD_NAME}
                   >
                     Download PDF
                   </Button>
