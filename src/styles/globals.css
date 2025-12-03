@@ -67,6 +67,7 @@
 
     body {
         @apply text-onyx bg-white;
+        background-color: #f9fafb;
     }
 
     /* Remove default margins and paddings */

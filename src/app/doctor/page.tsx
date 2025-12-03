@@ -7,11 +7,13 @@ import {
 } from "src/constants/app";
 import { Button } from "src/elements/Buttons/Button";
 import styles from "./page.module.css";
+import { BlankBlock } from "src/blocks/BlankBlock/BlankBlock";
 
 export default function ReferralPage() {
   return (
     <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
       <Header />
+      <BlankBlock testID="blank-block" height="base" />
       <main role="main" className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.card}>
