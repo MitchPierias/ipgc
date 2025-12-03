@@ -4,6 +4,7 @@
     gap: var(--size-600);
     padding: var(--size-600);
     margin: 0 auto;
+    align-items: center;
 }
 
 .content {
