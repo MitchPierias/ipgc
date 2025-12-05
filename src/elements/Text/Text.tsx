@@ -22,6 +22,10 @@ interface TextProps extends Common.ElementProps {
   bold?: boolean;
   uppercase?: boolean;
   /**
+   * Aligns the text to the left, center, or right
+   */
+  align?: "left" | "center" | "right";
+  /**
    * Animates the text in with a blur effect when
    * reduced motion is not preferred
    */
@@ -51,6 +55,7 @@ export const Text = ({
   children,
   uppercase,
   bold,
+  align = "left",
   animate,
   typeOn,
   typeSpeed = 50,
@@ -91,6 +96,7 @@ export const Text = ({
         props.className,
         animate && isVisible && styles.blurIn,
         typeOn && styles.typewriter,
+        align && styles[align],
         uppercase && styles.uppercase,
         bold && styles.bold
       ),

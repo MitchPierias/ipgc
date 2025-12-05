@@ -39,6 +39,18 @@
     font-size: 1rem;
 }
 
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
 .uppercase {
     text-transform: uppercase;
 }

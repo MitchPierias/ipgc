@@ -1,6 +1,6 @@
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { Heading, Subheading, Text } from "src/elements/Text/Text";
+import { Heading, Leading, Subheading, Text } from "src/elements/Text/Text";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 import styles from "./page.module.css";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel";
@@ -27,20 +27,38 @@ export default function AboutPage() {
           }}
           width="full"
           height="full"
+          className={styles.header}
         >
-          <ImagePanel
-            testID={`${testID}.image`}
-            image="/images/about-us.webp"
-          />
+          <SectionContainer
+            testID={`${testID}.section`}
+            width="content"
+            height="full"
+          >
+            <BlockLayout
+              testID={`${testID}.content`}
+              className={styles.content}
+              align="center"
+            >
+              <Leading testID={`${testID}.title`} align="center">
+                Committed to best-in-class security
+              </Leading>
+              <Subheading testID={`${testID}.description`} align="center">
+                {`To get security right, you have to get Identity right. The Okta Secure Identity Commitment is our long-term initiative to lead the industry in the fight against Identity attacks. `}
+              </Subheading>
+              <Link href="/">Learn more</Link>
+            </BlockLayout>
+          </SectionContainer>
         </ImageContainer>
         <div className={styles.wrapper}>
           <BlockLayout testID={`${testID}.header`} align={"center"}>
             <Heading
               testID={`${testID}.title`}
+              align={"center"}
             >{`We're building a world where identity belongs to you`}</Heading>
             <Subheading
               testID={`${testID}.description`}
               className={styles.description}
+              align={"center"}
             >
               {`We embrace neutrality to give organizations, employees, and end users greater flexibility, regardless of the devices or technology at hand. Learn about the Okta Platform and Auth0 Platform and how they’re helping everyone secure and control their digital presence.`}
             </Subheading>

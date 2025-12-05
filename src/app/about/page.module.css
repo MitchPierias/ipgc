@@ -4,10 +4,18 @@
 }
 
 .wrapper {
-    max-width: 72rem;
+    max-width: 960px;
     margin: 0 auto;
     padding: 1.5rem;
     padding-block: 3rem;
+}
+
+.header {
+
+    .content {
+        color: rgb(var(--color-white));
+        max-width: 960px;
+    }
 }
 
 .description {
