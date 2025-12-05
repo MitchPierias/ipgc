@@ -22,6 +22,20 @@
     margin-top: 3rem;
 }
 
+.section {
+    padding: 3rem;
+}
+
+.tint {
+    background: rgb(var(--color-background-tint));
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .wrapper {

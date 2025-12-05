@@ -1,10 +1,15 @@
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { Heading, Text } from "src/elements/Text/Text";
+import { Heading, Subheading, Text } from "src/elements/Text/Text";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 import styles from "./page.module.css";
 import { ImagePanel } from "src/blocks/ImagePanel/ImagePanel";
 import { ImageContainer } from "src/blocks/ImageContainer/ImageContainer";
+import clsx from "classnames";
+import Link from "next/link";
+import { SectionContainer } from "src/blocks/SectionContainer/SectionContainer";
+import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel";
+import Image from "next/image";
 
 export default function AboutPage() {
   const testID = "about" as const;
@@ -30,14 +35,64 @@ export default function AboutPage() {
         </ImageContainer>
         <div className={styles.wrapper}>
           <BlockLayout testID={`${testID}.header`} align={"center"}>
-            <Heading testID={`${testID}.title`}>About Us</Heading>
-            <Text
+            <Heading
+              testID={`${testID}.title`}
+            >{`We're building a world where identity belongs to you`}</Heading>
+            <Subheading
               testID={`${testID}.description`}
               className={styles.description}
             >
-              Meet our dedicated team of healthcare professionals
-            </Text>
+              {`We embrace neutrality to give organizations, employees, and end users greater flexibility, regardless of the devices or technology at hand. Learn about the Okta Platform and Auth0 Platform and how they’re helping everyone secure and control their digital presence.`}
+            </Subheading>
           </BlockLayout>
+        </div>
+        <div className={clsx(styles.section, styles.tint)}>
+          <SectionContainer testID={`${testID}.section`}>
+            <LayoutPanel testID={`${testID}.layout`} columns={2}>
+              <Image
+                src={
+                  "https://www.okta.com/adobe/dynamicmedia/deliver/dm-aid--91a265b6-de5d-4e87-b641-1f2fcc070ce1/body-company-1-webp.webp?preferwebp=true&width=1280"
+                }
+                width={1280}
+                height={1280}
+                alt="Committed to best-in-class security"
+                className={styles.image}
+              />
+              <BlockLayout testID={`${testID}.content`}>
+                <Heading testID={`${testID}.title`}>
+                  Setting the bar for the industry
+                </Heading>
+                <Subheading testID={`${testID}.description`}>
+                  {`In 2009, Todd McKinnon and Frederic Kerrest co-founded Okta, and the Identity-as-a-Service (IDaaS) market was born. Since then, we’ve completed multiple acquisitions and garnered top recognition for our influence and industry contributions. Get to know the executives at the forefront of our innovations, operations, and more.`}
+                </Subheading>
+                <Link href="/team">Meet our leaders</Link>
+              </BlockLayout>
+            </LayoutPanel>
+          </SectionContainer>
+        </div>
+        <div className={clsx(styles.section)}>
+          <SectionContainer testID={`${testID}.section`}>
+            <LayoutPanel testID={`${testID}.layout`} columns={2}>
+              <BlockLayout testID={`${testID}.content`}>
+                <Heading testID={`${testID}.title`}>
+                  Committed to best-in-class security
+                </Heading>
+                <Subheading testID={`${testID}.description`}>
+                  {`To get security right, you have to get Identity right. The Okta Secure Identity Commitment is our long-term initiative to lead the industry in the fight against Identity attacks. `}
+                </Subheading>
+                <Link href="/">Learn more</Link>
+              </BlockLayout>
+              <Image
+                src={
+                  "https://www.okta.com/adobe/dynamicmedia/deliver/dm-aid--014fffa8-07ee-4d20-8db9-e6de1f45bcf7/body-company-2-webp.webp?preferwebp=true&width=1280"
+                }
+                width={1280}
+                height={1280}
+                alt="Committed to best-in-class security"
+                className={styles.image}
+              />
+            </LayoutPanel>
+          </SectionContainer>
         </div>
       </main>
       <Footer testID="footer" />

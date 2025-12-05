@@ -119,7 +119,7 @@ export const Subheading = (props: React.ComponentProps<typeof Text>) => (
   <Text
     {...props}
     component="h3"
-    className={clsx(styles.heading, props.className)}
+    className={clsx(styles.subheading, props.className)}
   />
 );
 

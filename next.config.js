@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: 'a.storyblok.com',
         port: '',
         pathname: '/**',
+      }, {
+        protocol: 'https',
+        hostname: 'www.okta.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
