@@ -40,12 +40,11 @@ export default function AboutPage() {
               align="center"
             >
               <Leading testID={`${testID}.title`} align="center">
-                Committed to best-in-class security
+                {`The World’s Identity Company`}
               </Leading>
               <Subheading testID={`${testID}.description`} align="center">
-                {`To get security right, you have to get Identity right. The Okta Secure Identity Commitment is our long-term initiative to lead the industry in the fight against Identity attacks. `}
+                {`We’re the leading independent partner for Identity management. Our vision is to free everyone to safely use any technology. Now that might sound like a seriously lofty pursuit, but we’re proving it’s possible — with seamless and secure access, authentication, and authorization.`}
               </Subheading>
-              <Link href="/">Learn more</Link>
             </BlockLayout>
           </SectionContainer>
         </ImageContainer>

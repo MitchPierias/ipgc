@@ -7,21 +7,3 @@ export const navigationItems = [
   { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ];
-
-export const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/wholebodymri/",
-    icon: "/svg/linkedin.svg",
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/whole.body.mri/",
-    icon: "/svg/instagram.svg",
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@WholeBodyMRI",
-    icon: "/svg/youtube.svg",
-  },
-];

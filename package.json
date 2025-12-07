@@ -21,10 +21,10 @@
     "classnames": "^2.5.1",
     "formidable": "^3.5.4",
     "lucide-react": "^0.454.0",
-    "next": "^15.5.4",
+    "next": "^16.0.7",
     "nodemailer": "^7.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-scroll-parallax": "^3.4.5",
     "zod": "^4.1.8"
   },

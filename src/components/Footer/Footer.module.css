@@ -2,24 +2,24 @@
     color: rgb(var(--color-white));
     background-color: rgb(var(--color-slate));
     padding: var(--size-900);
+
+    * {
+        outline: 1px solid red;
+    }
 }
 
 .wrap {
     width: 100%;
     max-width: var(--layout-xl);
-    padding: 21px;
+    padding: 1rem;
     margin: 0 auto;
-}
-
-.topSection {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1rem;
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 1rem;
     }
 }
 
@@ -43,18 +43,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 21px;
-}
-
-.downloadSection .title {
-    font-size: 22px;
-    font-weight: 300;
-    margin-bottom: 12px;
+    /* gap: 21px; */
 }
 
 .rightColumn {
     display: grid;
-    gap: 21px;
+    /* gap: 21px; */
 }
 
 .navigation {
@@ -62,69 +56,18 @@
 
     .list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 21px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* gap: 21px; */
     }
 
     .link {
         color: #fff;
-        font-family: 'Aeonik', system-ui, sans-serif;
-        font-size: 2.5rem;
+        font-size: 1.3rem;
         font-weight: 300;
         transition: filter 200ms ease;
 
         &:hover {
             filter: blur(2px);
         }
-    }
-}
-
-.footerBottom {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 21px;
-
-    .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-self: flex-end;
-        justify-self: flex-end;
-
-        .image {
-            height: 86px;
-            max-width: 100%;
-            vertical-align: bottom;
-        }
-    }
-
-    .panel {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 21px;
-        padding: 21px;
-        text-transform: uppercase;
-    }
-
-    .text,
-    .link {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 100;
-        opacity: 0.5;
-        text-transform: uppercase;
-    }
-
-    .tagline {
-        font-family: 'Aeonik', system-ui, sans-serif;
-        font-size: 22px;
-        font-weight: 300;
-        text-transform: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 4px;
-        opacity: 1;
-        justify-content: flex-end;
     }
 }
