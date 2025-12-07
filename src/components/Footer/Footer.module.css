@@ -2,72 +2,69 @@
     color: rgb(var(--color-white));
     background-color: rgb(var(--color-slate));
     padding: var(--size-900);
-
-    * {
-        outline: 1px solid red;
-    }
 }
 
 .wrap {
-    width: 100%;
-    max-width: var(--layout-xl);
-    padding: 1rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+.contain {
+    max-width: var(--layout-md);
+    margin: 0 auto;
 }
 
 .logo {
     display: flex;
     align-items: center;
     color: rgb(var(--color-white));
-    height: 46px;
+    min-width: 244px;
+    max-width: 488px;
+    height: 100%;
 
     svg,
     img {
         height: 100%;
         width: auto;
         object-fit: contain;
-        fill: currentColor;
-        transition: fill 200ms ease;
     }
 }
 
 .leftColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* gap: 21px; */
-}
-
-.rightColumn {
+    flex: 2 2 244px;
     display: grid;
+    padding: 1rem;
     /* gap: 21px; */
 }
 
 .navigation {
+    flex: 3 3 488px;
+    flex-shrink: 3;
     display: grid;
 
     .list {
+        height: min-content;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        /* gap: 21px; */
-    }
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
 
-    .link {
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 300;
-        transition: filter 200ms ease;
-
-        &:hover {
-            filter: blur(2px);
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
         }
+    }
+}
+
+.link {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    transition: filter 200ms ease;
+
+    &:hover {
+        filter: blur(2px);
     }
 }

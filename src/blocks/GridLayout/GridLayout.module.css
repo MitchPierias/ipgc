@@ -7,16 +7,38 @@
     align-items: center;
 }
 
-.content {
+.align-top {
+    align-items: start;
+}
+
+.width-content {
     max-width: var(--layout-md);
+}
+
+.width-gutter {
+    max-width: var(--layout-lg);
+}
+
+.width-full {
+    max-width: 100%;
+}
+
+.height-full {
+    height: 100%;
+}
+
+.height-auto {
+    height: auto;
+}
+
+.height-content {
     min-height: var(--layout-md);
 }
 
-.gutter {
-    max-width: var(--layout-lg);
+.height-gutter {
     min-height: var(--layout-lg);
 }
 
-.full {
-    max-width: 100%;
+.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
 }
