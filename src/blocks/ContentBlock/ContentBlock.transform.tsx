@@ -9,6 +9,7 @@ export type ContentBlockBlok = {
   subtitle?: string;
   description?: string;
   buttonText?: string;
+  buttonHref?: string;
   variant?: "glass" | "invert" | DeprecatedVariant;
 };
 
@@ -20,6 +21,7 @@ export const ContentBlock = ({ blok }: Common.BlokProps<ContentBlockBlok>) => {
       subtitle={blok.subtitle}
       description={blok.description}
       buttonText={blok.buttonText}
+      buttonHref={blok.buttonHref}
       variant={blok.variant === "overlay" ? "glass" : blok.variant}
       {...storyblokEditable(blok)}
     />

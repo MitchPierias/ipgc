@@ -11,6 +11,7 @@ export interface Panel2Blok extends Common.Blok {
   subtitle?: string;
   description?: string;
   buttonText?: string;
+  buttonHref?: string;
   variant?: "glass" | "invert" | DeprecatedVariant;
   padding?: Common.Space;
   spacing?: Common.Space;
@@ -30,6 +31,7 @@ export const Panel2 = ({
       subtitle={blok.subtitle}
       description={blok.description}
       buttonText={blok.buttonText}
+      buttonHref={blok.buttonHref}
       variant={blok.variant === "overlay" ? "glass" : blok.variant}
       index={index}
       padding={blok.padding}

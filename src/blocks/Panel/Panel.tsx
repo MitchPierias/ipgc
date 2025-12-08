@@ -9,6 +9,7 @@ interface PanelProps extends Common.ComponentProps {
   subtitle?: string;
   description?: string;
   buttonText?: string;
+  buttonHref?: string;
   variant?: "glass" | "invert";
   padding?: Common.Space;
   spacing?: Common.Space;
@@ -47,7 +48,16 @@ export const Panel = ({
       <Subtitle testID={`${testID}.subtitle`}>{props.subtitle}</Subtitle>
       <Text testID={`${testID}.description`}>{props.description}</Text>
       {props.buttonText && (
-        <Button testID={`${testID}.button`} variant={"primary"}>
+        <Button
+          testID={`${testID}.button`}
+          variant={"primary"}
+          href={
+            props.buttonHref ||
+            (props.buttonText.toLowerCase().includes("request appointment")
+              ? "/contact"
+              : undefined)
+          }
+        >
           {props.buttonText}
         </Button>
       )}
