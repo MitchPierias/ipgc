@@ -4,32 +4,29 @@ import { StoryblokProvider } from "src/providers/StoryblokProvider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Interventional Pain GC | Full-Body Cancer Screening Using MRI",
+  title: "IPGC Spine & Joint",
   description:
-    "Interventional Pain GC offers Australia's most comprehensive full-body MRI for proactive health screening. Based on the Gold Coast.",
+    "Queensland's first and only clinic dedicated solely to imaging-guided procedures for spine, joint and musculoskeletal conditions.",
   keywords: [
     "MRI",
-    "Interventional Pain GC",
+    "IPGC",
     "cancer screening",
     "MRI",
     "health screening",
     "Gold Coast",
   ],
   openGraph: {
-    title: "Interventional Pain GC | Full-Body Cancer Screening Using MRI",
+    title: "IPGC Spine & Joint",
     description:
-      "Interventional Pain GC offers Australia's most comprehensive full-body MRI for proactive health screening. Based on the Gold Coast.",
+      "Queensland's first and only clinic dedicated solely to imaging-guided procedures for spine, joint and musculoskeletal conditions.",
     url: "https://ipgc.com.au",
-    siteName: "Interventional Pain GC",
+    siteName: "IPGC",
     locale: "en_AU",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
@@ -51,10 +48,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
             sizes="180x180"
             href="/apple-touch-icon.png"
           />
-          <meta
-            name="apple-mobile-web-app-title"
-            content="Interventional Pain GC"
-          />
+          <meta name="apple-mobile-web-app-title" content="IPGC" />
           <link rel="manifest" href="/site.webmanifest" />
         </head>
         <body>
