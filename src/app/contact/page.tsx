@@ -56,10 +56,15 @@ export default function ContactPage() {
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (
-      !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s+/g, ""))
-    ) {
-      newErrors.phone = "Please enter a valid phone number";
+    } else {
+      const cleanedPhone = formData.phone.replace(/\s+/g, "");
+      // Accept local format: 0431536911 (10 digits starting with 04)
+      // Or international format: +61431536911 (+61 followed by 9 digits)
+      const isValidPhone =
+        /^04\d{8}$/.test(cleanedPhone) || /^\+61\d{9}$/.test(cleanedPhone);
+      if (!isValidPhone) {
+        newErrors.phone = "Please enter a valid phone number";
+      }
     }
 
     if (!formData.email.trim()) {

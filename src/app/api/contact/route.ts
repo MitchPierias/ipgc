@@ -38,9 +38,9 @@ async function verifyHCaptcha(token: string): Promise<boolean> {
   }
 }
 
-// Configure nodemailer transporter
+// Configure nodemailer transporter for Outlook
 function createTransporter() {
-  const emailService = process.env.EMAIL_SERVICE || "gmail";
+  const emailServer = process.env.EMAIL_SERVER;
   const emailUser = process.env.EMAIL_USER;
   const emailPassword = process.env.EMAIL_PASSWORD;
 
@@ -48,11 +48,17 @@ function createTransporter() {
     throw new Error("Email credentials not configured");
   }
 
+  // Outlook/Microsoft 365 SMTP configuration
   return nodemailer.createTransport({
-    service: emailService,
+    host: emailServer,
+    port: 587,
+    secure: false, // true for 465, false for other ports
     auth: {
       user: emailUser,
       pass: emailPassword,
+    },
+    tls: {
+      ciphers: "SSLv3",
     },
   });
 }
@@ -227,10 +233,20 @@ This message was sent from the IPGC website contact form.
       </div>
     `;
 
+    // Get recipient email from environment variable, fallback to default
+    const recipientEmail = process.env.CONTACT_FORM_RECIPIENT_EMAIL;
+
+    if (!recipientEmail) {
+      return NextResponse.json(
+        { error: "Recipient email not configured" },
+        { status: HTTP_STATUS.INTERNAL_SERVER_ERROR }
+      );
+    }
+
     // Send email
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM || email,
-      to: "mitch@pierias.com",
+      from: email || process.env.EMAIL_FROM,
+      to: recipientEmail,
       subject: emailSubject,
       text: emailText,
       html: emailHtml,
