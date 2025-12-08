@@ -23,7 +23,7 @@ export default function AboutPage() {
           media={{
             type: "image",
             format: "webp",
-            src: "/images/mosaic-still-02.png",
+            src: "/images/ipgc-about-hero.png",
           }}
           width="full"
           height="full"
@@ -40,10 +40,10 @@ export default function AboutPage() {
               align="center"
             >
               <Leading testID={`${testID}.title`} align="center">
-                {`The World’s Identity Company`}
+                {`Where expertise meets care`}
               </Leading>
               <Subheading testID={`${testID}.description`} align="center">
-                {`We’re the leading independent partner for Identity management. Our vision is to free everyone to safely use any technology. Now that might sound like a seriously lofty pursuit, but we’re proving it’s possible — with seamless and secure access, authentication, and authorization.`}
+                {`We have recruited a team of doctors with the highest level of expertise.`}
               </Subheading>
             </BlockLayout>
           </SectionContainer>
@@ -53,13 +53,20 @@ export default function AboutPage() {
             <Heading
               testID={`${testID}.title`}
               align={"center"}
-            >{`We're building a world where identity belongs to you`}</Heading>
+            >{`Raising the standard in care`}</Heading>
             <Subheading
               testID={`${testID}.description`}
               className={styles.description}
               align={"center"}
             >
-              {`We embrace neutrality to give organizations, employees, and end users greater flexibility, regardless of the devices or technology at hand. Learn about the Okta Platform and Auth0 Platform and how they’re helping everyone secure and control their digital presence.`}
+              {`IPGC was founded with a simple goal: to bring class leading, minimally invasive spine and joint treatments to patients seeking precise, minimally invasive treatment. Since opening our doors in 2023, we’ve expanded our capabilities, refined our techniques, and helped shape the region’s standard for procedural excellence.`}
+            </Subheading>
+            <Subheading
+              testID={`${testID}.description`}
+              className={styles.description}
+              align={"center"}
+            >
+              {`Today, our specialist team continues to lead with innovation, technical expertise, and a commitment to patient-centered care. Meet the clinicians and professionals driving our mission—where expertise meets care, every day.`}
             </Subheading>
           </BlockLayout>
         </div>
@@ -67,9 +74,7 @@ export default function AboutPage() {
           <SectionContainer testID={`${testID}.section`}>
             <LayoutPanel testID={`${testID}.layout`} columns={2}>
               <Image
-                src={
-                  "https://www.okta.com/adobe/dynamicmedia/deliver/dm-aid--91a265b6-de5d-4e87-b641-1f2fcc070ce1/body-company-1-webp.webp?preferwebp=true&width=1280"
-                }
+                src={"/images/ipgc-about-1.png"}
                 width={1280}
                 height={1280}
                 alt="Committed to best-in-class security"
@@ -77,12 +82,15 @@ export default function AboutPage() {
               />
               <BlockLayout testID={`${testID}.content`}>
                 <Heading testID={`${testID}.title`}>
-                  Setting the bar for the industry
+                  {`Interventional Radiologist`}
                 </Heading>
                 <Subheading testID={`${testID}.description`}>
-                  {`In 2009, Todd McKinnon and Frederic Kerrest co-founded Okta, and the Identity-as-a-Service (IDaaS) market was born. Since then, we’ve completed multiple acquisitions and garnered top recognition for our influence and industry contributions. Get to know the executives at the forefront of our innovations, operations, and more.`}
+                  {`An Interventional Radiologist is a highly subspecialised doctor who has at least 15 years of medical training. Radiologists specialise in using ultrasound, CT and MRI to diagnose your condition and the origin of your pain.`}
                 </Subheading>
-                <Link href="/team">Meet our leaders</Link>
+                <Subheading testID={`${testID}.description`}>
+                  {`Using the same equipment and with high precision they can then administer steroid and other pain killers to the exact sites that cause pain, potentially reducing or limiting the use of tablets and the need for surgery.`}
+                </Subheading>
+                <Link href="/team">Meet our team</Link>
               </BlockLayout>
             </LayoutPanel>
           </SectionContainer>
@@ -92,17 +100,17 @@ export default function AboutPage() {
             <LayoutPanel testID={`${testID}.layout`} columns={2}>
               <BlockLayout testID={`${testID}.content`}>
                 <Heading testID={`${testID}.title`}>
-                  Committed to best-in-class security
+                  {`Why choose IPGC?`}
                 </Heading>
                 <Subheading testID={`${testID}.description`}>
-                  {`To get security right, you have to get Identity right. The Okta Secure Identity Commitment is our long-term initiative to lead the industry in the fight against Identity attacks. `}
+                  {`The specialists at IPGC have cumulatively treated tens of thousands of patient's with back, spine and joint related issues, with decades of cumulative experience.`}
                 </Subheading>
-                <Link href="/">Learn more</Link>
+                <Subheading testID={`${testID}.description`}>
+                  {`Our success is measured in how many patients we can help return to normality! We do this by performing minimally invasive procedures with minimal risk and virtually no down time.`}
+                </Subheading>
               </BlockLayout>
               <Image
-                src={
-                  "https://www.okta.com/adobe/dynamicmedia/deliver/dm-aid--014fffa8-07ee-4d20-8db9-e6de1f45bcf7/body-company-2-webp.webp?preferwebp=true&width=1280"
-                }
+                src={"/images/ipgc-about-2.png"}
                 width={1280}
                 height={1280}
                 alt="Committed to best-in-class security"
