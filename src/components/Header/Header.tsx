@@ -21,6 +21,7 @@ interface NavigationItem {
 
 export const Header = () => {
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const navigationItems = [
     { label: "Home", href: "/" },
@@ -31,6 +32,26 @@ export const Header = () => {
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        isMenuOpen
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className={styles.frame}>
@@ -80,7 +101,7 @@ export const Header = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className={styles.menuOverlay}>
+        <div ref={menuRef} className={styles.menuOverlay}>
           <ul className={styles.menuContent}>
             {navigationItems.map((item) => (
               <li key={item.href}>
