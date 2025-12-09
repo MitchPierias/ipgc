@@ -1,14 +1,6 @@
 .container {
-    min-height: 100vh;
-    background-color: #f9fafb;
-}
-
-.wrapper {
-    max-width: 56rem;
+    max-width: var(--layout-md);
     margin: 0 auto;
-    padding: 1.5rem;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
 }
 
 .description {

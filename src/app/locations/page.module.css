@@ -2,3 +2,7 @@
     max-width: var(--layout-md);
     margin: 0 auto;
 }
+
+.tint {
+    background: rgb(var(--color-background-tint));
+}
