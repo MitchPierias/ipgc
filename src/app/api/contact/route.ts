@@ -3,6 +3,7 @@ import nodemailer from "nodemailer";
 import formidable from "formidable";
 import fs from "fs";
 import path from "path";
+import os from "os";
 import {
   validateContactForm,
   validateFile,
@@ -69,10 +70,13 @@ async function parseFormData(request: NextRequest): Promise<{
   files: Record<string, any>;
 }> {
   return new Promise((resolve, reject) => {
+    // Use system temp directory (works in Vercel serverless: /tmp)
+    const tmpDir = os.tmpdir();
+
     const form = formidable({
       maxFileSize: 10 * 1024 * 1024, // 10MB limit
       keepExtensions: true,
-      uploadDir: path.join(process.cwd(), "tmp"),
+      uploadDir: tmpDir,
     });
 
     // Convert the request to a Node.js IncomingMessage-like object
@@ -88,10 +92,10 @@ async function parseFormData(request: NextRequest): Promise<{
             // Handle file upload
             const buffer = Buffer.from(await value.arrayBuffer());
             const filename = value.name;
-            const filepath = path.join(process.cwd(), "tmp", filename);
+            // Use system temp directory (works in Vercel serverless: /tmp)
+            const filepath = path.join(tmpDir, filename);
 
-            // Ensure tmp directory exists
-            const tmpDir = path.dirname(filepath);
+            // Ensure tmp directory exists (should already exist, but check for safety)
             if (!fs.existsSync(tmpDir)) {
               fs.mkdirSync(tmpDir, { recursive: true });
             }
