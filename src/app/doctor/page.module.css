@@ -1,54 +1,15 @@
 .container {
+    max-width: var(--layout-md);
+    margin: 0 auto;
     min-height: 100vh;
 }
 
-.wrapper {
-    max-width: 56rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    padding-block: 3rem;
-}
-
-.card {
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.content {
+.downloads {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.downloadSection {
-    background-color: #eff6ff;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    border: 1px solid #bfdbfe;
-}
-
-.downloadContainer {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-.downloadTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1e3a8a;
-    margin-bottom: 0.5rem;
-}
-
-.downloadDescription {
-    color: #1d4ed8;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .referralMethods {
@@ -78,8 +39,8 @@
     flex-shrink: 0;
     width: 2rem;
     height: 2rem;
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: rgb(var(--color-accent));
+    color: rgb(var(--color-white));
     border-radius: 50%;
     display: flex;
     align-items: center;

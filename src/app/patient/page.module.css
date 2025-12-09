@@ -1,15 +1,5 @@
 .container {
-    min-height: 100vh;
-}
-
-.wrapper {
-    max-width: 56rem;
+    max-width: var(--layout-md);
     margin: 0 auto;
-    padding: 1.5rem;
-    padding-block: 3rem;
-}
-
-.description {
-    font-size: 1.125rem;
-    color: #4b5563;
+    min-height: 100vh;
 }

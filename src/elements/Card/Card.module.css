@@ -1,5 +1,5 @@
 .frame {
-    background-color: #f9fafb;
+    background: rgb(var(--color-background-tint));
     border-radius: 0.5rem;
     padding: 1.5rem;
 }

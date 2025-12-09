@@ -35,7 +35,7 @@ export default function LocationsPage() {
           </BlockLayout>
 
           <GridLayout testID={`${testID}.grid`} padding="none">
-            <Card testID={`${testID}.address-info`} className={styles.tint}>
+            <Card testID={`${testID}.address-info`}>
               <BlockLayout
                 testID={`${testID}.address-layout`}
                 spacing={"tight"}
@@ -57,7 +57,7 @@ export default function LocationsPage() {
               </BlockLayout>
             </Card>
 
-            <Card testID={`${testID}.address-info`} className={styles.tint}>
+            <Card testID={`${testID}.address-info`}>
               <BlockLayout
                 testID={`${testID}.address-layout`}
                 spacing={"tight"}
