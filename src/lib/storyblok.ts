@@ -17,7 +17,6 @@ import { ContentAction } from "src/blocks/ContentAction/ContentAction.transform"
 import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel.transform";
 import { StaffBlock } from "src/blocks/StaffBlock/StaffBlock.transform";
 import { BlockHeader } from "src/blocks/BlockHeader/BlockHeader.transform";
-import { BlankBlock } from "src/blocks/BlankBlock/BlankBlock.transform";
 import { BackgroundMedia } from "src/blocks/BackgroundMedia/BackgroundMedia.transform";
 
 export const getStoryblokApi = storyblokInit({
@@ -44,7 +43,6 @@ export const getStoryblokApi = storyblokInit({
     ContentAction,
     StaffBlock,
     BlockHeader,
-    BlankBlock,
     BackgroundMedia,
   },
 });

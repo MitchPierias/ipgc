@@ -12,7 +12,7 @@ interface PanelProps extends Common.ComponentProps {
   padding?: Common.Space;
   spacing?: Common.Space;
   size?: Common.Layout;
-  index?: number;
+  align?: Common.Alignment;
   invert?: boolean;
 }
 
@@ -20,6 +20,7 @@ export const Panel = ({
   testID,
   spacing = "loose",
   padding = "loose",
+  align = "left",
   size = "content",
   invert,
   ...props
@@ -30,7 +31,8 @@ export const Panel = ({
       className={clsx(
         props.variant && styles[props.variant],
         styles[size],
-        invert && styles.invert
+        invert && styles.invert,
+        styles[align]
       )}
       padding={padding}
       spacing={spacing}

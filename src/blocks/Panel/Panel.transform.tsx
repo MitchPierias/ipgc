@@ -11,6 +11,7 @@ interface PanelBlok extends Common.Blok {
   items: ContentBlocks[];
   padding?: Common.Space;
   spacing?: Common.Space;
+  align?: Common.Alignment;
   invert?: boolean;
 }
 
@@ -24,6 +25,7 @@ export const Panel = ({
       padding={blok.padding}
       spacing={blok.spacing}
       invert={blok.invert}
+      align={blok.align}
       {...storyblokEditable(blok)}
     >
       {blok.items.map((item) => (

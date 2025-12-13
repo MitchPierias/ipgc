@@ -44,3 +44,18 @@
 .full {
     max-width: 100%;
 }
+
+.left {
+    text-align: left;
+    align-items: start;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+}
+
+.right {
+    text-align: right;
+    align-items: end;
+}
