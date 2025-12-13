@@ -1,6 +1,7 @@
 .frame {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 0.6fr));
+    grid-auto-flow: row;
     gap: var(--size-500);
     padding: var(--size-500);
     max-height: 100%;
@@ -25,7 +26,11 @@
 }
 
 .columns-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 
@@ -39,4 +44,36 @@
 
 .full {
     max-width: 100%;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.padding-tight {
+    padding: 0.5rem;
+}
+
+.padding-base {
+    padding: 1rem;
+}
+
+.padding-loose {
+    padding: 3rem;
+}
+
+.spacing-none {
+    gap: 0;
+}
+
+.spacing-tight {
+    gap: 0.5rem;
+}
+
+.spacing-base {
+    gap: 1rem;
+}
+
+.spacing-loose {
+    gap: 3rem;
 }

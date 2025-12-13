@@ -7,7 +7,7 @@ type ContentBlocks =
   | Common.PickBlockProps<typeof ContentText>
   | Common.PickBlockProps<typeof ContentIcon>;
 
-interface PanelBlok extends Common.Blok {
+export interface PanelBlok extends Common.Blok {
   items: ContentBlocks[];
   padding?: Common.Space;
   spacing?: Common.Space;

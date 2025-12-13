@@ -7,7 +7,8 @@ interface LayoutPanelProps extends Common.ComponentProps {
   columns?: 1 | 2 | 3;
   size?: Common.Layout;
   className?: string;
-  style?: React.CSSProperties;
+  padding?: Common.Space;
+  spacing?: Common.Space;
 }
 
 export const LayoutPanel = ({
@@ -16,6 +17,8 @@ export const LayoutPanel = ({
   columns = 1,
   size = "content",
   className,
+  padding = "base",
+  spacing = "base",
   ...props
 }: React.PropsWithChildren<LayoutPanelProps>) => {
   return (
@@ -26,9 +29,10 @@ export const LayoutPanel = ({
         styles.frame,
         styles[variant],
         styles[`columns-${columns}`],
-        styles[size]
+        styles[size],
+        styles[`padding-${padding}`],
+        styles[`spacing-${spacing}`]
       )}
-      style={props.style}
     >
       {props.children}
     </div>
