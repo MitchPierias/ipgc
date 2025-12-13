@@ -96,7 +96,6 @@
 }
 
 .mobile {
-    color: rgb(var(--color-black));
 
     @media (min-width: 768px) {
         display: none;
