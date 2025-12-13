@@ -8,6 +8,7 @@ import {
   Paragraph,
   Microcopy,
 } from "src/elements/Text/Text";
+import { storyblokEditable } from "@storyblok/react/rsc";
 
 interface ContentTextBlok extends Common.Blok {
   component: "ContentText";
@@ -31,20 +32,52 @@ export const ContentText = ({
   console.log(blok.variant, blok.body);
   switch (blok.variant) {
     case "leading":
-      return <Leading testID={testID}>{blok.body}</Leading>;
+      return (
+        <Leading testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Leading>
+      );
     case "heading":
-      return <Heading testID={testID}>{blok.body}</Heading>;
+      return (
+        <Heading testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Heading>
+      );
     case "subheading":
-      return <Subheading testID={testID}>{blok.body}</Subheading>;
+      return (
+        <Subheading testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Subheading>
+      );
     case "title":
-      return <Title testID={testID}>{blok.body}</Title>;
+      return (
+        <Title testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Title>
+      );
     case "subtitle":
-      return <Subtitle testID={testID}>{blok.body}</Subtitle>;
+      return (
+        <Subtitle testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Subtitle>
+      );
     case "paragraph":
-      return <Paragraph testID={testID}>{blok.body}</Paragraph>;
+      return (
+        <Paragraph testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Paragraph>
+      );
     case "microcopy":
-      return <Microcopy testID={testID}>{blok.body}</Microcopy>;
+      return (
+        <Microcopy testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Microcopy>
+      );
     default:
-      return <Text testID={testID}>{blok.body}</Text>;
+      return (
+        <Text testID={testID} {...storyblokEditable(blok)}>
+          {blok.body}
+        </Text>
+      );
   }
 };

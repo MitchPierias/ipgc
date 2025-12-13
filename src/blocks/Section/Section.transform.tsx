@@ -1,34 +1,16 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
-import { ImageContainer as ImageContainerComponent } from "./ImageContainer";
+import { Section as SectionComponent } from "./Section";
 import { LayoutPanel } from "../LayoutPanel/LayoutPanel.transform";
 
-export type StoryblokImageMeta = {
-  id: number;
-  alt: string;
-  name: string;
-  focus: string;
-  title: string;
-  source: string;
-  filename: string;
-  copyright: string;
-  fieldtype: "asset" | string;
-  meta_data: {};
-  is_external_url: boolean;
+type SectionBlok = {
+  background_image?: Common.ImageBlock;
+  contents?: Common.PickBlockProps<typeof LayoutPanel>[];
 };
 
-type ImageContainerContent = Common.PickBlockProps<typeof LayoutPanel>;
-
-type ImageContainerBlok = {
-  background_image?: StoryblokImageMeta;
-  contents?: ImageContainerContent[];
-};
-
-export const ImageContainer = ({
-  blok,
-}: Common.BlokProps<ImageContainerBlok>) => {
+export const Section = ({ blok }: Common.BlokProps<SectionBlok>) => {
   return (
-    <ImageContainerComponent
-      testID="image-container"
+    <SectionComponent
+      testID="section"
       media={
         blok.background_image?.filename && blok.background_image.filename !== ""
           ? {
@@ -45,6 +27,6 @@ export const ImageContainer = ({
       {blok.contents?.map((nestedBlok) => (
         <StoryblokComponent key={nestedBlok._uid} blok={nestedBlok} />
       ))}
-    </ImageContainerComponent>
+    </SectionComponent>
   );
 };

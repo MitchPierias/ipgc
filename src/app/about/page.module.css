@@ -1,41 +1,6 @@
 .container {
     min-height: 100vh;
-    background-color: #f9fafb;
-}
-
-.wrapper {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    padding-block: 3rem;
-}
-
-.header {
-
-    .content {
-        color: rgb(var(--color-white));
-        max-width: 960px;
-    }
-}
-
-.description {
-    font-size: 1.125rem;
-    color: #4b5563;
-}
-
-.staffGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.section {
-    padding: 3rem;
-}
-
-.tint {
-    background: rgb(var(--color-background-tint));
+    background-color: rgb(var(--color-background-secondary));
 }
 
 .image {

@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "src/hooks/useIntersectionObserver";
 import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel";
-import { ImageContainer } from "src/blocks/ImageContainer/ImageContainer";
+import { Section } from "src/blocks/Section/Section";
 
 interface TypewriterProps extends Common.ElementProps {
   title?: string;
@@ -86,7 +86,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   };
 
   return (
-    <ImageContainer
+    <Section
       ref={elementRef}
       testID="section"
       media={{
@@ -169,6 +169,6 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           onLoad={() => setImageLoaded(true)}
         />
       </div>
-    </ImageContainer>
+    </Section>
   );
 };

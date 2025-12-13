@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MosaicLayout } from "./MosaicLayout";
-import { ArticleCard } from "../ArticleCard/ArticleCard";
 
 const meta: Meta<typeof MosaicLayout> = {
   title: "Blocks/MosaicLayout",
@@ -65,14 +64,7 @@ export const Default: Story = {
     <div style={{ padding: "2rem" }}>
       <MosaicLayout {...args}>
         {sampleCards.map((card, index) => (
-          <ArticleCard
-            key={index}
-            testID={`mosaic-article-${index}`}
-            title={card.title}
-            description={card.description}
-            tags={card.tags}
-            media={card.media}
-          />
+          <div key={index}>Stuff</div>
         ))}
       </MosaicLayout>
     </div>

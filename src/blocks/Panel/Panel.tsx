@@ -1,7 +1,5 @@
 import clsx from "classnames";
 import styles from "./Panel.module.css";
-import { Button } from "src/elements/Buttons/Button";
-import { Subtitle, Text } from "src/elements/Text/Text";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 
 interface PanelProps extends Common.ComponentProps {
@@ -13,54 +11,31 @@ interface PanelProps extends Common.ComponentProps {
   variant?: "glass" | "invert";
   padding?: Common.Space;
   spacing?: Common.Space;
+  size?: Common.Layout;
   index?: number;
+  invert?: boolean;
 }
 
 export const Panel = ({
   testID,
   spacing = "loose",
   padding = "loose",
+  size = "content",
+  invert,
   ...props
 }: React.PropsWithChildren<PanelProps>) => {
-  if (props.children) {
-    return (
-      <BlockLayout
-        testID={testID}
-        className={clsx(props.variant && styles[props.variant])}
-        padding={padding}
-        spacing={spacing}
-      >
-        {props.children}
-      </BlockLayout>
-    );
-  }
-
   return (
     <BlockLayout
       testID={testID}
-      className={clsx(props.variant && styles[props.variant])}
+      className={clsx(
+        props.variant && styles[props.variant],
+        styles[size],
+        invert && styles.invert
+      )}
       padding={padding}
       spacing={spacing}
     >
-      <Text testID={`${testID}.title`} uppercase>
-        {props.title}
-      </Text>
-      <Subtitle testID={`${testID}.subtitle`}>{props.subtitle}</Subtitle>
-      <Text testID={`${testID}.description`}>{props.description}</Text>
-      {props.buttonText && (
-        <Button
-          testID={`${testID}.button`}
-          variant={"primary"}
-          href={
-            props.buttonHref ||
-            (props.buttonText.toLowerCase().includes("request appointment")
-              ? "/contact"
-              : undefined)
-          }
-        >
-          {props.buttonText}
-        </Button>
-      )}
+      {props.children}
     </BlockLayout>
   );
 };

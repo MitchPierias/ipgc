@@ -1,24 +1,17 @@
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 import { ParallaxStack as ParallaxStackComponent } from "./ParallaxStack";
-import { Panel, Panel2 } from "../Panel/Panel.transform";
+import { Panel } from "../Panel/Panel.transform";
 
-export type ParallaxStackBlok = {
+interface ParallaxStackBlok extends Common.Blok {
   component: "ParallaxStack";
   staggerDelay?: number;
   // Children will be handled by Storyblok's nested components
-  panels: (
-    | Common.PickBlockProps<typeof Panel>
-    | Common.PickBlockProps<typeof Panel2>
-  )[];
-};
+  panels: Common.PickBlockProps<typeof Panel>[];
+}
 
 export const ParallaxStack = ({
   blok,
-  children,
-}: {
-  blok: ParallaxStackBlok;
-  children?: React.ReactNode;
-}) => {
+}: Common.BlokProps<ParallaxStackBlok>) => {
   return (
     <ParallaxStackComponent
       testID="parallax-stack"

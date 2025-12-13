@@ -49,4 +49,6 @@ declare namespace Common {
     meta_data: {};
     is_external_url: boolean;
   };
+
+  type VideoBlock = {};
 }

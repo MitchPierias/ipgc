@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { LayoutPanel } from "./LayoutPanel";
 import { Panel } from "../Panel/Panel";
-import { ArticleCard } from "../ArticleCard/ArticleCard";
 
 const meta: Meta<typeof LayoutPanel> = {
   title: "Blocks/LayoutPanel",
@@ -43,40 +42,6 @@ export const Default: Story = {
           description="We use the latest MRI scanners and imaging technology to provide the most accurate and detailed health assessments."
           buttonText="View Technology"
           variant="glass"
-        />
-      </LayoutPanel>
-    </div>
-  ),
-};
-
-export const CardVariant: Story = {
-  args: {
-    variant: "card",
-  },
-  render: (args) => (
-    <div style={{ padding: "2rem" }}>
-      <LayoutPanel {...args}>
-        <ArticleCard
-          testID="card-1"
-          title="MRI Technology Advancement"
-          description="Latest developments in MRI scanning technology"
-          tags={["Technology", "Innovation"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-3-scaled.jpg",
-          }}
-        />
-        <ArticleCard
-          testID="card-2"
-          title="Patient Care Excellence"
-          description="Our commitment to exceptional patient experience"
-          tags={["Care", "Experience"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-34.jpg",
-          }}
         />
       </LayoutPanel>
     </div>

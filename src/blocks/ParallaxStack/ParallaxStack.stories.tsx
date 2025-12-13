@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ParallaxStack } from "./ParallaxStack";
 import { Panel } from "../Panel/Panel";
-import { ArticleCard } from "../ArticleCard/ArticleCard";
 import { IconBlock } from "../IconBlock/IconBlock";
 
 const meta: Meta<typeof ParallaxStack> = {
@@ -59,52 +58,6 @@ export const Default: Story = {
           description="We conduct cutting-edge research in preventive medicine and early detection technologies to improve patient outcomes."
           buttonText="Read Research"
           variant="glass"
-        />
-      </ParallaxStack>
-    </div>
-  ),
-};
-
-export const FastStagger: Story = {
-  args: {
-    testID: "parallax-stack-fast",
-    staggerDelay: 75,
-  },
-  render: (args) => (
-    <div style={{ padding: "2rem", minHeight: "100vh" }}>
-      <ParallaxStack {...args}>
-        <ArticleCard
-          testID="fast-article-1"
-          title="MRI Technology Advancement"
-          description="Latest developments in MRI scanning technology"
-          tags={["Technology", "Innovation"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-3-scaled.jpg",
-          }}
-        />
-        <ArticleCard
-          testID="fast-article-2"
-          title="Health Benefits"
-          description="Understanding the benefits of preventive health screening"
-          tags={["Health", "Prevention"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-34.jpg",
-          }}
-        />
-        <ArticleCard
-          testID="fast-article-3"
-          title="Patient Success"
-          description="Stories of early detection and successful treatment"
-          tags={["Success", "Patients"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-3-scaled.jpg",
-          }}
         />
       </ParallaxStack>
     </div>
@@ -180,18 +133,6 @@ export const MixedContent: Story = {
           description="We offer a full range of health screening services using the latest medical technology."
           buttonText="Explore Services"
           variant="glass"
-        />
-
-        <ArticleCard
-          testID="mixed-article"
-          title="Latest Research"
-          description="Breakthrough discoveries in preventive medicine"
-          tags={["Research", "Innovation"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-34.jpg",
-          }}
         />
 
         <IconBlock

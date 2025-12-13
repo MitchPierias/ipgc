@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { GridLayout } from "./GridLayout";
-import { ArticleCard } from "../ArticleCard/ArticleCard";
 import { Panel } from "../Panel/Panel";
 
 const meta: Meta<typeof GridLayout> = {
@@ -77,28 +76,6 @@ const sampleCards = [
   },
 ];
 
-export const WithArticleCards: Story = {
-  args: {
-    testID: "grid-layout-articles",
-  },
-  render: (args) => (
-    <div style={{ padding: "2rem" }}>
-      <GridLayout {...args}>
-        {sampleCards.map((card, index) => (
-          <ArticleCard
-            key={index}
-            testID={`grid-article-${index}`}
-            title={card.title}
-            description={card.description}
-            tags={card.tags}
-            media={card.media}
-          />
-        ))}
-      </GridLayout>
-    </div>
-  ),
-};
-
 export const WithPanels: Story = {
   args: {
     testID: "grid-layout-panels",
@@ -150,17 +127,6 @@ export const MixedContent: Story = {
   render: (args) => (
     <div style={{ padding: "2rem" }}>
       <GridLayout {...args}>
-        <ArticleCard
-          testID="mixed-article-1"
-          title="Latest MRI Technology"
-          description="Discover our newest scanning capabilities"
-          tags={["Technology", "New"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-3-scaled.jpg",
-          }}
-        />
         <Panel
           testID="mixed-panel-1"
           title="Quick Facts"
@@ -168,17 +134,6 @@ export const MixedContent: Story = {
           description="Fast, accurate, and comprehensive health assessments."
           buttonText="Learn More"
           variant="glass"
-        />
-        <ArticleCard
-          testID="mixed-article-2"
-          title="Patient Success Stories"
-          description="Read about our patients' health journey"
-          tags={["Stories", "Health"]}
-          media={{
-            type: "image",
-            format: "jpg",
-            src: "/images/WBMRI-34.jpg",
-          }}
         />
         <div
           style={{
