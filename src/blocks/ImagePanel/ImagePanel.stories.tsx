@@ -22,7 +22,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     testID: "image-panel-default",
-    image: "/images/WBMRI-3-scaled.jpg",
+    image: {
+      filename: "/images/WBMRI-3-scaled.jpg",
+      alt: "Whole Body MRI",
+    } as Common.ImageBlock,
   },
   render: (args) => (
     <ImagePanel {...args}>
@@ -49,7 +52,10 @@ export const Default: Story = {
 export const WithPanel: Story = {
   args: {
     testID: "image-panel-with-panel",
-    image: "/images/WBMRI-34.jpg",
+    image: {
+      filename: "/images/WBMRI-34.jpg",
+      alt: "Whole Body MRI",
+    } as Common.ImageBlock,
   },
   render: (args) => (
     <ImagePanel {...args}>
@@ -79,7 +85,10 @@ export const WithPanel: Story = {
 export const MinimalOverlay: Story = {
   args: {
     testID: "image-panel-minimal",
-    image: "/images/WBMRI-3-scaled.jpg",
+    image: {
+      filename: "/images/WBMRI-3-scaled.jpg",
+      alt: "Whole Body MRI",
+    } as Common.ImageBlock,
   },
   render: (args) => (
     <ImagePanel {...args}>
@@ -108,7 +117,10 @@ export const MinimalOverlay: Story = {
 export const CenteredContent: Story = {
   args: {
     testID: "image-panel-centered",
-    image: "/images/WBMRI-34.jpg",
+    image: {
+      filename: "/images/WBMRI-34.jpg",
+      alt: "Whole Body MRI",
+    } as Common.ImageBlock,
   },
   render: (args) => (
     <ImagePanel {...args}>
@@ -144,7 +156,10 @@ export const CenteredContent: Story = {
 export const MultipleElements: Story = {
   args: {
     testID: "image-panel-multiple",
-    image: "/images/WBMRI-3-scaled.jpg",
+    image: {
+      filename: "/images/WBMRI-3-scaled.jpg",
+      alt: "Whole Body MRI",
+    } as Common.ImageBlock,
   },
   render: (args) => (
     <ImagePanel {...args}>
