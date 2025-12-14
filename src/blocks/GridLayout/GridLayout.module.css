@@ -2,9 +2,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--size-600);
-    padding: var(--size-600);
+    padding: var(--size-900);
     margin: 0 auto;
-    align-items: center;
+    justify-items: center;
+
+    @media screen and (min-width: 1024px) {
+        padding: 7rem var(--size-500);
+    }
 }
 
 .align-top {

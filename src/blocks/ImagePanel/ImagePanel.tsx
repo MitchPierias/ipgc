@@ -1,7 +1,8 @@
+import Image from "next/image";
 import styles from "./ImagePanel.module.css";
 
 interface ImagePanelProps extends Common.ComponentProps {
-  image: string;
+  image: Common.ImageBlock;
 }
 
 export const ImagePanel = ({
@@ -9,12 +10,15 @@ export const ImagePanel = ({
   ...props
 }: React.PropsWithChildren<ImagePanelProps>) => {
   return (
-    <div
-      data-testid={testID}
-      className={styles.frame}
-      style={{ backgroundImage: `url(${props.image})` }}
-    >
-      {props.children}
+    <div data-testid={testID} className={styles.frame}>
+      <Image
+        data-testid={testID}
+        src={props.image.filename}
+        alt={props.image.alt}
+        className={styles.image}
+        width={1760}
+        height={1760}
+      />
     </div>
   );
 };
