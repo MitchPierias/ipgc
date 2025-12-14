@@ -171,16 +171,15 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
         style={{
           transform: getParallaxTransform(0.04, 0.06), // Medium parallax, starts 6% down (4% speed, 6% initial offset)
         }}
+        padding="loose"
       >
         {props.title && (
-          <Leading testID="title" typeDelay={3000} typeOn align="center">
+          <Leading testID="title" typeDelay={3000} typeOn>
             {props.title}
           </Leading>
         )}
         {props.subtitle && (
-          <Subtitle testID="subtitle" align="center">
-            {props.subtitle}
-          </Subtitle>
+          <Subtitle testID="subtitle">{props.subtitle}</Subtitle>
         )}
         {props.action && (
           <div
