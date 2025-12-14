@@ -73,7 +73,11 @@ export const Text = ({
   const textContent =
     typeof children === "string" ? children : String(children || "");
 
-  const { displayText } = useTypewriter({
+  const {
+    displayText,
+    showCursor,
+    cursorChar: hookCursorChar,
+  } = useTypewriter({
     text: textContent,
     speed: typeSpeed,
     startDelay: typeDelay,
@@ -96,10 +100,14 @@ export const Text = ({
         props.className,
         animate && isVisible && styles.blurIn,
         typeOn && styles.typewriter,
+        typeOn && showCursor && styles.showCursor,
         align && styles[align],
         uppercase && styles.uppercase,
         bold && styles.bold
       ),
+      ...(typeOn && {
+        "data-cursor-char": hookCursorChar,
+      }),
     },
     content
   );

@@ -1,8 +1,16 @@
+.section {
+    min-height: 50vh;
+    transition: min-height 0.3s ease-in-out;
+
+    @media (min-width: 1024px) {
+        min-height: 100vh;
+    }
+}
+
 .frame {
     position: relative;
-    gap: var(--size-500);
-    padding: var(--size-500);
     max-height: 100%;
+    width: 100%;
     color: white;
     will-change: transform;
 
@@ -46,10 +54,6 @@
 .image.loaded {
     opacity: 1;
     filter: blur(0);
-}
-
-.content {
-    padding-top: 64px;
 }
 
 .actions {

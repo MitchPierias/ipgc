@@ -9,6 +9,7 @@ interface LayoutPanelProps extends Common.ComponentProps {
   className?: string;
   padding?: Common.Space;
   spacing?: Common.Space;
+  style?: React.CSSProperties;
 }
 
 export const LayoutPanel = ({
@@ -33,6 +34,7 @@ export const LayoutPanel = ({
         styles[`padding-${padding}`],
         styles[`spacing-${spacing}`]
       )}
+      style={props.style}
     >
       {props.children}
     </div>

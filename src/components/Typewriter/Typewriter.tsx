@@ -11,6 +11,7 @@ import { useState, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "src/hooks/useIntersectionObserver";
 import { LayoutPanel } from "src/blocks/LayoutPanel/LayoutPanel";
 import { Section } from "src/blocks/Section/Section";
+import { Panel } from "src/blocks/Panel/Panel";
 
 interface TypewriterProps extends Common.ElementProps {
   title?: string;
@@ -28,6 +29,7 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   const [midgroundLoaded, setMidgroundLoaded] = useState(false);
   const [showActions, setShowActions] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [containerHeight, setContainerHeight] = useState(0);
 
   const { elementRef, isVisible } = useIntersectionObserver({
     threshold: 0.1,
@@ -42,6 +44,37 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Update container height on resize
+  useEffect(() => {
+    const updateContainerHeight = () => {
+      const element = elementRef.current;
+      if (element) {
+        setContainerHeight(element.getBoundingClientRect().height);
+      }
+    };
+
+    // Initial measurement
+    updateContainerHeight();
+
+    // Use ResizeObserver for better performance
+    const resizeObserver = new ResizeObserver(() => {
+      updateContainerHeight();
+    });
+
+    const element = elementRef.current;
+    if (element) {
+      resizeObserver.observe(element);
+    }
+
+    // Fallback to window resize for older browsers
+    window.addEventListener("resize", updateContainerHeight, { passive: true });
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateContainerHeight);
+    };
+  }, [elementRef]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +91,24 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
     };
   }, [isVisible]);
 
-  // Calculate parallax transforms
-  const getParallaxTransform = (speed: number, initialOffset: number = 0) => {
-    if (!isVisible) return `translateY(${initialOffset}px)`;
+  // Calculate parallax transforms using percentages
+  // speedPercent: percentage of container height to move (e.g., 0.06 = 6% of container height)
+  // initialOffsetPercent: percentage of container height for initial offset (e.g., 0.08 = 8% of container height)
+  const getParallaxTransform = (
+    speedPercent: number,
+    initialOffsetPercent: number = 0
+  ) => {
+    if (!isVisible || containerHeight === 0) {
+      const initialOffsetPx =
+        initialOffsetPercent * (containerHeight || window.innerHeight);
+      return `translateY(${initialOffsetPx}px)`;
+    }
 
     const element = elementRef.current;
-    if (!element) return `translateY(${initialOffset}px)`;
+    if (!element) {
+      const initialOffsetPx = initialOffsetPercent * containerHeight;
+      return `translateY(${initialOffsetPx}px)`;
+    }
 
     const rect = element.getBoundingClientRect();
     const elementTop = rect.top + scrollY;
@@ -80,8 +125,12 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
       )
     );
 
+    // Convert percentages to pixel values based on container height
+    const speedPx = speedPercent * containerHeight;
+    const initialOffsetPx = initialOffsetPercent * containerHeight;
+
     // Apply parallax effect with initial offset
-    const parallaxOffset = initialOffset - scrollProgress * speed;
+    const parallaxOffset = initialOffsetPx - scrollProgress * speedPx;
     return `translateY(${parallaxOffset}px)`;
   };
 
@@ -95,11 +144,12 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
         src: "/images/team-background.jpg",
       }}
       width="full"
+      className={styles.section}
     >
       <div
         className={styles.midground}
         style={{
-          transform: getParallaxTransform(60, 80), // Slower parallax, starts 80px down
+          transform: getParallaxTransform(0.06, 0.08), // Slower parallax, starts 8% down (6% speed, 8% initial offset)
         }}
       >
         <Image
@@ -113,27 +163,25 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           onLoad={() => setMidgroundLoaded(true)}
         />
       </div>
+
       <LayoutPanel
         testID={testID}
         className={styles.frame}
         size={"content"}
         style={{
-          transform: getParallaxTransform(40, 60), // Medium parallax, starts 60px down
+          transform: getParallaxTransform(0.04, 0.06), // Medium parallax, starts 6% down (4% speed, 6% initial offset)
         }}
       >
-        <BlockLayout
-          testID={`${testID}-layout`}
-          className={clsx(props.className, styles.content)}
-        >
-          {props.title && (
-            <Leading testID="title" typeDelay={3000} typeOn>
-              {props.title}
-            </Leading>
-          )}
-          {props.subtitle && (
-            <Subtitle testID="subtitle">{props.subtitle}</Subtitle>
-          )}
-        </BlockLayout>
+        {props.title && (
+          <Leading testID="title" typeDelay={3000} typeOn align="center">
+            {props.title}
+          </Leading>
+        )}
+        {props.subtitle && (
+          <Subtitle testID="subtitle" align="center">
+            {props.subtitle}
+          </Subtitle>
+        )}
         {props.action && (
           <div
             className={clsx(styles.actions, {
@@ -152,10 +200,11 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
           </div>
         )}
       </LayoutPanel>
+
       <div
         className={styles.foreground}
         style={{
-          transform: getParallaxTransform(120, 100), // Fastest parallax, starts 100px down
+          transform: getParallaxTransform(0.12, 0.1), // Fastest parallax, starts 10% down (12% speed, 10% initial offset)
         }}
       >
         <Image

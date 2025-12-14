@@ -112,13 +112,13 @@ export function useTypewriter({
     };
   }, []);
 
-  const textWithCursor =
-    showCursor && (isTyping || showCursorState)
-      ? `${displayText}${cursorChar}`
-      : displayText;
+  // Determine if cursor should be visible (only when typing or when showCursorState is true)
+  const shouldShowCursor = showCursor && (isTyping || showCursorState);
 
   return {
-    displayText: textWithCursor,
+    displayText, // Return text without cursor - cursor will be handled by CSS pseudo-element
+    showCursor: shouldShowCursor,
+    cursorChar,
     isTyping,
     isComplete: displayText.length === text.length,
   };

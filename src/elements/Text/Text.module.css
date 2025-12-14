@@ -111,8 +111,27 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Cursor blinking animation - handled by JavaScript but we can add fallback styles */
-.typewriter::after {
-    content: '';
-    /* Fallback cursor styling if needed */
+/* Cursor as pseudo-element - always reserves space to prevent layout shifts */
+.typewriter.showCursor::after {
+    content: attr(data-cursor-char);
+    /* Inline-block so it flows with text and always reserves space */
+    display: inline-block;
+    /* Match the text styling */
+    color: inherit;
+    font-weight: inherit;
+    /* Blinking animation - opacity only, so space is always reserved */
+    animation: cursorBlink 530ms infinite;
+}
+
+@keyframes cursorBlink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
 }

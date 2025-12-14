@@ -14,6 +14,7 @@ interface PanelProps extends Common.ComponentProps {
   size?: Common.Layout;
   align?: Common.Alignment;
   invert?: boolean;
+  className?: string;
 }
 
 export const Panel = ({
@@ -29,6 +30,7 @@ export const Panel = ({
     <BlockLayout
       testID={testID}
       className={clsx(
+        props.className,
         props.variant && styles[props.variant],
         styles[size],
         invert && styles.invert,
