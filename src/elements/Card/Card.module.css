@@ -1,7 +1,7 @@
 .frame {
     background: rgb(var(--color-background-tint));
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+    border-radius: var(--radius-500);
+    padding: var(--size-500);
 }
 
 .elevation-md {

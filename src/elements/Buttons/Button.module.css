@@ -40,6 +40,7 @@
 
 .tertiary {
     color: rgb(var(--color-black));
+    font-weight: 500;
     background-color: transparent;
     text-transform: inherit;
     text-decoration: underline;

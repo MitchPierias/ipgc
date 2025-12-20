@@ -1,7 +1,6 @@
 .frame {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .spacing-none {
@@ -9,15 +8,15 @@
 }
 
 .spacing-tight {
-    gap: 0.5rem;
+    gap: var(--size-300);
 }
 
 .spacing-base {
-    gap: 1rem;
+    gap: var(--size-500);
 }
 
 .spacing-loose {
-    gap: 3rem;
+    gap: var(--size-900);
 }
 
 .padding-none {
@@ -25,15 +24,15 @@
 }
 
 .padding-tight {
-    padding: 0.5rem;
+    padding: var(--size-300);
 }
 
 .padding-base {
-    padding: 1rem;
+    padding: var(--size-500);
 }
 
 .padding-loose {
-    padding: 3rem;
+    padding: var(--size-900);
 }
 
 .align-center {

@@ -14,27 +14,14 @@
 
 .base {
     /* Header: 14px top + 14px bottom + 22px logo + 0.6rem*2 menu padding = ~69px */
-    height: 69px;
+    height: 92px;
+
+    @media screen and (min-width: 768px) {
+        height: 162px;
+    }
 }
 
 .loose {
     /* Header height * 1.5 */
     height: 103.5px;
-}
-
-@media (min-width: 768px) {
-    .tight {
-        /* Header: 40px padding + 34px logo + 1.1rem menu padding = ~92px */
-        height: 92px;
-    }
-
-    .base {
-        /* Header: 40px top + 40px bottom + 34px logo + 1.1rem*2 menu padding = ~149px */
-        height: 149px;
-    }
-
-    .loose {
-        /* Header height * 1.5 */
-        height: 223.5px;
-    }
 }

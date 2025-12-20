@@ -180,7 +180,7 @@ export default function ContactPage() {
       <BlankBlock testID={`${testID}.blank`} height="base" />
       <main role="main" className={styles.container}>
         <Card testID={`${testID}.card`} elevation="md">
-          <BlockLayout testID={`${testID}.layout`} padding="none">
+          <BlockLayout testID={`${testID}.layout`} padding={"none"}>
             <BlockLayout testID={`${testID}.header`} align={"center"}>
               <Heading testID={`${testID}.title`}>Contact Us</Heading>
               <Text

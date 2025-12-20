@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^1.16.0",
+    "@react-google-maps/api": "^2.20.8",
     "@storyblok/react": "^5.4.1",
     "@vercel/speed-insights": "^1.2.0",
     "classnames": "^2.5.1",
