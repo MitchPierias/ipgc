@@ -47,6 +47,8 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
 
   // Update container height on resize
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const updateContainerHeight = () => {
       const element = elementRef.current;
       if (element) {
@@ -77,6 +79,8 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
   }, [elementRef]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -98,6 +102,9 @@ export const Typewriter = ({ testID, ...props }: TypewriterProps) => {
     speedPercent: number,
     initialOffsetPercent: number = 0
   ) => {
+    // Guard against SSR - return safe default during server-side rendering
+    if (typeof window === "undefined") return "translateY(0px)";
+
     if (!isVisible || containerHeight === 0) {
       const initialOffsetPx =
         initialOffsetPercent * (containerHeight || window.innerHeight);

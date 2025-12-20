@@ -5,7 +5,15 @@ import React from "react";
 
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IProps>(
   (
-    { testID, variant = "primary", size = "md", children, disabled, ...props },
+    {
+      testID,
+      variant = "primary",
+      size = "md",
+      align = "center",
+      children,
+      disabled,
+      ...props
+    },
     ref
   ) =>
     React.createElement(
@@ -18,6 +26,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IProps>(
           styles.frame,
           styles[variant],
           styles[size],
+          styles[align],
           disabled && styles.disabled
         ),
         ref,

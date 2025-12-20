@@ -1,5 +1,6 @@
 interface BaseProps extends Common.ComponentProps {
   variant?: Common.Variant;
+  align?: "left" | "center" | "right";
   size?: Common.Size;
   disabled?: boolean;
 }

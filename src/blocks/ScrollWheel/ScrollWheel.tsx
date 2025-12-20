@@ -29,6 +29,8 @@ export const ScrollWheel = ({
   ]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       if (target.current) {
         const rect = target.current.getBoundingClientRect();

@@ -1,7 +1,14 @@
 import type React from "react";
 import Image from "next/image";
 import styles from "./StaffCard.module.css";
-import { Heading, Paragraph, Text, Title } from "src/elements/Text/Text";
+import {
+  Heading,
+  Paragraph,
+  Subtitle,
+  Text,
+  Title,
+} from "src/elements/Text/Text";
+import { Button } from "src/elements/Buttons/Button";
 
 export interface StaffCardProps extends Common.ComponentProps {
   name: string;
@@ -27,15 +34,23 @@ export const StaffCard = ({ testID, ...props }: StaffCardProps) => {
       <div className={styles.content}>
         <div className={styles.header}>
           <Title testID={`${testID}.title`}>{props.name}</Title>
-          <Text testID={`${testID}.subtitle`}>{props.title}</Text>
-          {props.education && (
+          <Paragraph testID={`${testID}.subtitle`}>{props.title}</Paragraph>
+          {/* {props.education && (
             <Text testID={`${testID}.education`}>{props.education}</Text>
-          )}
+          )} */}
         </div>
 
-        {props.bio && (
+        <Button
+          testID={`${testID}.more`}
+          variant={"tertiary"}
+          align={"left"}
+          size={"md"}
+        >
+          Learn more
+        </Button>
+        {/* {props.bio && (
           <Paragraph testID={`${testID}.bio`}>{props.bio}</Paragraph>
-        )}
+        )} */}
       </div>
     </div>
   );

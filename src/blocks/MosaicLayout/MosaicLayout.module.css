@@ -1,15 +1,15 @@
 .frame {
     grid-column: content;
     grid-row: content;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     padding: 1rem;
-    gap: 1rem;
+}
 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* Desktop Grid View */
+.gridView {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .item {
@@ -35,5 +35,90 @@
 
     &.landscape {
         grid-column: span 2;
+    }
+}
+
+/* Mobile Carousel View */
+.carouselView {
+    display: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.carouselTrack {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.carouselSlide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.carouselItem {
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    width: 100%;
+
+    &>span {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &.portrait {
+        aspect-ratio: 0.5;
+    }
+}
+
+.carouselIndicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease;
+
+    &.active {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Responsive: Show carousel on mobile, grid on desktop */
+@media (max-width: 768px) {
+    .gridView {
+        display: none;
+    }
+
+    .carouselView {
+        display: block;
     }
 }
