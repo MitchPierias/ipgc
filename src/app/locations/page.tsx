@@ -84,14 +84,6 @@ export default function LocationsPage() {
               </BlockLayout>
             </Card>
           </GridLayout>
-
-          <BlockLayout testID={`${testID}.map-section`} padding="none">
-            <GoogleMapComponent
-              testID={`${testID}.map`}
-              address="94 Laver Drive, Robina, Queensland 4226, Australia"
-              height="400px"
-            />
-          </BlockLayout>
         </BlockLayout>
 
         <BlankBlock testID={`${testID}.blank`} height="base" />
