@@ -1,23 +1,19 @@
 "use client";
 
-import React from "react";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import {
   Heading,
   Microcopy,
-  Paragraph,
   Subheading,
   Subtitle,
   Text,
-  Title,
 } from "src/elements/Text/Text";
 import { Card } from "src/elements/Card/Card";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 import { GridLayout } from "src/elements/GridLayout/GridLayout";
 import styles from "./page.module.css";
 import { BlankBlock } from "src/blocks/BlankBlock/BlankBlock";
-import { GoogleMapComponent } from "src/components/GoogleMap/GoogleMap";
 
 export default function LocationsPage() {
   const testID = "locations" as const;
