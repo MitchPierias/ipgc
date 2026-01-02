@@ -18,6 +18,7 @@ import { ScrollWheel } from "src/blocks/ScrollWheel/ScrollWheel.transform";
 import { StaffBlock } from "src/blocks/StaffBlock/StaffBlock.transform";
 import { BlockHeader } from "src/blocks/BlockHeader/BlockHeader.transform";
 import { BackgroundMedia } from "src/blocks/BackgroundMedia/BackgroundMedia.transform";
+import { VideoPlayer } from "src/components/VideoPlayer/VideoPlayer.transform";
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
@@ -44,5 +45,6 @@ export const getStoryblokApi = storyblokInit({
     StaffBlock,
     BlockHeader,
     BackgroundMedia,
+    VideoPlayer,
   },
 });
