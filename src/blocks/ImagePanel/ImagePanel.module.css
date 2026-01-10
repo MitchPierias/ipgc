@@ -1,11 +1,9 @@
 .frame {
-    /* aspect-ratio: 9 / 16; */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    aspect-ratio: 1/1;
     border-radius: 21px;
     max-width: 100%;
     max-height: 100%;
+    overflow: hidden;
 }
 
 .image {

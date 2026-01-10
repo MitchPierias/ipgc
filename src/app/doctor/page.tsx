@@ -1,6 +1,6 @@
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { Heading, Text } from "src/elements/Text/Text";
+import { Heading, Subheading, Text } from "src/elements/Text/Text";
 import {
   REFERRAL_FORM_PATH,
   REFERRAL_FORM_DOWNLOAD_NAME,
@@ -15,7 +15,7 @@ const testID = "doctor-portal" as const;
 
 export default function DoctorPortalPage() {
   return (
-    <div className="home wp-singular page-template page-template-page-home page-template-page-home-php page page-id-2 wp-theme-wholebodymri">
+    <div data-testid={testID}>
       <Header />
       <BlankBlock testID={`${testID}.spacer`} height="base" />
       <main role="main" className={styles.container}>
@@ -23,7 +23,9 @@ export default function DoctorPortalPage() {
           <Heading testID="referral-form-title">
             Clinicians are able to make referrals via:
           </Heading>
-          <Text testID="all-referrals-accepted">All referrals accepted.</Text>
+          <Subheading testID="all-referrals-accepted">
+            All referrals accepted.
+          </Subheading>
         </BlockLayout>
 
         {/* Download Section */}

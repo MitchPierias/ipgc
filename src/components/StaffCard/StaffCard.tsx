@@ -16,6 +16,7 @@ export interface StaffCardProps extends Common.ComponentProps {
   education: string;
   bio: string;
   imageUrl: string;
+  onClick: () => void;
 }
 
 export const StaffCard = ({ testID, ...props }: StaffCardProps) => {
@@ -45,6 +46,7 @@ export const StaffCard = ({ testID, ...props }: StaffCardProps) => {
           variant={"tertiary"}
           align={"left"}
           size={"md"}
+          onClick={props.onClick}
         >
           Learn more
         </Button>

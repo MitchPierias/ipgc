@@ -4,7 +4,7 @@
     --content-width: 960px;
     --gutter-size: 64px;
 
-    --layout-md: 960px;
+    --layout-md: 1050px;
     --layout-lg: calc(var(--layout-md) + var(--gutter-size) * 2);
     --layout-xl: calc(var(--layout-lg) + 2 * var(--gutter-size));
 
