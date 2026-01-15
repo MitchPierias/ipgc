@@ -47,7 +47,12 @@ export default async function Page({
             size="gutter"
             className={styles.layout}
           >
-            <ImagePanel testID="image-panel" image={profile.image} />
+            <ImagePanel
+              testID="image-panel"
+              image={profile.image}
+              width={960}
+              height={960}
+            />
             <Panel testID="panel">
               <BlockLayout testID="block-layout">
                 <Paragraph testID="subtitle" uppercase component="p">

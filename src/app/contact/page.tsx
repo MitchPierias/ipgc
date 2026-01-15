@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { Heading, Microcopy, Text } from "src/elements/Text/Text";
+import { Heading, Microcopy, Subheading, Text } from "src/elements/Text/Text";
 import { Button } from "src/elements/Buttons/Button";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import styles from "./page.module.css";
@@ -182,7 +182,16 @@ export default function ContactPage() {
         <Card testID={`${testID}.card`} elevation="md">
           <BlockLayout testID={`${testID}.layout`} padding={"none"}>
             <BlockLayout testID={`${testID}.header`} align={"center"}>
-              <Heading testID={`${testID}.title`}>Contact Us</Heading>
+              <BlockLayout
+                testID={`${testID}.group`}
+                spacing={"none"}
+                align="center"
+              >
+                <Heading testID={`${testID}.title`}>Contact Us</Heading>
+                <Subheading testID={`${testID}.subtitle`}>
+                  07 5613 2031
+                </Subheading>
+              </BlockLayout>
               <Text
                 testID={`${testID}.description`}
                 className={styles.description}

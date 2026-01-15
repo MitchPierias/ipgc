@@ -1,15 +1,23 @@
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
-import { Heading, Subheading, Text } from "src/elements/Text/Text";
+import {
+  Heading,
+  Paragraph,
+  Subheading,
+  Text,
+  Title,
+} from "src/elements/Text/Text";
 import {
   REFERRAL_FORM_PATH,
   REFERRAL_FORM_DOWNLOAD_NAME,
+  FAQS,
 } from "src/constants/app";
 import { Button } from "src/elements/Buttons/Button";
 import styles from "./page.module.css";
 import { BlankBlock } from "src/blocks/BlankBlock/BlankBlock";
 import { BlockLayout } from "src/elements/BlockLayout/BlockLayout";
 import { Card } from "src/elements/Card/Card";
+import { Panel } from "src/blocks/Panel/Panel";
 
 const testID = "doctor-portal" as const;
 
@@ -99,6 +107,29 @@ export default function DoctorPortalPage() {
             </div>
           </div>
         </div>
+
+        <Panel testID={`${testID}.panel`}>
+          <Heading testID={`${testID}.panel-title`}>
+            Frequently Asked Questions
+          </Heading>
+          <BlockLayout
+            testID={`${testID}.panel-content`}
+            spacing={"base"}
+            padding="none"
+          >
+            {FAQS.map((faq) => (
+              <BlockLayout
+                key={faq.question}
+                testID={`${testID}.question`}
+                spacing={"base"}
+                padding="none"
+              >
+                <Title testID={`${testID}.question`}>{faq.question}</Title>
+                <Paragraph testID={`${testID}.answer`}>{faq.answer}</Paragraph>
+              </BlockLayout>
+            ))}
+          </BlockLayout>
+        </Panel>
       </main>
       <BlankBlock testID={`${testID}.spacer`} height="base" />
       <Footer testID="footer" />
