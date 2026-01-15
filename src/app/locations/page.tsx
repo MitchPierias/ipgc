@@ -31,7 +31,7 @@ export default function LocationsPage() {
             </Subheading>
             <BlockLayout testID={`${testID}.phone-numbers`} spacing={"base"}>
               <Subtitle testID={`${testID}.phone`}>
-                <strong>Phone:</strong> 0413 519 891
+                <strong>Phone:</strong> (07) 5613 2031
               </Subtitle>
               <Subtitle testID={`${testID}.email`}>
                 <strong>Email:</strong> reception@ipgc.com.au
